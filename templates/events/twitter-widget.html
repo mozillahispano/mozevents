@@ -4,7 +4,7 @@
     new TWTR.Widget({
       version: 2,
       type: 'search',
-      search: 'firefox',
+      search: '#{{ event.twitterTag }}',
       interval: 6000,
       title: '{{ event.name }}',
       subject: '#{{ event.twitterTag }}',
