@@ -1,0 +1,297 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-04-01 10:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: events/extra.py:17
+msgid "Invalid captcha"
+msgstr ""
+
+#: events/forms.py:22
+msgid "Confirm email address"
+msgstr ""
+
+#: events/forms.py:23
+msgid ""
+"To avoid automatical registrations, you have to fill this field with the two "
+"words above. If you arent able to read them, you can reload a different ones "
+"from the arrows icon."
+msgstr ""
+
+#: events/forms.py:24
+msgid "I accept the privacy policy"
+msgstr ""
+
+#: events/forms.py:37
+msgid "The email doesn't match"
+msgstr ""
+
+#: events/models.py:17 events/models.py:50
+msgid "Name"
+msgstr ""
+
+#: events/models.py:18
+msgid "Slug"
+msgstr ""
+
+#: events/models.py:19 events/models.py:55
+msgid "Creation date"
+msgstr ""
+
+#: events/models.py:20
+msgid "Event date"
+msgstr ""
+
+#: events/models.py:21
+msgid "Registration start date"
+msgstr ""
+
+#: events/models.py:22
+msgid "Registration end date"
+msgstr ""
+
+#: events/models.py:23 templates/events/detail.html:19
+#: templates/events/registration-confirmed.html:22
+msgid "Address"
+msgstr ""
+
+#: events/models.py:23
+msgid "The address should be searchable in Google Maps"
+msgstr ""
+
+#: events/models.py:24
+msgid "Places"
+msgstr ""
+
+#: events/models.py:24
+msgid "Number of places, leave blank for unlimited"
+msgstr ""
+
+#: events/models.py:25
+msgid "Event description and program"
+msgstr ""
+
+#: events/models.py:26
+msgid "Comments url"
+msgstr ""
+
+#: events/models.py:26
+msgid "Link to comments at the forum"
+msgstr ""
+
+#: events/models.py:27
+msgid "Active"
+msgstr ""
+
+#: events/models.py:28
+msgid "Social tag"
+msgstr ""
+
+#: events/models.py:28
+msgid ""
+"Tag for this event at Twitter and Flickr, e.g fx4madrid. Note: Do not add # "
+"to the tag, it will be added auto for Twitter."
+msgstr ""
+
+#: events/models.py:51
+msgid "First name"
+msgstr ""
+
+#: events/models.py:52
+msgid "Family name"
+msgstr ""
+
+#: events/models.py:56
+msgid "Email"
+msgstr ""
+
+#: events/models.py:57
+msgid "Twitter user"
+msgstr ""
+
+#: events/models.py:58
+msgid "Press"
+msgstr ""
+
+#: events/models.py:58
+msgid "Check this field if you are you from press or other media"
+msgstr ""
+
+#: events/models.py:59
+msgid "Website"
+msgstr ""
+
+#: events/models.py:60
+msgid "Confirmed"
+msgstr ""
+
+#: events/utils.py:30
+#, python-format
+msgid "[%(name)s] Registration confirmation"
+msgstr ""
+
+#: templates/404.html:5 templates/404.html.py:9
+msgid "Not found"
+msgstr ""
+
+#: templates/404.html:11
+msgid ""
+"Sorry, the page you are trying to load does not exist, check the address and "
+"try again"
+msgstr ""
+
+#: templates/500.html:5 templates/500.html.py:9
+msgid "Server error"
+msgstr ""
+
+#: templates/500.html:11
+msgid ""
+"Sorry, our server find and error and can not continue, please send a report "
+"to eventos arroba mozilla-hispano.org"
+msgstr ""
+
+#: templates/base.html:6 templates/index.html:5 templates/index.html.py:9
+msgid "Events"
+msgstr ""
+
+#: templates/events/detail.html:10 templates/events/social-block.html:5
+msgid "I will be at"
+msgstr ""
+
+#: templates/events/detail.html:10 templates/events/social-block.html:5
+msgid "And you?"
+msgstr ""
+
+#: templates/events/detail.html:10 templates/events/social-block.html:5
+msgid "mozilla_hispano"
+msgstr ""
+
+#: templates/events/detail.html:20
+msgid "Comments and opinions about the event"
+msgstr ""
+
+#: templates/events/detail.html:25
+msgid "Photos"
+msgstr ""
+
+#: templates/events/detail.html:30
+msgid "Back to event listing"
+msgstr ""
+
+#: templates/events/detail.html:37
+msgid "Register here!"
+msgstr ""
+
+#: templates/events/flickr-badge.html:25
+msgid "View all photos on flickr with tag"
+msgstr ""
+
+#: templates/events/registration-closed.html:5
+#: templates/events/registration-closed.html:9
+#: templates/events/registration-confirmed.html:5
+#: templates/events/registration-confirmed.html:9
+#: templates/events/registration-done.html:5
+#: templates/events/registration-done.html:9
+#: templates/events/registration.html:5 templates/events/registration.html:9
+msgid "Registration"
+msgstr ""
+
+#: templates/events/registration-closed.html:11
+msgid "Sorry, but registration for this event is currently closed."
+msgstr ""
+
+#: templates/events/registration-confirmed.html:12
+msgid "Ey, it seems that your registration was already confirmed!"
+msgstr ""
+
+#: templates/events/registration-confirmed.html:14
+msgid "Thanks, your registration has been confirmed!"
+msgstr ""
+
+#: templates/events/registration-confirmed.html:17
+msgid "We are looking forward to meet you at"
+msgstr ""
+
+#: templates/events/registration-confirmed.html:19
+msgid "Remember the details"
+msgstr ""
+
+#: templates/events/registration-confirmed.html:21
+msgid "Date"
+msgstr ""
+
+#: templates/events/registration-confirmed.html:26
+#: templates/events/registration-done.html:17
+msgid "Back to"
+msgstr ""
+
+#: templates/events/registration-done.html:11
+msgid "Thanks, your registration has been saved"
+msgstr ""
+
+#: templates/events/registration-done.html:13
+msgid "We have sent an email to"
+msgstr ""
+
+#: templates/events/registration-done.html:13
+msgid "with the instructions to confirm it"
+msgstr ""
+
+#: templates/events/registration-email.html:2
+msgid "Hi"
+msgstr ""
+
+#: templates/events/registration-email.html:4
+msgid "Thanks for registering in"
+msgstr ""
+
+#: templates/events/registration-email.html:6
+msgid "Here you have the event details"
+msgstr ""
+
+#: templates/events/registration-email.html:8
+msgid "Date:"
+msgstr ""
+
+#: templates/events/registration-email.html:9
+msgid "Address:"
+msgstr ""
+
+#: templates/events/registration-email.html:11
+msgid ""
+"Important! You must confirm your attendance by clicking on the following "
+"address"
+msgstr ""
+
+#: templates/events/registration-email.html:15
+msgid "http://www.mozilla-hispano.org"
+msgstr ""
+
+#: templates/events/registration-email.html:16
+msgid "http://twitter.com/mozilla_hispano"
+msgstr ""
+
+#: templates/events/registration.html:15
+msgid "Fields marked with <span>*</span> are mandatory"
+msgstr ""
+
+#: templates/events/registration.html:82
+msgid "Submit"
+msgstr ""
+
+#: templates/events/social-block.html:3
+msgid "Don't forget to share the event!"
+msgstr ""

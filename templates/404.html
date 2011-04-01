@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Not found' %}{% endblock %}
+
+{% block content %}
+
+<h2>{% trans 'Not found' %}</h2>
+
+<p>{% trans 'Sorry, the page you are trying to load does not exist, check the address and try again' %}.</p>
+
+{% endblock %}

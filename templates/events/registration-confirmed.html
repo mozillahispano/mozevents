@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{{ event.name }} - {% trans 'Registration' %}{% endblock %}
+
+{% block content %}
+
+<h2><a href="/event/{{ event.id }}/{{ event.slug }}/">{{ event.name }}</a> - {% trans 'Registration' %}</h2>
+
+{% if alreadyConfirmed %}
+<p><strong>{% trans 'Ey, it seems that your registration was already confirmed!' %}.</strong></p>
+{% else %}
+<p><strong>{% trans 'Thanks, your registration has been confirmed!' %}</strong></p>
+{% endif %}
+
+<p>{% trans 'We are looking forward to meet you at' %} {{ event.name }}.</p>
+
+<p>{% trans 'Remember the details' %}:</p>
+
+<p><em>{% trans 'Date' %}:</em> <strong>{{ event.eventDate }}</strong></p>
+<p><em>{% trans 'Address' %}:</em> <a href="http://maps.google.es/maps?q={{ event.address }}">{{ event.address }}</a></p>
+
+{% include "events/social-block.html" %}
+
+<p class="back-link">« <a href="http://eventos.mozilla-hispano.org/event/{{ event.id }}/{{ event.slug }}/">{% trans 'Back to' %} {{ event.name }}</a></p>
+    
+{% endblock %}
+
+{% block sidebar %}
+  
+{% include "events/twitter-widget.html" %}
+
+{% endblock %}

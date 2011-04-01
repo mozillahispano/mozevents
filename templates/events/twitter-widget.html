@@ -1,0 +1,35 @@
+{% load i18n %}
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+    <script>
+    new TWTR.Widget({
+      version: 2,
+      type: 'search',
+      search: 'firefox',
+      interval: 6000,
+      title: '{{ event.name }}',
+      subject: '#{{ event.twitterTag }}',
+      width: 245,
+      height: 600,
+      theme: {
+        shell: {
+          background: 'transparent',
+          color: '#444444'
+        },
+        tweets: {
+          background: '#ffffff',
+          color: '#444444',
+          links: '#264373'
+        }
+      },
+      features: {
+        scrollbar: true,
+        loop: false,
+        live: true,
+        hashtags: false,
+        timestamp: true,
+        avatars: true,
+        toptweets: false,
+        behavior: 'all'
+      }
+    }).render().start();
+</script>

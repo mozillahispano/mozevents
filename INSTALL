@@ -1,0 +1,58 @@
+CONFIGURATION
+1. Edit settings.py and add your database, email and recaptcha details
+2. To create initial DB, from this folder run python manage.py syndb
+
+Configuration assumes you place your application in /var/lib/mozevents, change it if needed.
+
+SERVER
+You can run the development server using python manage.py runserver
+
+If you want to run on Apache2 server, you will have to install libapache2-mod-wsgi module and create a virtual host.
+
+Here it's an example, change information if needed:
+
+<VirtualHost *:80>
+        DocumentRoot /var/lib/mozevents/public
+        ServerAdmin admin@email.com
+        ServerName admin@email.com
+        ErrorLog /var/log/apache2/eventos.mozilla-hispano.org.error.log
+        CustomLog /var/log/apache2/eventos.mozilla-hispano.org.log combined
+
+	# Django settings
+    	WSGIScriptAlias / /var/lib/mozevents/public/wsgi_handler.py
+    	WSGIDaemonProcess mozevents user=ubuntu group=ubuntu processes=1 threads=10
+    	WSGIProcessGroup mozevents
+
+   	<Directory /var/lib/mozevents/public>
+        	 Order deny,allow
+         	Allow from all
+   	</Directory>
+
+    	# Non-Django directories
+    	Alias /static /var/lib/mozevents/public/static/
+    	<Location "/static">
+        	SetHandler None
+    	</Location>
+ 
+	Alias /media/ /var/lib/mozevents/public/media/
+
+	# Protegemos el directorio media de miradas indiscretas
+	<Directory /var/lib/mozevents/public/media/>
+                Options -Indexes
+		Order deny,allow
+                Allow from all
+        </Directory>
+
+	Alias /admin-media /usr/share/pyshared/django/contrib/admin/media
+   
+	<Directory /usr/share/pyshared/django/contrib/admin/media/>
+        	 Order deny,allow
+         	Allow from all
+   	</Directory>
+
+</VirtualHost>
+
+If you application is not under /var/lib/mozevents, you will have also to modify 
+/public/wsgi_handler.py to change the path.
+
+Check also if the python-django path is correct for your system. 

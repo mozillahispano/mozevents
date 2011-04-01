@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{{ event.name }}{% endblock %}
+
+{% block content %}
+    
+<div id="social">
+    <a href="http://twitter.com/share" class="twitter-share-button" data-text="{% trans 'I will be at' %} {{ event.name }} {% trans 'And you?' %} #{{ event.twitterTag }}" data-count="horizontal" data-via="{% trans 'mozilla_hispano'%}" data-lang="es">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    
+    <iframe src="http://www.facebook.com/plugins/like.php?href&amp;layout=button_count&amp;show_faces=false&amp;width=150&amp;action=like&amp;font&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>
+</div>
+
+<h2>{{ event.name }}</h2>
+
+<div class="evento-detalles">
+    <p class="evento-fecha"><strong>{{ event.eventDate }}</strong></p>
+    <p class="evento-dir"><em>{% trans 'Address' %}:</em> <a href="http://maps.google.es/maps?q={{ event.address }}">{{ event.address }}</a></p>
+    <p class="evento-foro"><a href="{{ event.commentsUrl }}">{% trans 'Comments and opinions about the event' %}</a></p>
+</div>
+
+{{ event.description|safe}}
+
+<h3>{% trans 'Photos' %}</h3>
+
+{% include "events/flickr-badge.html" %}
+
+
+<p class="back-link">« <a href="/">{% trans 'Back to event listing' %}</a></p>
+
+{% endblock %}
+
+{% block sidebar %}
+    
+{% if event.registrationOpen %}
+    <p id="regButton"><a href="/event/{{ event.id }}/{{ event.slug }}/registration/">{% trans 'Register here!' %}</a></p>
+{% endif %}
+    
+{% include "events/twitter-widget.html" %}
+
+{% endblock %}

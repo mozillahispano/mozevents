@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{{ event.name }} - {% trans 'Registration' %}{% endblock %}
+
+{% block content %}
+
+<h2><a href="/event/{{ event.id }}/{{ event.slug }}/">{{ event.name }}</a> - {% trans 'Registration' %}</h2>
+
+<p>{% trans 'Thanks, your registration has been saved' %}.</p>
+
+<p>{% trans 'We have sent an email to' %} <em>{{ registration.email }}</em> {% trans 'with the instructions to confirm it' %}.</p>
+
+{% include "events/social-block.html" %}
+
+<p class="back-link">« <a href="http://eventos.mozilla-hispano.org/event/{{ event.id }}/{{ event.slug }}/">{% trans 'Back to' %} {{ event.name }}</a></p>
+
+{% endblock %}
+
+{% block sidebar %}
+    
+{% include "events/twitter-widget.html" %}
+
+{% endblock %}

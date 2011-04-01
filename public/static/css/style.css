@@ -1,0 +1,118 @@
+#barra #regButton {
+    display: block;
+    font-size: 2em;
+    height: 30px;
+    margin: 1em auto;
+    padding: 10px;
+    text-align: center;
+    width: 160px;
+    background: -moz-linear-gradient(center top , #98D98A, #6BBA6A) repeat scroll 0 0 transparent;
+    border-color: #7EBA7C #578E57 #447D43;
+    border-left: 1px solid #578E57;
+    border-right: 1px solid #578E57;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 #9CABAE, 0 1px 0 #B7E4AC inset;
+    border-radius: 5px;
+}
+#barra #regButton a {
+    color: #23441E;
+    text-shadow: 0 1px 0 #AEDBAA;
+}
+
+#barra #regButton:hover {
+    background: -moz-linear-gradient(center top , #B7E3B0, #9ACE9B) repeat scroll 0 0 transparent;
+    box-shadow: 0 1px 0 #A7C3C9, 0 1px 0 #CCEBC7 inset;
+}
+#barra #regButton a:hover {
+    color: #485A0C;
+    text-shadow: 0 1px 0 #C2E3C1;
+}
+
+#formInfo {
+    text-align: right;
+}
+
+#formInfo span {
+    color: red;
+}
+
+#social {
+    float: right;
+    width: 270px;
+}
+
+#flickrLink {
+     text-align: center;
+}
+
+#flickr_badge_uber_wrapper {
+    margin: auto;
+}
+
+.evento-detalles {
+    margin-bottom: 2em;
+}
+
+.texto-portada-individual {
+    padding-top: 0px !important;
+}
+
+.back-link {
+    font-size: 0.85em;
+    margin-top: 2em;
+}
+
+label {
+    display: block;
+    margin-bottom: 1em;
+}
+
+label[for=id_press], label[for=id_privacyPolicy] {
+    display: inline;
+}
+
+input[type=checkbox] {
+    margin-right: 7px;
+}
+
+label.required {
+	font-weight: bold;
+}
+
+label.required:after {
+	content: " *";
+	color: red;
+}
+
+.fieldInfo {
+    font-size: 0.9em;
+    clear: both;
+    color: #777777;
+}
+
+.fieldWrapper {
+    clear: both;
+    margin-bottom: 1em;
+}
+
+.fieldWrapper input {
+    float: left;
+}
+
+ul.errorlist {
+    background-color: #D75B5B;
+    padding: 5px !important;
+    text-align: center;
+    width: 214px;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    font-weight: bold;
+    float: left;
+    margin: -2px 0 0 24px !important;
+}
+
+ul.errorlist li {
+    background: none !important;
+    padding: 0 !important;
+}
