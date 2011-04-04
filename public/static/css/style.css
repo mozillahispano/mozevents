@@ -1,30 +1,115 @@
-#barra #regButton {
+@font-face {
+	font-family: MuseoSans;
+	src: url('../fonts/MuseoSans_500.otf');
+}
+    
+#header {
+    background-image: url("../img/header.png");
+    height: 125px;
+    position: relative;
+}
+
+#header h1 a {
+    color: #D86214;
     display: block;
-    font-size: 2em;
-    height: 30px;
-    margin: 1em auto;
-    padding: 10px;
+    font-family: MuseoSans;
+    font-size: 29px;
+    height: 90px;
+    margin: 22px 0 0 418px;
+    overflow: hidden;
+    position: absolute;
     text-align: center;
-    width: 160px;
-    background: -moz-linear-gradient(center top , #98D98A, #6BBA6A) repeat scroll 0 0 transparent;
+    text-shadow: 1px 1px #CCCCCC;
+    vertical-align: middle;
+    width: 251px;
+}
+
+#header h1 a span {
+}
+
+#header #visit-box {
+  background: url("../img/visit-box.png") no-repeat scroll 0 0 transparent;
+  display: block;
+  height: 49px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 118px;
+}
+
+#header #visit-box a {
+    color: #FFFFFF;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 34px;
+    text-align: center;
+    font-family: MuseoSans;
+    text-shadow: 1px 1px #555555;
+    height: 30px;
+    width: 118px;
+}
+
+#tullido {min-width: 950px;}
+
+#contenido{ min-width: 720px; }
+
+#mainbody {
+    background: url("../img/footer-bg.png") no-repeat scroll center bottom #FFFFFF;
+    padding-bottom: 175px;
+}
+
+#barra {
+    margin-top: 0;
+}
+
+#regButton {
+    background: repeat scroll 0 0 #98D98A;
+    background-image: linear-gradient(#98D98A, #6BBA6A);
+    background: -moz-linear-gradient(center top , #98D98A, #6BBA6A) repeat scroll 0 0 #98D98A;
+    background-image: -webkit-linear-gradient(#98D98A, #6BBA6A);
+    background-image: -o-linear-gradient(#98D98A, #6BBA6A);
+    background-color: #98D98A;
     border-color: #7EBA7C #578E57 #447D43;
-    border-left: 1px solid #578E57;
-    border-right: 1px solid #578E57;
+    border-radius: 5px 5px 5px 5px;
     border-style: solid;
     border-width: 1px;
     box-shadow: 0 1px 0 #9CABAE, 0 1px 0 #B7E4AC inset;
-    border-radius: 5px;
-}
-#barra #regButton a {
-    color: #23441E;
-    text-shadow: 0 1px 0 #AEDBAA;
+    float: right;
+    font-size: 2em;
+    height: 68px;
+    margin: 53px 0 0 463px;
+    overflow: visible;
+    padding-bottom: 0;
+    position: absolute;
+    width: 228px;
 }
 
-#barra #regButton:hover {
+#regButton span {
+    color: #FFFFFF;
+    font-size: 0.5em;
+    margin-left: 109px;
+    position: absolute;
+}
+
+#regButton a {
+    background: url("../img/panda.png") no-repeat scroll -7px 0 transparent;
+    color: #23441E;
+    display: block;
+    font-size: 0.8em;
+    height: 47px;
+    margin: -21px 0 0;
+    padding: 45px 0 0 59px;
+    text-align: center;
+    text-shadow: 0 1px 0 #AEDBAA;
+    width: 178px;
+}
+
+#regButton:hover {
     background: -moz-linear-gradient(center top , #B7E3B0, #9ACE9B) repeat scroll 0 0 transparent;
     box-shadow: 0 1px 0 #A7C3C9, 0 1px 0 #CCEBC7 inset;
 }
-#barra #regButton a:hover {
+#regButton a:hover {
     color: #485A0C;
     text-shadow: 0 1px 0 #C2E3C1;
 }
@@ -35,6 +120,10 @@
 
 #formInfo span {
     color: red;
+}
+
+#reg-form {
+    background: url("../img/reg-bg.png") no-repeat scroll 329px 25px transparent;
 }
 
 #social {
@@ -50,8 +139,26 @@
     margin: auto;
 }
 
+#event-list li {
+    background: none repeat scroll 0 0 transparent;
+    font-size: 2em;
+    margin: 1em 0;
+    padding: 0;
+    text-align: center;
+}
+
+#bugtext {
+    color: #FFFFFF;
+    font-family: Verdana;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 81px 0 0 349px;
+    position: absolute;
+}
+
 .evento-detalles {
-    margin-bottom: 2em;
+    margin-bottom: 3em;
+    width: 400px;
 }
 
 .texto-portada-individual {
@@ -68,7 +175,7 @@ label {
     margin-bottom: 1em;
 }
 
-label[for=id_press], label[for=id_privacyPolicy] {
+label[for=id_press], label[for=id_privacyPolicy], label[for=id_volunteer] {
     display: inline;
 }
 
@@ -97,19 +204,28 @@ label.required:after {
 }
 
 .fieldWrapper input {
-    float: left;
+    float: none;
+}
+
+#id_firstName,
+#id_familyName,
+#id_email,
+#id_emailConfirm,
+#id_twitter,
+#id_website {
+	width: 15em;
 }
 
 ul.errorlist {
     background-color: #D75B5B;
     padding: 5px !important;
     text-align: center;
-    width: 214px;
     border-radius: 5px 5px 5px 5px;
     color: #FFFFFF;
     font-weight: bold;
-    float: left;
-    margin: -2px 0 0 24px !important;
+    float: none;
+    margin: 0 !important;
+    width: 16em;
 }
 
 ul.errorlist li {

@@ -3,19 +3,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>{% block title %}{% endblock %} « {% trans 'Events' %} « Mozilla Hispano</title>
+<title>{% block title %}{% trans 'Mozilla Events' %}{% endblock %} « {% trans 'Events' %} « Mozilla Hispano</title>
 
-<link rel="shortcut icon" href="http://www.mozilla-hispano.org/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="http://www.mozilla-hispano.org/wp-content/themes/mozillahispano/css/paisaje.css" type="text/css" />
 <!--[if lt IE 7]>
 		<link rel="stylesheet" href="http://www.mozilla-hispano.org/wp-content/themes/mozillahispano/css/iebugs.css" type="text/css" />
 <![endif]-->
 
-<link rel="stylesheet" href="http://eventos.mozilla-hispano.org/static/css/style.css" type="text/css" />
+<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
 
-<script type="text/javascript" src="http://www.mozilla-hispano.org/wp-content/themes/mozillahispano/js/cabecera.js"></script>
 <script type="text/javascript" src="/admin-media/js/jquery.min.js"></script>
-<script type="text/javascript" src="/static/js/functions.js"></script>
+<!--<script type="text/javascript" src="/static/js/functions.js"></script>-->
 
  <script type="text/javascript">
  var RecaptchaOptions = {
@@ -30,29 +29,14 @@
     
 <div id="lienzo">
 		<div id="tullido">
-			<div id="cabecera">
-			<div id="alojaLogo">
-				<h1><a href="http://www.mozilla-hispano.org/">Mozilla hispano, tu comunidad en español de Mozilla</a></h1>
-				<div class="mozillaCommunities"><img title="Mozilla Hispano forma parte de Mozilla Communities" alt="Mozilla Communities" src="http://www.mozilla-hispano.org/wp-content/themes/mozillahispano/media/logoMozillaCommunities.png"></div>
-			</div>
-			<div id="social">
-				<a href="http://twitter.com/mozilla_hispano" id="twitter-icon" title="Síguenos en Twitter">Síguenos en Twitter</a>
-				<a href="http://www.facebook.com/mozillahispano" id="facebook-icon" title="Síguenos en Facebook">Síguenos en Facebook</a>
-			</div>
-	</div>
+				<div id="header">
+						<div id="logo">
+								<h1><a href="/{% block eventURL %}{% endblock %}"><span>{% block titleheader %}{% trans 'Mozilla<br />Events' %}{% endblock %}</span></a></h1>
+						</div>
+						<div id="visit-box"><a href="{% trans 'http://www.mozilla-hispano.org' %}" title="{% trans 'Visit our community site' %}">{% trans 'mozilla hispano' %}</a></div>
+				</div>
 
-	<div id="menu">
-		<ul class="clearfix">
-				<li><a href="http://www.mozilla-hispano.org/">Noticias</a></li>
-				<li><a title="Foro de asistencia técnica y debate" href="http://www.mozilla-hispano.org/foro/">Foro</a></li>
-				<li><a title="Documentos, artículos y preguntas frecuentes de ayuda a los usuarios" href="http://www.mozilla-hispano.org/documentacion/">Documentación</a></li>
-				<li><a title="Artículos de opinión, mensajes y fotos de los miembros de la comunidad" href="http://www.mozilla-hispano.org/planet/">Planet</a></li>
-				<li><a title="Centro de desarrollo e innovación en la plataforma Mozilla" href="http://www.mozilla-hispano.org/labs/">Labs</a></li>
-				<li><a title="Ayuda a difundir Mozilla en 
-español" href="http://www.mozilla-hispano.org/difusion/">Difusión</a></li>
-				<li><a title="Únete y colabora con Mozilla Hispano" href="http://www.mozilla-hispano.org/documentacion/Colabora">Únete</a></li>
-		</ul>
-	</div>			<div class="clearfix" id="cuerpo">
+	<div class="clearfix" id="mainbody">
 
 	<div id="contenido">
 		<div class="portada-individual">
@@ -70,23 +54,6 @@ español" href="http://www.mozilla-hispano.org/difusion/">Difusión</a></li>
 
 	</div><!-- Cuerpo -->
 </div><!-- tullido -->
-
-<div id="pie">
-    <div id="pie-botones">
-		<a title="XHTML 1.0 Strict válido" href="http://validator.w3.org/check?uri=referer"><img width="80"
-height="15" alt="XHTML 1.0 Strict válido" src="http://www.mozilla-hispano.org/wp-content/themes/mozillahispano/img/valid-xhtml10.png"/></a>
-		<a title="CSS válido"
-href="http://jigsaw.w3.org/css-validator/validator?uri=http://www.mozilla-hispano.org/"><img width="80" height="15" alt="CSS válido" src="http://www.mozilla-hispano.org/wp-content/themes/mozillahispano/img/valid-css.png"/></a>
-		<a href="http://www.mozilla-hispano.org/documentacion/Organizaci%C3%B3n_de_Mozilla_Hispano#Licencia" title="Licencia para el uso del contenido de este proyecto"><img src="http://www.mozilla-hispano.org/images/cc-by-sa.png" alt="cc-by-sa"/></a>
-	</div>
-
-	<ul>
-		<li><a href="http://www.mozilla-hispano.org/documentacion/Organizaci%C3%B3n_de_Mozilla_Hispano#Contacto" title="Contacta con el proyecto">Contacto</a></li>
-
-		<li><a href="http://www.mozilla-hispano.org/documentacion/Organizaci%C3%B3n_de_Mozilla_Hispano" title="Conoce más sobre el proyecto">Acerca de Mozilla Hispano</a></li>
-		<li><a href="http://www.mozilla-hispano.org/documentacion/Colabora" title="Colabora con el proyecto">Colabora</a></li>
-	</ul>
-</div>
 
 <script type="text/javascript" src="http://www.google-analytics.com/urchin.js"></script>
 <script type="text/javascript">

@@ -21,7 +21,7 @@ class RegistrationForm(ModelForm):
 	
 	emailConfirm = forms.EmailField(label=_("Confirm email address"), max_length=100)
 	recaptcha = ReCaptchaField(help_text=_("To avoid automatical registrations, you have to fill this field with the two words above. If you arent able to read them, you can reload a different ones from the arrows icon."))
-	privacyPolicy = forms.BooleanField(label=_("I accept the privacy policy"), help_text='Privacy policy text')
+	privacyPolicy = forms.BooleanField(label=_("I accept the privacy policy"), help_text=_("All your data will be incorporated to a database and will be used to organice and control the event assistants and contact you with information relevant to this event. We will not share your information with anyone and we will delete all data once the event is over.<br />If you have any doubt or you want to correct or delete your information anytime, contacting us via email at eventos at mozilla-hispano.org"))
 	
 	# Validation rules
 	

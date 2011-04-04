@@ -3,13 +3,15 @@
 {% load i18n %}
 
 {% block title %}{{ event.name }} - {% trans 'Registration' %}{% endblock %}
+{% block titleheader %}{{ event.name }}{% endblock %}
+{% block eventURL %}{{ event.id }}/{{ event.slug }}/{% endblock %}
 
 {% block content %}
 
-<h2><a href="/event/{{ event.id }}/{{ event.slug }}/">{{ event.name }}</a> - {% trans 'Registration' %}</h2>
+<h2><a href="/{{ event.id }}/{{ event.slug }}/">{{ event.name }}</a> - {% trans 'Registration' %}</h2>
 
 {% if alreadyConfirmed %}
-<p><strong>{% trans 'Ey, it seems that your registration was already confirmed!' %}.</strong></p>
+<p><strong>{% trans 'Ey, it seems that your registration was already confirmed!' %}</strong></p>
 {% else %}
 <p><strong>{% trans 'Thanks, your registration has been confirmed!' %}</strong></p>
 {% endif %}
@@ -23,7 +25,7 @@
 
 {% include "events/social-block.html" %}
 
-<p class="back-link">« <a href="http://eventos.mozilla-hispano.org/event/{{ event.id }}/{{ event.slug }}/">{% trans 'Back to' %} {{ event.name }}</a></p>
+<p class="back-link">« <a href="http://eventos.mozilla-hispano.org/{{ event.id }}/{{ event.slug }}/">{% trans 'Back to' %} {{ event.name }}</a></p>
     
 {% endblock %}
 

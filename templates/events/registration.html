@@ -3,10 +3,14 @@
 {% load i18n %}
 
 {% block title %}{{ event.name }} - {% trans 'Registration' %}{% endblock %}
+{% block titleheader %}{{ event.name }}{% endblock %}
+{% block eventURL %}{{ event.id }}/{{ event.slug }}/{% endblock %}
 
 {% block content %}
 
-<h2><a href="/event/{{ event.id }}/{{ event.slug }}/">{{ event.name }}</a> - {% trans 'Registration' %}</h2>
+<h2><a href="/{{ event.id }}/{{ event.slug }}/">{{ event.name }}</a> - {% trans 'Registration' %}</h2>
+
+<p id="bugtext">{% trans "Join the party!" %}</p>
 
 {% for error in form.non_field_errors %}
     <p class="validation-error">{{ error }}</span>
@@ -14,7 +18,7 @@
 
 <p id="formInfo">{% trans 'Fields marked with <span>*</span> are mandatory' %}.</p>
 
-<form method="post" action="" enctype="multipart/form-data">{% csrf_token %}
+<form id="reg-form" method="post" action="" enctype="multipart/form-data">{% csrf_token %}
 	{{ form.non_field_errors }}
 	{{ form.id }}
 
@@ -66,6 +70,13 @@
 			{{ form.press.errors }}
                         <p class="fieldInfo">{{ form.press.help_text }}</p>
 	    </div>
+            
+            <div class="fieldWrapper">
+			<label {% if form.volunteer.field.required %}class="required"{% endif %} for="id_volunteer">{{ form.volunteer.label }}</label>
+			{{ form.volunteer }}
+			{{ form.volunteer.errors }}
+                        <p class="fieldInfo">{{ form.volunteer.help_text }}</p>
+	    </div>
 
 	    <div class="fieldWrapper">
 		{{ form.recaptcha }}
@@ -76,7 +87,7 @@
 	    <div class="fieldWrapper">
 		<label {% if form.privacyPolicy.field.required %}class="required"{% endif %} for="id_privacyPolicy">{{ form.privacyPolicy.label }}</label> {{ form.privacyPolicy }}
 		{{ form.privacyPolicy.errors }}
-		<p class="fieldInfo">{{ form.privacyPolicy.help_text }}</p>
+		<p class="fieldInfo">{{ form.privacyPolicy.help_text|safe }}</p>
 	    </div>
             
 	<input type="submit" value="{% trans 'Submit' %}" />

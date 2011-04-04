@@ -35,7 +35,7 @@ def index(request):
         
 def detail(request, id, slug):
         
-        event = get_object_or_404(Event, id=id)
+        event = get_object_or_404(Event, id=id, active=True)
         
         data = {
             'event': event,
@@ -45,7 +45,7 @@ def detail(request, id, slug):
         
 def registration(request, id, slug):
         
-        event = get_object_or_404(Event, id=id)
+        event = get_object_or_404(Event, id=id, active=True)
         
         data = {
                     'event': event,
@@ -58,11 +58,6 @@ def registration(request, id, slug):
         if request.method == "POST":
             
             form = RegistrationForm(request.POST, request.FILES)
-            
-            data = {
-                    'event': event,
-                    'form': form,
-                }
             
             if form.is_valid():
                 
@@ -85,6 +80,11 @@ def registration(request, id, slug):
                 return render_to_response('events/registration-done.html', data, context_instance=RequestContext(request))
                 
             else:
+		
+		data = {
+                    'event': event,
+                    'form': form,
+		}
                 
                 return render_to_response('events/registration.html', data, context_instance=RequestContext(request))
                 
@@ -101,7 +101,7 @@ def registration(request, id, slug):
 	    
 def confirmation(request, id, slug, hash):
         
-	event = get_object_or_404(Event, pk=id)
+	event = get_object_or_404(Event, pk=id, active=True)
         registration = get_object_or_404(Registration, hash=hash)
 	alreadyConfirmed = False
 	

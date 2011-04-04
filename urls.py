@@ -6,8 +6,13 @@ admin.autodiscover()
 
 # Importamos los los URLconf de nuestas apps
 urlpatterns = patterns('',
-    (r'^event/', include('events.urls')),
     (r'^admin/', include(admin.site.urls)),
     (r'^$', 'events.views.index'),
     (r'^i18n/', include('django.conf.urls.i18n')),
+)
+
+urlpatterns += patterns('events.views',
+    (r'^(?P<id>\d+)/(?P<slug>[-\w]+)/registration/confirm/(?P<hash>\w+)$', 'confirmation'),
+    (r'^(?P<id>\d+)/(?P<slug>[-\w]+)/registration/$', 'registration'),
+    (r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', 'detail'),
 )

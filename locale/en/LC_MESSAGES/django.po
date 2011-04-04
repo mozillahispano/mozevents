@@ -8,13 +8,1057 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-01 10:03+0000\n"
+"POT-Creation-Date: 2011-04-04 08:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: django_countries/countries.py:5 django_countries/countries.py:256
+msgid "Afghanistan"
+msgstr ""
+
+#: django_countries/countries.py:6 django_countries/countries.py:257
+msgid "Åland Islands"
+msgstr ""
+
+#: django_countries/countries.py:7 django_countries/countries.py:258
+msgid "Albania"
+msgstr ""
+
+#: django_countries/countries.py:8 django_countries/countries.py:259
+msgid "Algeria"
+msgstr ""
+
+#: django_countries/countries.py:9 django_countries/countries.py:260
+msgid "American Samoa"
+msgstr ""
+
+#: django_countries/countries.py:10 django_countries/countries.py:261
+msgid "Andorra"
+msgstr ""
+
+#: django_countries/countries.py:11 django_countries/countries.py:262
+msgid "Angola"
+msgstr ""
+
+#: django_countries/countries.py:12 django_countries/countries.py:263
+msgid "Anguilla"
+msgstr ""
+
+#: django_countries/countries.py:13 django_countries/countries.py:264
+msgid "Antarctica"
+msgstr ""
+
+#: django_countries/countries.py:14 django_countries/countries.py:265
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: django_countries/countries.py:15 django_countries/countries.py:266
+msgid "Argentina"
+msgstr ""
+
+#: django_countries/countries.py:16 django_countries/countries.py:267
+msgid "Armenia"
+msgstr ""
+
+#: django_countries/countries.py:17 django_countries/countries.py:268
+msgid "Aruba"
+msgstr ""
+
+#: django_countries/countries.py:18 django_countries/countries.py:270
+msgid "Australia"
+msgstr ""
+
+#: django_countries/countries.py:19 django_countries/countries.py:271
+msgid "Austria"
+msgstr ""
+
+#: django_countries/countries.py:20 django_countries/countries.py:272
+msgid "Azerbaijan"
+msgstr ""
+
+#: django_countries/countries.py:21 django_countries/countries.py:273
+msgid "Bahamas"
+msgstr ""
+
+#: django_countries/countries.py:22 django_countries/countries.py:274
+msgid "Bahrain"
+msgstr ""
+
+#: django_countries/countries.py:23 django_countries/countries.py:275
+msgid "Bangladesh"
+msgstr ""
+
+#: django_countries/countries.py:24 django_countries/countries.py:276
+msgid "Barbados"
+msgstr ""
+
+#: django_countries/countries.py:25 django_countries/countries.py:277
+msgid "Belarus"
+msgstr ""
+
+#: django_countries/countries.py:26 django_countries/countries.py:278
+msgid "Belgium"
+msgstr ""
+
+#: django_countries/countries.py:27 django_countries/countries.py:279
+msgid "Belize"
+msgstr ""
+
+#: django_countries/countries.py:28 django_countries/countries.py:280
+msgid "Benin"
+msgstr ""
+
+#: django_countries/countries.py:29 django_countries/countries.py:281
+msgid "Bermuda"
+msgstr ""
+
+#: django_countries/countries.py:30 django_countries/countries.py:282
+msgid "Bhutan"
+msgstr ""
+
+#: django_countries/countries.py:31 django_countries/countries.py:284
+msgid "Bolivia, Plurinational State of"
+msgstr ""
+
+#: django_countries/countries.py:32 django_countries/countries.py:285
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: django_countries/countries.py:33 django_countries/countries.py:286
+msgid "Botswana"
+msgstr ""
+
+#: django_countries/countries.py:34 django_countries/countries.py:287
+msgid "Bouvet Island"
+msgstr ""
+
+#: django_countries/countries.py:35 django_countries/countries.py:288
+msgid "Brazil"
+msgstr ""
+
+#: django_countries/countries.py:36 django_countries/countries.py:289
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: django_countries/countries.py:37 django_countries/countries.py:291
+msgid "Brunei Darussalam"
+msgstr ""
+
+#: django_countries/countries.py:38 django_countries/countries.py:292
+msgid "Bulgaria"
+msgstr ""
+
+#: django_countries/countries.py:39 django_countries/countries.py:293
+msgid "Burkina Faso"
+msgstr ""
+
+#: django_countries/countries.py:40 django_countries/countries.py:294
+msgid "Burundi"
+msgstr ""
+
+#: django_countries/countries.py:41 django_countries/countries.py:295
+msgid "Cambodia"
+msgstr ""
+
+#: django_countries/countries.py:42 django_countries/countries.py:296
+msgid "Cameroon"
+msgstr ""
+
+#: django_countries/countries.py:43 django_countries/countries.py:297
+msgid "Canada"
+msgstr ""
+
+#: django_countries/countries.py:44 django_countries/countries.py:298
+msgid "Cape Verde"
+msgstr ""
+
+#: django_countries/countries.py:45 django_countries/countries.py:299
+msgid "Cayman Islands"
+msgstr ""
+
+#: django_countries/countries.py:46 django_countries/countries.py:300
+msgid "Central African Republic"
+msgstr ""
+
+#: django_countries/countries.py:47 django_countries/countries.py:301
+msgid "Chad"
+msgstr ""
+
+#: django_countries/countries.py:48 django_countries/countries.py:302
+msgid "Chile"
+msgstr ""
+
+#: django_countries/countries.py:49 django_countries/countries.py:303
+msgid "China"
+msgstr ""
+
+#: django_countries/countries.py:50 django_countries/countries.py:304
+msgid "Christmas Island"
+msgstr ""
+
+#: django_countries/countries.py:51 django_countries/countries.py:305
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: django_countries/countries.py:52 django_countries/countries.py:306
+msgid "Colombia"
+msgstr ""
+
+#: django_countries/countries.py:53 django_countries/countries.py:307
+msgid "Comoros"
+msgstr ""
+
+#: django_countries/countries.py:54 django_countries/countries.py:308
+msgid "Congo"
+msgstr ""
+
+#: django_countries/countries.py:55 django_countries/countries.py:309
+msgid "Congo, The Democratic Republic of the"
+msgstr ""
+
+#: django_countries/countries.py:56 django_countries/countries.py:310
+msgid "Cook Islands"
+msgstr ""
+
+#: django_countries/countries.py:57 django_countries/countries.py:311
+msgid "Costa Rica"
+msgstr ""
+
+#: django_countries/countries.py:58 django_countries/countries.py:312
+msgid "Côte D'ivoire"
+msgstr ""
+
+#: django_countries/countries.py:59 django_countries/countries.py:313
+msgid "Croatia"
+msgstr ""
+
+#: django_countries/countries.py:60 django_countries/countries.py:314
+msgid "Cuba"
+msgstr ""
+
+#: django_countries/countries.py:61 django_countries/countries.py:315
+msgid "Cyprus"
+msgstr ""
+
+#: django_countries/countries.py:62 django_countries/countries.py:316
+msgid "Czech Republic"
+msgstr ""
+
+#: django_countries/countries.py:63 django_countries/countries.py:318
+msgid "Denmark"
+msgstr ""
+
+#: django_countries/countries.py:64 django_countries/countries.py:319
+msgid "Djibouti"
+msgstr ""
+
+#: django_countries/countries.py:65 django_countries/countries.py:320
+msgid "Dominica"
+msgstr ""
+
+#: django_countries/countries.py:66 django_countries/countries.py:321
+msgid "Dominican Republic"
+msgstr ""
+
+#: django_countries/countries.py:67 django_countries/countries.py:322
+msgid "Ecuador"
+msgstr ""
+
+#: django_countries/countries.py:68 django_countries/countries.py:323
+msgid "Egypt"
+msgstr ""
+
+#: django_countries/countries.py:69 django_countries/countries.py:324
+msgid "El Salvador"
+msgstr ""
+
+#: django_countries/countries.py:70 django_countries/countries.py:325
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: django_countries/countries.py:71 django_countries/countries.py:326
+msgid "Eritrea"
+msgstr ""
+
+#: django_countries/countries.py:72 django_countries/countries.py:327
+msgid "Estonia"
+msgstr ""
+
+#: django_countries/countries.py:73 django_countries/countries.py:328
+msgid "Ethiopia"
+msgstr ""
+
+#: django_countries/countries.py:74 django_countries/countries.py:329
+msgid "Falkland Islands (Malvinas)"
+msgstr ""
+
+#: django_countries/countries.py:75 django_countries/countries.py:330
+msgid "Faroe Islands"
+msgstr ""
+
+#: django_countries/countries.py:76 django_countries/countries.py:332
+msgid "Fiji"
+msgstr ""
+
+#: django_countries/countries.py:77 django_countries/countries.py:333
+msgid "Finland"
+msgstr ""
+
+#: django_countries/countries.py:78 django_countries/countries.py:334
+msgid "France"
+msgstr ""
+
+#: django_countries/countries.py:79 django_countries/countries.py:335
+msgid "French Guiana"
+msgstr ""
+
+#: django_countries/countries.py:80 django_countries/countries.py:336
+msgid "French Polynesia"
+msgstr ""
+
+#: django_countries/countries.py:81 django_countries/countries.py:337
+msgid "French Southern Territories"
+msgstr ""
+
+#: django_countries/countries.py:82 django_countries/countries.py:338
+msgid "Gabon"
+msgstr ""
+
+#: django_countries/countries.py:83 django_countries/countries.py:339
+msgid "Gambia"
+msgstr ""
+
+#: django_countries/countries.py:84 django_countries/countries.py:340
+msgid "Georgia"
+msgstr ""
+
+#: django_countries/countries.py:85 django_countries/countries.py:341
+msgid "Germany"
+msgstr ""
+
+#: django_countries/countries.py:86 django_countries/countries.py:342
+msgid "Ghana"
+msgstr ""
+
+#: django_countries/countries.py:87 django_countries/countries.py:343
+msgid "Gibraltar"
+msgstr ""
+
+#: django_countries/countries.py:88 django_countries/countries.py:344
+msgid "Greece"
+msgstr ""
+
+#: django_countries/countries.py:89 django_countries/countries.py:345
+msgid "Greenland"
+msgstr ""
+
+#: django_countries/countries.py:90 django_countries/countries.py:346
+msgid "Grenada"
+msgstr ""
+
+#: django_countries/countries.py:91 django_countries/countries.py:347
+msgid "Guadeloupe"
+msgstr ""
+
+#: django_countries/countries.py:92 django_countries/countries.py:348
+msgid "Guam"
+msgstr ""
+
+#: django_countries/countries.py:93 django_countries/countries.py:349
+msgid "Guatemala"
+msgstr ""
+
+#: django_countries/countries.py:94 django_countries/countries.py:350
+msgid "Guernsey"
+msgstr ""
+
+#: django_countries/countries.py:95 django_countries/countries.py:351
+msgid "Guinea"
+msgstr ""
+
+#: django_countries/countries.py:96 django_countries/countries.py:352
+msgid "Guinea-bissau"
+msgstr ""
+
+#: django_countries/countries.py:97 django_countries/countries.py:353
+msgid "Guyana"
+msgstr ""
+
+#: django_countries/countries.py:98 django_countries/countries.py:354
+msgid "Haiti"
+msgstr ""
+
+#: django_countries/countries.py:99 django_countries/countries.py:355
+msgid "Heard Island and McDonald Islands"
+msgstr ""
+
+#: django_countries/countries.py:100 django_countries/countries.py:356
+msgid "Holy See (Vatican City State)"
+msgstr ""
+
+#: django_countries/countries.py:101 django_countries/countries.py:357
+msgid "Honduras"
+msgstr ""
+
+#: django_countries/countries.py:102 django_countries/countries.py:358
+msgid "Hong Kong"
+msgstr ""
+
+#: django_countries/countries.py:103 django_countries/countries.py:359
+msgid "Hungary"
+msgstr ""
+
+#: django_countries/countries.py:104 django_countries/countries.py:360
+msgid "Iceland"
+msgstr ""
+
+#: django_countries/countries.py:105 django_countries/countries.py:361
+msgid "India"
+msgstr ""
+
+#: django_countries/countries.py:106 django_countries/countries.py:362
+msgid "Indonesia"
+msgstr ""
+
+#: django_countries/countries.py:107 django_countries/countries.py:363
+msgid "Iran, Islamic Republic of"
+msgstr ""
+
+#: django_countries/countries.py:108 django_countries/countries.py:364
+msgid "Iraq"
+msgstr ""
+
+#: django_countries/countries.py:109 django_countries/countries.py:365
+msgid "Ireland"
+msgstr ""
+
+#: django_countries/countries.py:110 django_countries/countries.py:367
+msgid "Isle of Man"
+msgstr ""
+
+#: django_countries/countries.py:111 django_countries/countries.py:368
+msgid "Israel"
+msgstr ""
+
+#: django_countries/countries.py:112 django_countries/countries.py:369
+msgid "Italy"
+msgstr ""
+
+#: django_countries/countries.py:113 django_countries/countries.py:370
+msgid "Jamaica"
+msgstr ""
+
+#: django_countries/countries.py:114 django_countries/countries.py:371
+msgid "Japan"
+msgstr ""
+
+#: django_countries/countries.py:115 django_countries/countries.py:372
+msgid "Jersey"
+msgstr ""
+
+#: django_countries/countries.py:116 django_countries/countries.py:373
+msgid "Jordan"
+msgstr ""
+
+#: django_countries/countries.py:117 django_countries/countries.py:374
+msgid "Kazakhstan"
+msgstr ""
+
+#: django_countries/countries.py:118 django_countries/countries.py:375
+msgid "Kenya"
+msgstr ""
+
+#: django_countries/countries.py:119 django_countries/countries.py:376
+msgid "Kiribati"
+msgstr ""
+
+#: django_countries/countries.py:120 django_countries/countries.py:377
+msgid "Korea, Democratic People's Republic of"
+msgstr ""
+
+#: django_countries/countries.py:121 django_countries/countries.py:378
+msgid "Korea, Republic of"
+msgstr ""
+
+#: django_countries/countries.py:122 django_countries/countries.py:379
+msgid "Kuwait"
+msgstr ""
+
+#: django_countries/countries.py:123 django_countries/countries.py:380
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: django_countries/countries.py:124 django_countries/countries.py:381
+msgid "Lao People's Democratic Republic"
+msgstr ""
+
+#: django_countries/countries.py:125 django_countries/countries.py:382
+msgid "Latvia"
+msgstr ""
+
+#: django_countries/countries.py:126 django_countries/countries.py:383
+msgid "Lebanon"
+msgstr ""
+
+#: django_countries/countries.py:127 django_countries/countries.py:384
+msgid "Lesotho"
+msgstr ""
+
+#: django_countries/countries.py:128 django_countries/countries.py:385
+msgid "Liberia"
+msgstr ""
+
+#: django_countries/countries.py:129 django_countries/countries.py:386
+msgid "Libyan Arab Jamahiriya"
+msgstr ""
+
+#: django_countries/countries.py:130 django_countries/countries.py:387
+msgid "Liechtenstein"
+msgstr ""
+
+#: django_countries/countries.py:131 django_countries/countries.py:388
+msgid "Lithuania"
+msgstr ""
+
+#: django_countries/countries.py:132 django_countries/countries.py:389
+msgid "Luxembourg"
+msgstr ""
+
+#: django_countries/countries.py:133 django_countries/countries.py:390
+msgid "Macao"
+msgstr ""
+
+#: django_countries/countries.py:134 django_countries/countries.py:391
+msgid "Macedonia, The Former Yugoslav Republic of"
+msgstr ""
+
+#: django_countries/countries.py:135 django_countries/countries.py:392
+msgid "Madagascar"
+msgstr ""
+
+#: django_countries/countries.py:136 django_countries/countries.py:393
+msgid "Malawi"
+msgstr ""
+
+#: django_countries/countries.py:137 django_countries/countries.py:394
+msgid "Malaysia"
+msgstr ""
+
+#: django_countries/countries.py:138 django_countries/countries.py:395
+msgid "Maldives"
+msgstr ""
+
+#: django_countries/countries.py:139 django_countries/countries.py:396
+msgid "Mali"
+msgstr ""
+
+#: django_countries/countries.py:140 django_countries/countries.py:397
+msgid "Malta"
+msgstr ""
+
+#: django_countries/countries.py:141 django_countries/countries.py:398
+msgid "Marshall Islands"
+msgstr ""
+
+#: django_countries/countries.py:142 django_countries/countries.py:399
+msgid "Martinique"
+msgstr ""
+
+#: django_countries/countries.py:143 django_countries/countries.py:400
+msgid "Mauritania"
+msgstr ""
+
+#: django_countries/countries.py:144 django_countries/countries.py:401
+msgid "Mauritius"
+msgstr ""
+
+#: django_countries/countries.py:145 django_countries/countries.py:402
+msgid "Mayotte"
+msgstr ""
+
+#: django_countries/countries.py:146 django_countries/countries.py:403
+msgid "Mexico"
+msgstr ""
+
+#: django_countries/countries.py:147 django_countries/countries.py:404
+msgid "Micronesia, Federated States of"
+msgstr ""
+
+#: django_countries/countries.py:148 django_countries/countries.py:405
+msgid "Moldova, Republic of"
+msgstr ""
+
+#: django_countries/countries.py:149 django_countries/countries.py:406
+msgid "Monaco"
+msgstr ""
+
+#: django_countries/countries.py:150 django_countries/countries.py:407
+msgid "Mongolia"
+msgstr ""
+
+#: django_countries/countries.py:151 django_countries/countries.py:408
+msgid "Montenegro"
+msgstr ""
+
+#: django_countries/countries.py:152 django_countries/countries.py:409
+msgid "Montserrat"
+msgstr ""
+
+#: django_countries/countries.py:153 django_countries/countries.py:410
+msgid "Morocco"
+msgstr ""
+
+#: django_countries/countries.py:154 django_countries/countries.py:411
+msgid "Mozambique"
+msgstr ""
+
+#: django_countries/countries.py:155 django_countries/countries.py:412
+msgid "Myanmar"
+msgstr ""
+
+#: django_countries/countries.py:156 django_countries/countries.py:413
+msgid "Namibia"
+msgstr ""
+
+#: django_countries/countries.py:157 django_countries/countries.py:414
+msgid "Nauru"
+msgstr ""
+
+#: django_countries/countries.py:158 django_countries/countries.py:415
+msgid "Nepal"
+msgstr ""
+
+#: django_countries/countries.py:159 django_countries/countries.py:416
+msgid "Netherlands"
+msgstr ""
+
+#: django_countries/countries.py:160 django_countries/countries.py:417
+msgid "Netherlands Antilles"
+msgstr ""
+
+#: django_countries/countries.py:161 django_countries/countries.py:418
+msgid "New Caledonia"
+msgstr ""
+
+#: django_countries/countries.py:162 django_countries/countries.py:419
+msgid "New Zealand"
+msgstr ""
+
+#: django_countries/countries.py:163 django_countries/countries.py:420
+msgid "Nicaragua"
+msgstr ""
+
+#: django_countries/countries.py:164 django_countries/countries.py:421
+msgid "Niger"
+msgstr ""
+
+#: django_countries/countries.py:165 django_countries/countries.py:422
+msgid "Nigeria"
+msgstr ""
+
+#: django_countries/countries.py:166 django_countries/countries.py:423
+msgid "Niue"
+msgstr ""
+
+#: django_countries/countries.py:167 django_countries/countries.py:424
+msgid "Norfolk Island"
+msgstr ""
+
+#: django_countries/countries.py:168 django_countries/countries.py:425
+msgid "Northern Mariana Islands"
+msgstr ""
+
+#: django_countries/countries.py:169 django_countries/countries.py:426
+msgid "Norway"
+msgstr ""
+
+#: django_countries/countries.py:170 django_countries/countries.py:428
+msgid "Oman"
+msgstr ""
+
+#: django_countries/countries.py:171 django_countries/countries.py:429
+msgid "Pakistan"
+msgstr ""
+
+#: django_countries/countries.py:172 django_countries/countries.py:430
+msgid "Palau"
+msgstr ""
+
+#: django_countries/countries.py:173 django_countries/countries.py:431
+msgid "Palestinian Territory, Occupied"
+msgstr ""
+
+#: django_countries/countries.py:174 django_countries/countries.py:432
+msgid "Panama"
+msgstr ""
+
+#: django_countries/countries.py:175 django_countries/countries.py:433
+msgid "Papua New Guinea"
+msgstr ""
+
+#: django_countries/countries.py:176 django_countries/countries.py:434
+msgid "Paraguay"
+msgstr ""
+
+#: django_countries/countries.py:177 django_countries/countries.py:435
+msgid "Peru"
+msgstr ""
+
+#: django_countries/countries.py:178 django_countries/countries.py:436
+msgid "Philippines"
+msgstr ""
+
+#: django_countries/countries.py:179 django_countries/countries.py:437
+msgid "Pitcairn"
+msgstr ""
+
+#: django_countries/countries.py:180 django_countries/countries.py:439
+msgid "Poland"
+msgstr ""
+
+#: django_countries/countries.py:181 django_countries/countries.py:440
+msgid "Portugal"
+msgstr ""
+
+#: django_countries/countries.py:182 django_countries/countries.py:442
+msgid "Puerto Rico"
+msgstr ""
+
+#: django_countries/countries.py:183 django_countries/countries.py:443
+msgid "Qatar"
+msgstr ""
+
+#: django_countries/countries.py:184 django_countries/countries.py:446
+msgid "Réunion"
+msgstr ""
+
+#: django_countries/countries.py:185 django_countries/countries.py:447
+msgid "Romania"
+msgstr ""
+
+#: django_countries/countries.py:186 django_countries/countries.py:448
+msgid "Russian Federation"
+msgstr ""
+
+#: django_countries/countries.py:187 django_countries/countries.py:449
+msgid "Rwanda"
+msgstr ""
+
+#: django_countries/countries.py:188 django_countries/countries.py:450
+msgid "Saint Barthélemy"
+msgstr ""
+
+#: django_countries/countries.py:189 django_countries/countries.py:451
+msgid "Saint Helena, Ascension and Tristan Da Cunha"
+msgstr ""
+
+#: django_countries/countries.py:190 django_countries/countries.py:452
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: django_countries/countries.py:191 django_countries/countries.py:453
+msgid "Saint Lucia"
+msgstr ""
+
+#: django_countries/countries.py:192 django_countries/countries.py:454
+msgid "Saint Martin"
+msgstr ""
+
+#: django_countries/countries.py:193 django_countries/countries.py:455
+msgid "Saint Pierre and Miquelon"
+msgstr ""
+
+#: django_countries/countries.py:194 django_countries/countries.py:456
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+
+#: django_countries/countries.py:195 django_countries/countries.py:457
+msgid "Samoa"
+msgstr ""
+
+#: django_countries/countries.py:196 django_countries/countries.py:458
+msgid "San Marino"
+msgstr ""
+
+#: django_countries/countries.py:197 django_countries/countries.py:459
+msgid "Sao Tome and Principe"
+msgstr ""
+
+#: django_countries/countries.py:198 django_countries/countries.py:460
+msgid "Saudi Arabia"
+msgstr ""
+
+#: django_countries/countries.py:199 django_countries/countries.py:461
+msgid "Senegal"
+msgstr ""
+
+#: django_countries/countries.py:200 django_countries/countries.py:462
+msgid "Serbia"
+msgstr ""
+
+#: django_countries/countries.py:201 django_countries/countries.py:463
+msgid "Seychelles"
+msgstr ""
+
+#: django_countries/countries.py:202 django_countries/countries.py:464
+msgid "Sierra Leone"
+msgstr ""
+
+#: django_countries/countries.py:203 django_countries/countries.py:465
+msgid "Singapore"
+msgstr ""
+
+#: django_countries/countries.py:204 django_countries/countries.py:466
+msgid "Slovakia"
+msgstr ""
+
+#: django_countries/countries.py:205 django_countries/countries.py:467
+msgid "Slovenia"
+msgstr ""
+
+#: django_countries/countries.py:206 django_countries/countries.py:468
+msgid "Solomon Islands"
+msgstr ""
+
+#: django_countries/countries.py:207 django_countries/countries.py:469
+msgid "Somalia"
+msgstr ""
+
+#: django_countries/countries.py:208 django_countries/countries.py:470
+msgid "South Africa"
+msgstr ""
+
+#: django_countries/countries.py:209 django_countries/countries.py:471
+msgid "South Georgia and the South Sandwich Islands"
+msgstr ""
+
+#: django_countries/countries.py:210 django_countries/countries.py:472
+msgid "Spain"
+msgstr ""
+
+#: django_countries/countries.py:211 django_countries/countries.py:473
+msgid "Sri Lanka"
+msgstr ""
+
+#: django_countries/countries.py:212 django_countries/countries.py:474
+msgid "Sudan"
+msgstr ""
+
+#: django_countries/countries.py:213 django_countries/countries.py:475
+msgid "Suriname"
+msgstr ""
+
+#: django_countries/countries.py:214 django_countries/countries.py:476
+msgid "Svalbard and Jan Mayen"
+msgstr ""
+
+#: django_countries/countries.py:215 django_countries/countries.py:477
+msgid "Swaziland"
+msgstr ""
+
+#: django_countries/countries.py:216 django_countries/countries.py:478
+msgid "Sweden"
+msgstr ""
+
+#: django_countries/countries.py:217 django_countries/countries.py:479
+msgid "Switzerland"
+msgstr ""
+
+#: django_countries/countries.py:218 django_countries/countries.py:480
+msgid "Syrian Arab Republic"
+msgstr ""
+
+#: django_countries/countries.py:219 django_countries/countries.py:481
+msgid "Taiwan, Province of China"
+msgstr ""
+
+#: django_countries/countries.py:220 django_countries/countries.py:482
+msgid "Tajikistan"
+msgstr ""
+
+#: django_countries/countries.py:221 django_countries/countries.py:483
+msgid "Tanzania, United Republic of"
+msgstr ""
+
+#: django_countries/countries.py:222 django_countries/countries.py:484
+msgid "Thailand"
+msgstr ""
+
+#: django_countries/countries.py:223 django_countries/countries.py:487
+msgid "Timor-leste"
+msgstr ""
+
+#: django_countries/countries.py:224 django_countries/countries.py:488
+msgid "Togo"
+msgstr ""
+
+#: django_countries/countries.py:225 django_countries/countries.py:489
+msgid "Tokelau"
+msgstr ""
+
+#: django_countries/countries.py:226 django_countries/countries.py:490
+msgid "Tonga"
+msgstr ""
+
+#: django_countries/countries.py:227 django_countries/countries.py:491
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: django_countries/countries.py:228 django_countries/countries.py:492
+msgid "Tunisia"
+msgstr ""
+
+#: django_countries/countries.py:229 django_countries/countries.py:493
+msgid "Turkey"
+msgstr ""
+
+#: django_countries/countries.py:230 django_countries/countries.py:494
+msgid "Turkmenistan"
+msgstr ""
+
+#: django_countries/countries.py:231 django_countries/countries.py:495
+msgid "Turks and Caicos Islands"
+msgstr ""
+
+#: django_countries/countries.py:232 django_countries/countries.py:496
+msgid "Tuvalu"
+msgstr ""
+
+#: django_countries/countries.py:233 django_countries/countries.py:498
+msgid "Uganda"
+msgstr ""
+
+#: django_countries/countries.py:234 django_countries/countries.py:499
+msgid "Ukraine"
+msgstr ""
+
+#: django_countries/countries.py:235 django_countries/countries.py:500
+msgid "United Arab Emirates"
+msgstr ""
+
+#: django_countries/countries.py:236 django_countries/countries.py:501
+msgid "United Kingdom"
+msgstr ""
+
+#: django_countries/countries.py:237 django_countries/countries.py:503
+msgid "United States"
+msgstr ""
+
+#: django_countries/countries.py:238 django_countries/countries.py:504
+msgid "United States Minor Outlying Islands"
+msgstr ""
+
+#: django_countries/countries.py:239 django_countries/countries.py:505
+msgid "Uruguay"
+msgstr ""
+
+#: django_countries/countries.py:240 django_countries/countries.py:506
+msgid "Uzbekistan"
+msgstr ""
+
+#: django_countries/countries.py:241 django_countries/countries.py:507
+msgid "Vanuatu"
+msgstr ""
+
+#: django_countries/countries.py:242 django_countries/countries.py:508
+msgid "Venezuela, Bolivarian Republic of"
+msgstr ""
+
+#: django_countries/countries.py:243 django_countries/countries.py:509
+msgid "Viet Nam"
+msgstr ""
+
+#: django_countries/countries.py:244 django_countries/countries.py:510
+msgid "Virgin Islands, British"
+msgstr ""
+
+#: django_countries/countries.py:245 django_countries/countries.py:511
+msgid "Virgin Islands, U.S."
+msgstr ""
+
+#: django_countries/countries.py:246 django_countries/countries.py:512
+msgid "Wallis and Futuna"
+msgstr ""
+
+#: django_countries/countries.py:247 django_countries/countries.py:513
+msgid "Western Sahara"
+msgstr ""
+
+#: django_countries/countries.py:248 django_countries/countries.py:514
+msgid "Yemen"
+msgstr ""
+
+#: django_countries/countries.py:249 django_countries/countries.py:515
+msgid "Zambia"
+msgstr ""
+
+#: django_countries/countries.py:250 django_countries/countries.py:516
+msgid "Zimbabwe"
+msgstr ""
+
+#: django_countries/countries.py:269
+msgid "Ascension and Tristan Da Cunha Saint Helena"
+msgstr ""
+
+#: django_countries/countries.py:283
+msgid "Bolivarian Republic of Venezuela"
+msgstr ""
+
+#: django_countries/countries.py:290
+msgid "British Virgin Islands"
+msgstr ""
+
+#: django_countries/countries.py:317
+msgid "Democratic People's Republic of Korea"
+msgstr ""
+
+#: django_countries/countries.py:331
+msgid "Federated States of Micronesia"
+msgstr ""
+
+#: django_countries/countries.py:366
+msgid "Islamic Republic of Iran"
+msgstr ""
+
+#: django_countries/countries.py:427
+msgid "Occupied Palestinian Territory"
+msgstr ""
+
+#: django_countries/countries.py:438
+msgid "Plurinational State of Bolivia"
+msgstr ""
+
+#: django_countries/countries.py:441
+msgid "Province of China Taiwan"
+msgstr ""
+
+#: django_countries/countries.py:444
+msgid "Republic of Korea"
+msgstr ""
+
+#: django_countries/countries.py:445
+msgid "Republic of Moldova"
+msgstr ""
+
+#: django_countries/countries.py:485
+msgid "The Democratic Republic of the Congo"
+msgstr ""
+
+#: django_countries/countries.py:486
+msgid "The Former Yugoslav Republic of Macedonia"
+msgstr ""
+
+#: django_countries/countries.py:497
+msgid "U.S. Virgin Islands"
+msgstr ""
+
+#: django_countries/countries.py:502
+msgid "United Republic of Tanzania"
+msgstr ""
 
 #: events/extra.py:17
 msgid "Invalid captcha"
@@ -35,106 +1079,134 @@ msgstr ""
 msgid "I accept the privacy policy"
 msgstr ""
 
+#: events/forms.py:24
+msgid ""
+"All your data will be incorporated to a database and will be used to "
+"organice and control the event assistants and contact you with information "
+"relevant to this event. We will not share your information with anyone and "
+"we will delete all data once the event is over.<br />If you have any doubt "
+"or you want to correct or delete your information anytime, contacting us via "
+"email at eventos at mozilla-hispano.org"
+msgstr ""
+
 #: events/forms.py:37
 msgid "The email doesn't match"
 msgstr ""
 
-#: events/models.py:17 events/models.py:50
+#: events/models.py:20 events/models.py:55
 msgid "Name"
 msgstr ""
 
-#: events/models.py:18
+#: events/models.py:21
 msgid "Slug"
 msgstr ""
 
-#: events/models.py:19 events/models.py:55
+#: events/models.py:22 events/models.py:60
 msgid "Creation date"
 msgstr ""
 
-#: events/models.py:20
+#: events/models.py:23
 msgid "Event date"
 msgstr ""
 
-#: events/models.py:21
+#: events/models.py:24
 msgid "Registration start date"
 msgstr ""
 
-#: events/models.py:22
+#: events/models.py:25
 msgid "Registration end date"
 msgstr ""
 
-#: events/models.py:23 templates/events/detail.html:19
-#: templates/events/registration-confirmed.html:22
-msgid "Address"
-msgstr ""
-
-#: events/models.py:23
-msgid "The address should be searchable in Google Maps"
-msgstr ""
-
-#: events/models.py:24
-msgid "Places"
-msgstr ""
-
-#: events/models.py:24
-msgid "Number of places, leave blank for unlimited"
-msgstr ""
-
-#: events/models.py:25
-msgid "Event description and program"
-msgstr ""
-
 #: events/models.py:26
-msgid "Comments url"
-msgstr ""
-
-#: events/models.py:26
-msgid "Link to comments at the forum"
+msgid "Country"
 msgstr ""
 
 #: events/models.py:27
+msgid "City"
+msgstr ""
+
+#: events/models.py:28 templates/events/detail.html:25
+#: templates/events/registration-confirmed.html:24
+msgid "Address"
+msgstr ""
+
+#: events/models.py:28
+msgid "The address should be searchable in Google Maps"
+msgstr ""
+
+#: events/models.py:29
+msgid "Places"
+msgstr ""
+
+#: events/models.py:29
+msgid "Number of places, leave blank for unlimited"
+msgstr ""
+
+#: events/models.py:30
+msgid "Event description and program"
+msgstr ""
+
+#: events/models.py:31
+msgid "Comments url"
+msgstr ""
+
+#: events/models.py:31
+msgid "Link to comments at the forum"
+msgstr ""
+
+#: events/models.py:32
 msgid "Active"
 msgstr ""
 
-#: events/models.py:28
+#: events/models.py:33
 msgid "Social tag"
 msgstr ""
 
-#: events/models.py:28
+#: events/models.py:33
 msgid ""
 "Tag for this event at Twitter and Flickr, e.g fx4madrid. Note: Do not add # "
 "to the tag, it will be added auto for Twitter."
 msgstr ""
 
-#: events/models.py:51
+#: events/models.py:56
 msgid "First name"
 msgstr ""
 
-#: events/models.py:52
+#: events/models.py:57
 msgid "Family name"
 msgstr ""
 
-#: events/models.py:56
+#: events/models.py:61
 msgid "Email"
 msgstr ""
 
-#: events/models.py:57
+#: events/models.py:62
 msgid "Twitter user"
 msgstr ""
 
-#: events/models.py:58
+#: events/models.py:63
 msgid "Press"
 msgstr ""
 
-#: events/models.py:58
+#: events/models.py:63
 msgid "Check this field if you are you from press or other media"
 msgstr ""
 
-#: events/models.py:59
+#: events/models.py:64
+msgid "I want to help as a volunteer"
+msgstr ""
+
+#: events/models.py:64
+msgid ""
+"Check this field if you to want to help us at the event as a volunteer, we "
+"will contact you with more details"
+msgstr ""
+
+#: events/models.py:65
 msgid "Website"
 msgstr ""
 
-#: events/models.py:60
+#: events/models.py:66
 msgid "Confirmed"
 msgstr ""
 
@@ -163,36 +1235,60 @@ msgid ""
 "to eventos arroba mozilla-hispano.org"
 msgstr ""
 
-#: templates/base.html:6 templates/index.html:5 templates/index.html.py:9
+#: templates/base.html:6
+msgid "Mozilla Events"
+msgstr ""
+
+#: templates/base.html:6 templates/index.html:5
 msgid "Events"
 msgstr ""
 
-#: templates/events/detail.html:10 templates/events/social-block.html:5
+#: templates/base.html:34
+msgid "Mozilla<br />Events"
+msgstr ""
+
+#: templates/base.html:36 templates/events/registration-email.html:15
+msgid "http://www.mozilla-hispano.org"
+msgstr ""
+
+#: templates/base.html:36
+msgid "Visit our community site"
+msgstr ""
+
+#: templates/base.html:36
+msgid "mozilla hispano"
+msgstr ""
+
+#: templates/events/detail.html:12 templates/events/social-block.html:5
 msgid "I will be at"
 msgstr ""
 
-#: templates/events/detail.html:10 templates/events/social-block.html:5
+#: templates/events/detail.html:12 templates/events/social-block.html:5
 msgid "And you?"
 msgstr ""
 
-#: templates/events/detail.html:10 templates/events/social-block.html:5
+#: templates/events/detail.html:12 templates/events/social-block.html:5
 msgid "mozilla_hispano"
 msgstr ""
 
-#: templates/events/detail.html:20
+#: templates/events/detail.html:18
+msgid "I am in!"
+msgstr ""
+
+#: templates/events/detail.html:18
+msgid "Register here"
+msgstr ""
+
+#: templates/events/detail.html:26
 msgid "Comments and opinions about the event"
 msgstr ""
 
-#: templates/events/detail.html:25
+#: templates/events/detail.html:32
 msgid "Photos"
 msgstr ""
 
-#: templates/events/detail.html:30
+#: templates/events/detail.html:38
 msgid "Back to event listing"
-msgstr ""
-
-#: templates/events/detail.html:37
-msgid "Register here!"
 msgstr ""
 
 #: templates/events/flickr-badge.html:25
@@ -200,53 +1296,53 @@ msgid "View all photos on flickr with tag"
 msgstr ""
 
 #: templates/events/registration-closed.html:5
-#: templates/events/registration-closed.html:9
+#: templates/events/registration-closed.html:11
 #: templates/events/registration-confirmed.html:5
-#: templates/events/registration-confirmed.html:9
+#: templates/events/registration-confirmed.html:11
 #: templates/events/registration-done.html:5
-#: templates/events/registration-done.html:9
-#: templates/events/registration.html:5 templates/events/registration.html:9
+#: templates/events/registration-done.html:11
+#: templates/events/registration.html:5 templates/events/registration.html:11
 msgid "Registration"
 msgstr ""
 
-#: templates/events/registration-closed.html:11
+#: templates/events/registration-closed.html:13
 msgid "Sorry, but registration for this event is currently closed."
 msgstr ""
 
-#: templates/events/registration-confirmed.html:12
+#: templates/events/registration-confirmed.html:14
 msgid "Ey, it seems that your registration was already confirmed!"
 msgstr ""
 
-#: templates/events/registration-confirmed.html:14
+#: templates/events/registration-confirmed.html:16
 msgid "Thanks, your registration has been confirmed!"
 msgstr ""
 
-#: templates/events/registration-confirmed.html:17
+#: templates/events/registration-confirmed.html:19
 msgid "We are looking forward to meet you at"
 msgstr ""
 
-#: templates/events/registration-confirmed.html:19
+#: templates/events/registration-confirmed.html:21
 msgid "Remember the details"
 msgstr ""
 
-#: templates/events/registration-confirmed.html:21
+#: templates/events/registration-confirmed.html:23
 msgid "Date"
 msgstr ""
 
-#: templates/events/registration-confirmed.html:26
-#: templates/events/registration-done.html:17
+#: templates/events/registration-confirmed.html:28
+#: templates/events/registration-done.html:19
 msgid "Back to"
 msgstr ""
 
-#: templates/events/registration-done.html:11
+#: templates/events/registration-done.html:13
 msgid "Thanks, your registration has been saved"
 msgstr ""
 
-#: templates/events/registration-done.html:13
+#: templates/events/registration-done.html:15
 msgid "We have sent an email to"
 msgstr ""
 
-#: templates/events/registration-done.html:13
+#: templates/events/registration-done.html:15
 msgid "with the instructions to confirm it"
 msgstr ""
 
@@ -259,36 +1355,36 @@ msgid "Thanks for registering in"
 msgstr ""
 
 #: templates/events/registration-email.html:6
-msgid "Here you have the event details"
-msgstr ""
-
-#: templates/events/registration-email.html:8
-msgid "Date:"
-msgstr ""
-
-#: templates/events/registration-email.html:9
-msgid "Address:"
-msgstr ""
-
-#: templates/events/registration-email.html:11
 msgid ""
 "Important! You must confirm your attendance by clicking on the following "
 "address"
 msgstr ""
 
-#: templates/events/registration-email.html:15
-msgid "http://www.mozilla-hispano.org"
+#: templates/events/registration-email.html:10
+msgid "Here you have the event details"
+msgstr ""
+
+#: templates/events/registration-email.html:12
+msgid "Date:"
+msgstr ""
+
+#: templates/events/registration-email.html:13
+msgid "Address:"
 msgstr ""
 
 #: templates/events/registration-email.html:16
 msgid "http://twitter.com/mozilla_hispano"
 msgstr ""
 
-#: templates/events/registration.html:15
+#: templates/events/registration.html:13
+msgid "Join the party!"
+msgstr ""
+
+#: templates/events/registration.html:19
 msgid "Fields marked with <span>*</span> are mandatory"
 msgstr ""
 
-#: templates/events/registration.html:82
+#: templates/events/registration.html:93
 msgid "Submit"
 msgstr ""
 

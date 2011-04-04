@@ -7,6 +7,9 @@ import datetime
 # l10n
 from django.utils.translation import ugettext_lazy as _
 
+# Country list from django-countries
+from django_countries.countries import COUNTRIES
+
 # Models
 
 class Event(models.Model):
@@ -20,10 +23,12 @@ class Event(models.Model):
     eventDate = models.DateTimeField(_("Event date"))
     regStartDate = models.DateTimeField(_("Registration start date"))
     regEndDate = models.DateTimeField(_("Registration end date"))
+    country = models.CharField(_("Country"), choices=COUNTRIES, max_length=2)
+    city = models.CharField(_("City"), max_length=200)
     address = models.CharField(_("Address"), max_length=200, help_text=_("The address should be searchable in Google Maps"))
     places = models.IntegerField(_("Places"), blank=True, null=True, help_text=_("Number of places, leave blank for unlimited"))
     description = models.TextField(_("Event description and program"), blank=True, null=True)
-    commentsUrl = models.CharField(_("Comments url"), max_length=200, help_text=_("Link to comments at the forum"))
+    commentsUrl = models.CharField(_("Comments url"), max_length=200, help_text=_("Link to comments at the forum"), blank=True, null=True)
     active = models.BooleanField(_("Active"))
     twitterTag = models.CharField(_("Social tag"), max_length=50, help_text=_("Tag for this event at Twitter and Flickr, e.g fx4madrid. Note: Do not add # to the tag, it will be added auto for Twitter."))
     
@@ -56,6 +61,7 @@ class Registration(models.Model):
     email = models.EmailField(_("Email"), max_length=100)
     twitter = models.CharField(_("Twitter user"), max_length=100, blank=True, null=True)
     press = models.BooleanField(_("Press"), help_text=_("Check this field if you are you from press or other media"))
+    volunteer = models.BooleanField(_("I want to help as a volunteer"), help_text=_("Check this field if you to want to help us at the event as a volunteer, we will contact you with more details"))
     website = models.URLField(_("Website"), max_length=200, blank=True, null=True)
     confirmed = models.BooleanField(_("Confirmed"))
     
