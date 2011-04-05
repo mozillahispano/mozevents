@@ -1,8 +1,6 @@
 CONFIGURATION
-1. Edit settings.py and add your database, email and recaptcha details
+1. Edit settings.py and add your database, email, url and recaptcha details
 2. To create initial DB, from this folder run python manage.py syndb
-
-Configuration assumes you place your application in /var/lib/mozevents, change it if needed.
 
 SERVER
 You can run the development server using python manage.py runserver
@@ -20,7 +18,7 @@ Here it's an example, change information if needed:
 
 	# Django settings
     	WSGIScriptAlias / /var/lib/mozevents/public/wsgi_handler.py
-    	WSGIDaemonProcess mozevents user=ubuntu group=ubuntu processes=1 threads=10
+    	WSGIDaemonProcess mozevents user=ubuntu group=ubuntu processes=2 threads=5 maximum-requests=100
     	WSGIProcessGroup mozevents
 
    	<Directory /var/lib/mozevents/public>
@@ -36,7 +34,7 @@ Here it's an example, change information if needed:
  
 	Alias /media/ /var/lib/mozevents/public/media/
 
-	# Protegemos el directorio media de miradas indiscretas
+	# Directory protection
 	<Directory /var/lib/mozevents/public/media/>
                 Options -Indexes
 		Order deny,allow
@@ -55,4 +53,4 @@ Here it's an example, change information if needed:
 If you application is not under /var/lib/mozevents, you will have also to modify 
 /public/wsgi_handler.py to change the path.
 
-Check also if the python-django path is correct for your system. 
+Check also if the python-django path is correct for your system.

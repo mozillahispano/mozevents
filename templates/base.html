@@ -6,9 +6,9 @@
 <title>{% block title %}{% trans 'Mozilla Events' %}{% endblock %} « {% trans 'Events' %} « Mozilla Hispano</title>
 
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="http://www.mozilla-hispano.org/wp-content/themes/mozillahispano/css/paisaje.css" type="text/css" />
+<link rel="stylesheet" href="/static/css/paisaje.css" type="text/css" />
 <!--[if lt IE 7]>
-		<link rel="stylesheet" href="http://www.mozilla-hispano.org/wp-content/themes/mozillahispano/css/iebugs.css" type="text/css" />
+		<link rel="stylesheet" href="/static/css/iebugs.css" type="text/css" />
 <![endif]-->
 
 <link rel="stylesheet" href="/static/css/style.css" type="text/css" />
@@ -27,8 +27,8 @@
 
 <body>
     
-<div id="lienzo">
-		<div id="tullido">
+<div id="canvas">
+		<div id="cripple">
 				<div id="header">
 						<div id="logo">
 								<h1><a href="/{% block eventURL %}{% endblock %}"><span>{% block titleheader %}{% trans 'Mozilla<br />Events' %}{% endblock %}</span></a></h1>
@@ -38,17 +38,17 @@
 
 	<div class="clearfix" id="mainbody">
 
-	<div id="contenido">
-		<div class="portada-individual">
-			<div class="texto-portada-individual">
-                            {% block content %}{% endblock %}
+		<div id="content">
+			<div class="maincontent">
+				<div class="maintext">
+				    {% block content %}{% endblock %}
+				</div>
 			</div>
 		</div>
-	</div>
-        
-        <div id="barra">
-            {% block sidebar %}{% endblock %}
-	</div>
+		
+		<div id="sidebar">
+		    {% block sidebar %}{% endblock %}
+		</div>
 	
 	</div>
 

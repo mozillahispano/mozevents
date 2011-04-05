@@ -35,6 +35,7 @@ def newMail(event, registration):
 				Context({
 					'event': event,
 					'reg': reg,
+					'SITE_URL': settings.SITE_URL,
 				})
 			),
 			settings.EMAIL_FROM,

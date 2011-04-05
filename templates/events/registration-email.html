@@ -5,7 +5,7 @@
 
 {% trans 'Important! You must confirm your attendance by clicking on the following address' %}:
 
-http://eventos.mozilla-hispano.org/{{ event.id }}/{{ event.slug }}/registration/confirm/{{ reg.hash }}
+{{ SITE_URL }}/{{ event.id }}/{{ event.slug }}/registration/confirm/{{ reg.hash }}
 
 {% trans 'Here you have the event details' %}:
 
