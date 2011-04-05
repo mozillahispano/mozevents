@@ -2,59 +2,7 @@ body {
 	text-align: center;
 }
 .clearfix {display:inline-block;} /*ie7 b*/
-#lienzo {
+#canvas {
 	width: 1024px;
 	text-align: left;
-}
-/* Cabecera */
-#cabecera {
-	background-image: url(../media/cabeceraDiaIE.jpg);
-}
-#cabecera #alojaLogo {
-	background-image: none;
-}
-#cabecera h1 {
-	background-image: none;
-	border: 2px solid yellow;
-	display: none;
-}
-.tarde #cabecera {
-	background-image: url(../media/cabeceraTardeIE.jpg);
-}
-.noche #cabecera {
-	background-image: url(../media/cabeceraNocheIE.jpg);
-}
-/* Menu */
-#menu{
-	padding-bottom: 10px;
-	background-image: url(../media/menuSombra.png);
-	background-position: bottom;
-	background-repeat: repeat-x;
-}
-#menu ul {
-	width: 100%;
-	background-color: #ed2733;
-	background-image: url(../media/menuFondo.png);
-	background-position: top;
-	background-repeat: repeat-x;
-	color: white;
-}
-#menu li {
-	float: left;
-	border-left: 1px solid #ff4b50;
-	border-right: 1px solid #680204;
-}
-#menu li a {
-	padding: 0.2em 2.5em;
-	color: White;
-	font-weight: bold;
-	font-size: 1.5em;
-}
-#menu li a:hover {
-	color: #500;
-}
-
-/* Barra derecha */
-#barra #buscador .submit {
-	line-height: 1em;
 }
