@@ -3,10 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>{% block title %}{% trans 'Mozilla Events' %}{% endblock %} « {% trans 'Events' %} « Mozilla Hispano</title>
+<title>{% block title %}{% trans 'Mozilla Events' %}{% endblock %} « {% trans 'Events' %} « {{ SITE_TITLE }}</title>
 
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="/static/css/paisaje.css" type="text/css" />
+
 <!--[if lt IE 7]>
 		<link rel="stylesheet" href="/static/css/iebugs.css" type="text/css" />
 <![endif]-->
@@ -55,7 +55,11 @@
 	</div><!-- Cuerpo -->
 </div><!-- tullido -->
 
-</div>
+<script type="text/javascript" src="http://www.google-analytics.com/urchin.js"></script>
+<script type="text/javascript">
+_uacct = "UA-2846159-1";
+urchinTracker();
+</script></div>
 
 </body>
 

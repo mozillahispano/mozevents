@@ -3,6 +3,7 @@
 # Change these settings to fit your needs
 
 SITE_URL = "http://events.your-site.org"
+SITE_TITLE = "Your site name"
 
 EMAIL_FROM = 'your@email.org'
 EMAIL_HOST = 'smtp.gmail.com'
