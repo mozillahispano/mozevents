@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="/static/css/style.css" type="text/css" />
 
 <script type="text/javascript" src="/admin-media/js/jquery.min.js"></script>
-<!--<script type="text/javascript" src="/static/js/functions.js"></script>-->
+<script type="text/javascript" src="/static/js/functions.js"></script>
 
  <script type="text/javascript">
  var RecaptchaOptions = {
@@ -34,6 +34,15 @@
 								<h1><a href="/{% block eventURL %}{% endblock %}"><span>{% block titleheader %}{% trans 'Mozilla<br />Events' %}{% endblock %}</span></a></h1>
 						</div>
 						<div id="visit-box"><a href="{% trans 'http://www.mozilla-hispano.org' %}" title="{% trans 'Visit our community site' %}">{% trans 'mozilla hispano' %}</a></div>
+						<form id="langSelector" action="/i18n/setlang/" method="post">
+								{% csrf_token %}
+								<select name="language">
+								    {% for lang in LANGUAGES %}
+									<option value="{{ lang.0 }}" {% if lang.0 == request.LANGUAGE_CODE %}selected="selected"{% endif %}>{{ lang.1 }}</option>
+								    {% endfor %}
+								</select>
+								<input type="submit" value="→" />
+						</form>
 				</div>
 
 	<div class="clearfix" id="mainbody">

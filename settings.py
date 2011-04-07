@@ -1,5 +1,6 @@
 # Django settings for mozevents project.
-
+# l10n
+from django.utils.translation import ugettext_lazy as _
 # Change these settings to fit your needs
 
 SITE_URL = "http://events.your-site.org"
@@ -42,7 +43,7 @@ TIME_ZONE = 'Europe/Madrid'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-US'
+LANGUAGE_CODE = 'en'
 
 #
 # Do not need to edit below
@@ -84,6 +85,11 @@ ADMIN_MEDIA_PREFIX = '/admin-media/'
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'pgU4EKx:/=~<t3t$)UuxE-Zryoo?A"ppWS2*q4bpuVdYb~p35)'
 
+LANGUAGES = (
+    ('es', _('Spanish')),
+    ('en', _('English')),
+)
+
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -93,16 +99,18 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.auth",
-    "django.core.context_processors.debug",
+    #"django.core.context_processors.debug",
     "django.core.context_processors.i18n",
+    "django.core.context_processors.request",
     "django.core.context_processors.media",
     'events.context_processors.site_settings',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.cache.UpdateCacheMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',

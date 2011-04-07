@@ -91,6 +91,16 @@ a:active {
     width: 118px;
 }
 
+#header form#langSelector {
+	float: right;
+	margin-top: 88px;
+        margin-right: 4px;
+}
+
+#header form#langSelector input[type="submit"] {
+	display: none;
+}
+
 #canvas {
 	max-width: 1024px;
 	min-width: 690px;
