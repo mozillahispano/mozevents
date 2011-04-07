@@ -100,11 +100,13 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 ROOT_URLCONF = 'mozevents.urls'
@@ -131,3 +133,8 @@ INSTALLED_APPS = (
     'recaptcha',
     'events'
 )
+
+CACHE_BACKEND = 'file://'+PROJECT_PATH+'/cache'
+CACHE_MIDDLEWARE_SECONDS = 600
+CACHE_MIDDLEWARE_KEY_PREFIX = 'mozevents'
+CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True
