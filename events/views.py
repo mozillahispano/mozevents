@@ -119,3 +119,13 @@ def confirmation(request, id, slug, hash):
         }
 	
 	return render_to_response('events/registration-confirmed.html', data, context_instance=RequestContext(request))
+	
+def tweets(request, id, slug):
+        
+        event = get_object_or_404(Event, id=id, active=True)
+        
+        data = {
+            'event': event,
+        }
+	
+	return render_to_response('events/tweets.html', data, context_instance=RequestContext(request))

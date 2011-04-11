@@ -1,0 +1,75 @@
+/* Copyright (c) 2011, David Bengoa Rocandio
+* All rights reserved.
+*
+* This program is licensed under the Chicken Dance License v0.2
+*
+* You should have received a copy of the license text with this
+* software, along with instructions on how to perform the Chicken
+* Dance.
+*
+* Full license: http://bengoarocandio.com/html5tweets/COPYING
+* Chicken Dance instructions: http://bengoarocandio.com/html5tweets/DANCE
+*/
+
+@font-face {
+	font-family: MuseoSans;
+	src: url('../fonts/MuseoSans_500.otf');
+}
+
+body,html{
+    font-family: MuseoSans; /* Font prefetch */
+    margin:0;
+    padding:0;
+}
+html{
+    min-height: 100%;
+    /*-moz-transition-property: background-color;
+    -moz-transition-duration: 3s;*/
+}
+h2{
+    margin: 0;
+}
+
+h2 a {
+	color: #FFFFFF;
+    text-decoration: none;
+}
+canvas{
+    position: absolute;
+    top:0px;
+    left: 0px;
+}
+
+#help{
+    position: relative;
+    background: no-repeat url(../img/fxlogo.png);
+    color: #fff;
+    padding-left: 105px;
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 100px;
+    background-size: 100px;
+    padding-top:20px;
+    font-size: 14px;
+    z-index: 3;
+}
+
+#load{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    margin-left: -200px;
+    height: 300px;
+    margin-top: -150px;
+    background: top no-repeat url(../img/fxlogo.png);
+    color: #fff;
+    padding-top: 200px;
+    text-align:center;
+    font-size: 40px;
+}
+
+body{
+   background-image: -moz-radial-gradient(center 45deg, cover, #F89F1D 0%, #F25626 100%);
+   background: #F89F1D;
+}
