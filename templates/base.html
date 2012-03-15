@@ -1,8 +1,7 @@
 {% load i18n %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="utf-8">
 <title>{% block title %}{% trans 'Mozilla Events' %}{% endblock %} « {% trans 'Events' %} « {{ SITE_TITLE }}</title>
 
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -13,8 +12,8 @@
 
 <link rel="stylesheet" href="/static/css/style.css" type="text/css" />
 
-<script type="text/javascript" src="/admin-media/js/jquery.min.js"></script>
-<script type="text/javascript" src="/static/js/functions.js"></script>
+<script src="/admin-media/js/jquery.min.js"></script>
+<script src="/static/js/functions.js"></script>
 
  <script type="text/javascript">
  var RecaptchaOptions = {
@@ -35,7 +34,6 @@
 						</div>
 						<div id="visit-box"><a href="{% trans 'http://www.mozilla-hispano.org' %}" title="{% trans 'Visit our community site' %}">{% trans 'mozilla hispano' %}</a></div>
 						<form id="langSelector" action="/i18n/setlang/" method="post">
-								{% csrf_token %}
 								<select name="language">
 								    {% for lang in LANGUAGES %}
 									<option value="{{ lang.0 }}" {% if lang.0 == request.LANGUAGE_CODE %}selected="selected"{% endif %}>{{ lang.1 }}</option>
