@@ -3,6 +3,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.http import Http404
 from django.views.generic.simple import direct_to_template
 from django.template import RequestContext
+from django.views.decorators.csrf import csrf_exempt
 
 # Templates in Django need a "Context" to parse with, so we'll borrow this.
 # "Context"'s are really nothing more than a generic dict wrapped up in a
@@ -23,6 +24,7 @@ import uuid
 
 from events.utils import newMail
 
+@csrf_exempt
 def index(request):
         
         eventList = Event.objects.filter(active=True).order_by('-eventDate')
@@ -30,9 +32,10 @@ def index(request):
         data = {
             'events': eventList,
         }
-	
-	return render_to_response('index.html', data, context_instance=RequestContext(request))
-        
+    
+    return render_to_response('index.html', data, context_instance=RequestContext(request))
+
+@csrf_exempt 
 def detail(request, id, slug):
         
         event = get_object_or_404(Event, id=id, active=True)
@@ -40,9 +43,10 @@ def detail(request, id, slug):
         data = {
             'event': event,
         }
-	
-	return render_to_response('events/detail.html', data, context_instance=RequestContext(request))
-        
+    
+    return render_to_response('events/detail.html', data, context_instance=RequestContext(request))
+
+   
 def registration(request, id, slug):
         
         event = get_object_or_404(Event, id=id, active=True)
@@ -52,8 +56,8 @@ def registration(request, id, slug):
         }
         
         # If registration is closed, we should display a different page
-	if event.registrationOpen is False:
-		return render_to_response("events/registration-closed.html", data)
+    if event.registrationOpen is False:
+        return render_to_response("events/registration-closed.html", data)
                 
         if request.method == "POST":
             
@@ -70,21 +74,21 @@ def registration(request, id, slug):
                 
                 #Email confirmation
                 newMail(event.id, registration.id)
-		
-		data = {
-			'event': event,
-			'form': form,
-			'registration': registration,
+        
+        data = {
+            'event': event,
+            'form': form,
+            'registration': registration,
                 }
                 
                 return render_to_response('events/registration-done.html', data, context_instance=RequestContext(request))
                 
             else:
-		
-		data = {
+        
+        data = {
                     'event': event,
                     'form': form,
-		}
+        }
                 
                 return render_to_response('events/registration.html', data, context_instance=RequestContext(request))
                 
@@ -98,28 +102,29 @@ def registration(request, id, slug):
             }
             
             return render_to_response('events/registration.html', data, context_instance=RequestContext(request))
-	    
+    
 def confirmation(request, id, slug, hash):
         
-	event = get_object_or_404(Event, pk=id, active=True)
+    event = get_object_or_404(Event, pk=id, active=True)
         registration = get_object_or_404(Registration, hash=hash)
-	alreadyConfirmed = False
-	
-	# If already confirmed
-	if registration.confirmed is True:
-		alreadyConfirmed = True
-	else:
-		registration.confirmed = True
-		registration.save()
+    alreadyConfirmed = False
+    
+    # If already confirmed
+    if registration.confirmed is True:
+        alreadyConfirmed = True
+    else:
+        registration.confirmed = True
+        registration.save()
         
         data = {
             'registration': registration,
-	    'event': event,
-	    'alreadyConfirmed': alreadyConfirmed,
+        'event': event,
+        'alreadyConfirmed': alreadyConfirmed,
         }
-	
-	return render_to_response('events/registration-confirmed.html', data, context_instance=RequestContext(request))
-	
+    
+    return render_to_response('events/registration-confirmed.html', data, context_instance=RequestContext(request))
+
+@csrf_exempt
 def tweets(request, id, slug):
         
         event = get_object_or_404(Event, id=id, active=True)
@@ -127,5 +132,5 @@ def tweets(request, id, slug):
         data = {
             'event': event,
         }
-	
-	return render_to_response('events/tweets.html', data, context_instance=RequestContext(request))
+    
+    return render_to_response('events/tweets.html', data, context_instance=RequestContext(request))
