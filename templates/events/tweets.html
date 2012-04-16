@@ -143,7 +143,7 @@ function updateCanvasSize(){
         width: cwidth,
         height: cheight
     });
-    scheduleAnimationFrame();
+    scheduleAnimationFrame(render);
 }
 
 function insertarOrdenado(twt){
@@ -292,7 +292,7 @@ function avaliableTweetsUpdated(){
         actualTweetBorn = +new Date();
         ph.tweet.born = actualTweetBorn;
         alphaAnimating.push([ph,0,1,actualTweetBorn,800]);
-        scheduleAnimationFrame();
+        scheduleAnimationFrame(render);
     }else if(new Date()-actualTweetBorn > VIEW_TIME){
         var ph = getEmptyPlaceholder();
         ph.tweet = avaliableTweets.shift();
@@ -306,7 +306,7 @@ function avaliableTweetsUpdated(){
         alphaAnimating.push([previousTweet,1,0.5,actualTweetBorn,400]);
 
         freePlaceholdersIfNeeded();
-        scheduleAnimationFrame();
+        scheduleAnimationFrame(render);
     }
 }
 
@@ -414,9 +414,8 @@ function render(){
     ctx.drawImage(icanvas,0,0);
 
     ctx.restore();
-    if(actualTweetAnimating || alphaAnimating.length > 0)scheduleAnimationFrame();
+    if(actualTweetAnimating || alphaAnimating.length > 0)scheduleAnimationFrame(render);
 }
-window.addEventListener("MozBeforePaint", render, false);
 
 var pow = Math.pow;
 function easeInOut(minValue,maxValue,totalSteps,actualStep) {
@@ -452,8 +451,12 @@ function prettyDate(time){
 		day_diff < 31 && "{% trans '" + Math.ceil( day_diff / 7 ) + " weeks ago' %}";
 }
 var scheduleAnimationFrame = window.mozRequestAnimationFrame ||
-    function(){
-        setTimeout(render,30);
+    window.webkitRequestAnimationFrame ||
+    window.oRequestAnimationFrame ||
+    window.msRequestAnimationFrame ||
+    window.requestAnimationFrame ||
+    function(callback){
+        setTimeout(callback,30);
     };
 
 init();
