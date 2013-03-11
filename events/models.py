@@ -32,12 +32,19 @@ class Event(models.Model):
     active = models.BooleanField(_("Active"))
     twitterTag = models.CharField(_("Social tag"), max_length=50, help_text=_("Tag for this event at Twitter and Flickr, e.g fx4madrid. Note: Do not add # to the tag, it will be added auto for Twitter."))
     
+    def placesLeft(self):
+        '''
+            Returns how many places an event has left
+        '''
+        return self.places - self.objects.count()
+    
     def registrationOpen(self):
         '''
             Returns if incriptions are open.
         '''
-        now = datetime.datetime.now()
-        if now >= self.regStartDate and now <= self.regEndDate:
+        now = datetime.datetime.now
+        
+        if now >= self.regStartDate and now <= self.regEndDate and self.placesLeft > 0:
             return True
         else:
             return False

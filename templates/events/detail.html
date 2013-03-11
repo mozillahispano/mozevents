@@ -24,6 +24,7 @@
     <p class="event-date"><strong>{{ event.eventDate }}</strong></p>
     <p class="event-addr"><em>{% trans 'Address' %}:</em> <a href="http://maps.google.es/maps?q={{ event.address }}">{{ event.address }}</a></p>
     {% if event.commentsUrl %}<p class="event-comment"><a href="{{ event.commentsUrl }}">{% trans 'Comments and opinions about the event' %}</a></p>{% endif %}
+    {% if event.places %}<p>{% trans 'Places' %}: {{ event.placesLeft }}/{{ event.places }}</p>{% endif %}
 </div>
 
 {{ event.description|safe}}
