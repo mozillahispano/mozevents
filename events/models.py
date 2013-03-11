@@ -36,13 +36,18 @@ class Event(models.Model):
         '''
             Returns how many places an event has left
         '''
-        return self.places - self.objects.count()
+        places = self.places - Registration.objects.filter(event=self.id).count()
+        # If we add people manually to the event, we dont want to show a negative count ;)
+        if places < 0:
+            places = 0
+
+        return places
     
     def registrationOpen(self):
         '''
             Returns if incriptions are open.
         '''
-        now = datetime.datetime.now
+        now = datetime.datetime.now()
         
         if now >= self.regStartDate and now <= self.regEndDate and self.placesLeft > 0:
             return True
