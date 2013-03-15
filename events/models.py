@@ -10,6 +10,8 @@ from django.utils.translation import ugettext_lazy as _
 # Country list from django-countries
 from django_countries.countries import COUNTRIES
 
+from django.utils.encoding import smart_str, smart_unicode
+
 # Models
 
 class Event(models.Model):
