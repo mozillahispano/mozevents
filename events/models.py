@@ -79,5 +79,10 @@ class Registration(models.Model):
     
     hash = models.CharField(max_length=200, editable=False)
     
+    def save(self):
+        # Updating the name field before saving
+        self.name = smart_unicode(self.firstName) + " " + smart_unicode(self.familyName)
+        super(Registration, self).save()
+    
     def __unicode__(self):
         return self.name
