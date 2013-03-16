@@ -1,14 +1,45 @@
-CONFIGURATION
-1. Edit settings.py and add your database, email, url and recaptcha details
-2. To create initial DB, from this folder run python manage.py syndb
+## Mozevent (mozilla events)
 
-SERVER
-You can run the development server using python manage.py runserver
+This django app allows you to set up an event system for you meetings, talks, parties...
+
+## License
+
+Check LICENSE file
+
+### Installation
+
+Clone this repo
+
+```
+git clone git@github.com:mozillahispano/mozevents.git
+```
+
+Create and fill your local settings (database, email, url and recaptcha)
+
+```
+cp settings_local.py.example settings_local.py
+vim settings_local.py
+```
+
+Fill the initial database
+
+```
+python manage.py syndb
+```
+
+Run the testserver
+
+```
+python manage.py runserver
+```
+
+#### Apache
 
 If you want to run on Apache2 server, you will have to install libapache2-mod-wsgi module and create a virtual host.
 
 Here it's an example, change information if needed:
 
+```
 <VirtualHost *:80>
         DocumentRoot /var/lib/mozevents/public
         ServerAdmin admin@email.com
@@ -18,7 +49,7 @@ Here it's an example, change information if needed:
 
 	# Django settings
     	WSGIScriptAlias / /var/lib/mozevents/public/wsgi_handler.py
-    	WSGIDaemonProcess mozevents user=ubuntu group=ubuntu processes=2 threads=5 maximum-requests=100
+    	WSGIDaemonProcess mozevents user=www-data group=www-data processes=2 threads=5 maximum-requests=100
     	WSGIProcessGroup mozevents
 
    	<Directory /var/lib/mozevents/public>
@@ -49,6 +80,7 @@ Here it's an example, change information if needed:
    	</Directory>
 
 </VirtualHost>
+```
 
 If you application is not under /var/lib/mozevents, you will have also to modify 
 /public/wsgi_handler.py to change the path.
