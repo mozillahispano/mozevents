@@ -2,7 +2,7 @@
 
 This django app allows you to set up an event system for you meetings, talks, parties...
 
-## License
+### License
 
 Check LICENSE file
 
@@ -17,6 +17,7 @@ git clone git@github.com:mozillahispano/mozevents.git
 Create and fill your local settings (database, email, url and recaptcha)
 
 ```
+cd mozevents
 cp settings_local.py.example settings_local.py
 vim settings_local.py
 ```
