@@ -39,6 +39,10 @@ Fill the initial database
 
     $ python manage.py syndb
 
+Collect the static files
+
+    $ python manage.py collectstatic
+    
 Run the testserver
 
     $ python manage.py runserver
