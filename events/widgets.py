@@ -2,7 +2,7 @@ from django import forms
 from django.utils.safestring import mark_safe
 from django.conf import settings
 # Recaptcha stuff
-import mozevents.recaptcha.recaptcha as captcha
+import recaptcha.recaptcha as captcha
 
 class ReCaptcha(forms.widgets.Widget):
     recaptcha_challenge_name = 'recaptcha_challenge_field'
