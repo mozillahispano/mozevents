@@ -34,9 +34,6 @@ STATICFILES_DIRS = (
     PROJECT_PATH+"/public/static/",
 )
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'pgU4EKx:/=~<t3t$)UuxE-Zryoo?A"ppWS2*q4bpuVdYb~p35)'
-
 LANGUAGES = (
     ('es', _('Spanish')),
     ('en', _('English')),

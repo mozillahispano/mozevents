@@ -4,39 +4,48 @@ This django app allows you to set up an event system for you meetings, talks, pa
 
 ### License
 
-Check LICENSE file
+Check ``LICENSE`` file.
 
 ### Installation
 
+#### Requirements
+
+You just need ``python`` and ``git`` installed on your system.
+
+It's recomendable too, use a virtual environment for python (``virtualenv`` or similars).
+
+#### Get the code and requirements
+
 Clone this repo
 
-```
-git clone git@github.com:mozillahispano/mozevents.git
-```
+    $ git clone git@github.com:mozillahispano/mozevents.git
 
-Create and fill your local settings (database, email, url and recaptcha)
+You'll need to install python packages used in this project. These are in ``requeriments.txt``.
+The best way to install these packages is using ``pip``:
 
-```
-cd mozevents
-cp settings_local.py.example settings_local.py
-vim settings_local.py
-```
+    $ pip install -r mozevents/requirements.txt
+
+Note: We asume you have running your virtual environment.
+
+#### Configure your local site
+
+Create and fill your local settings (database, email, url and recaptcha keys)
+
+    $ cd mozevents
+    $ cp settings_local.py.example settings_local.py
+    $ vim settings_local.py
 
 Fill the initial database
 
-```
-python manage.py syndb
-```
+    $ python manage.py syndb
 
 Run the testserver
 
-```
-python manage.py runserver
-```
+    $ python manage.py runserver
 
 #### Apache
 
-If you want to run on Apache2 server, you will have to install libapache2-mod-wsgi module and create a virtual host.
+If you want to run on Apache2 server, you will have to install ``libapache2-mod-wsgi`` module and create a virtual host.
 
 Here it's an example, change information if needed:
 
@@ -86,4 +95,8 @@ Here it's an example, change information if needed:
 If you application is not under /var/lib/mozevents, you will have also to modify 
 /public/wsgi_handler.py to change the path.
 
-Check also if the python-django path is correct for your system.
+Check also if the ``python-django`` path is correct for your system.
+
+#### Nginx
+
+TBD
