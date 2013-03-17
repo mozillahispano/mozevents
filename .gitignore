@@ -2,3 +2,4 @@
 *.pid
 true
 cache
+__init__.py
