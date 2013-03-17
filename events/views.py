@@ -1,7 +1,7 @@
 # coding=utf-8
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import Http404
-from django.views.generic.simple import direct_to_template
+from django.views.generic import TemplateView
 from django.template import RequestContext
 
 # Templates in Django need a "Context" to parse with, so we'll borrow this.

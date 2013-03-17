@@ -3,6 +3,7 @@ from settings import *
 # Change these settings to fit your needs
 
 SITE_URL = "http://events.your-site.org"
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'events.your-site.org']
 SITE_TITLE = "Your site name"
 
 EMAIL_FROM = 'your@email.org'
