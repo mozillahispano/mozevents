@@ -8,10 +8,10 @@
 from django.utils.translation import ugettext_lazy as _
 
 # Get project path
-import os
-PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+from os.path import dirname, join, realpath
+PROJECT_PATH = realpath(join(dirname(__file__), '..'))
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 SITE_ID = 1
@@ -28,7 +28,7 @@ USE_L10N = True
 # Example: "/home/media/media.lawrence.com/"
 MEDIA_ROOT = PROJECT_PATH+'/public/media/'
 
-STATIC_ROOT = PROJECT_PATH+"/public/static/"
+STATIC_ROOT = PROJECT_PATH+"/static/"
 STATIC_URL = '/static/'
 
 # Make this unique, and don't share it with anybody.

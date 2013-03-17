@@ -10,7 +10,7 @@ from django.conf import settings
 from django import forms
 from django.utils.encoding import smart_unicode
 from events.widgets import ReCaptcha
-import mozevents.recaptcha.recaptcha as captcha
+import recaptcha.recaptcha as captcha
 
 class ReCaptchaField(forms.CharField):
     default_error_messages = {
