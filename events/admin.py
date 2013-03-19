@@ -42,7 +42,7 @@ def export_as_csv_action(description=_("Export selected objects as CSV file"),
         return response
     export_as_csv.short_description = description
     return export_as_csv
-    
+
 class EventAdmin(admin.ModelAdmin):
     # Autofill slugs
     prepopulated_fields = {"slug": ("name",)}
@@ -53,12 +53,16 @@ class EventAdmin(admin.ModelAdmin):
     # TinyMCE
     class Media:
 	js = ('/static/js/tiny_mce/tiny_mce.js', '/static/js/textareas.js')
+	
+def reg_attended(modeladmin, request, queryset):
+    queryset.update(attended=True)
+reg_attended.short_description = _("Set registration attended to true")
 
 class RegistrationAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'website', 'event', 'twitter', "volunteer", "press", 'confirmed', 'creationDate')
-    list_filter = ['event', 'confirmed', 'press', 'volunteer', 'creationDate']
+    list_display = ('name', 'email', 'website', 'event', 'twitter', "volunteer", "press", 'confirmed', 'attended', 'creationDate')
+    list_filter = ['event', 'confirmed', 'press', 'volunteer', 'attended', 'creationDate']
     search_fields = ['name']
-    actions = [export_as_csv_action(_("Export selected registrations as CSV file"), fields=['id', 'name', 'email', 'website', 'twitter', 'volunteer', 'press'], header=True)]
+    actions = [export_as_csv_action(_("Export selected registrations as CSV file"), fields=['id', 'name', 'email', 'website', 'twitter', 'volunteer', 'press'], header=True), reg_attended]
     
 
 admin.site.register(Event, EventAdmin)

@@ -57,7 +57,17 @@ class Event(models.Model):
             return False
                     
     registrationOpen = property(registrationOpen)
-                
+    
+    def peopleAttended(self):
+        '''
+            Returns the number of people checked in as attended
+        '''
+        attended = Registration.objects.filter(event=self.id, attended=True).count()
+        
+        return attended
+    
+    peopleAttended = property(peopleAttended)
+    
     def __unicode__(self):
         return self.name
     
@@ -78,6 +88,7 @@ class Registration(models.Model):
     volunteer = models.BooleanField(_("I want to help as a volunteer"), help_text=_("Check this field if you to want to help us at the event as a volunteer, we will contact you with more details"))
     website = models.URLField(_("Website"), max_length=200, blank=True, null=True)
     confirmed = models.BooleanField(_("Confirmed"))
+    attended = models.BooleanField(_("Attended to the event"))
     
     hash = models.CharField(max_length=200, editable=False)
     
