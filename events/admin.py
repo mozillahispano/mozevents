@@ -61,7 +61,7 @@ reg_attended.short_description = _("Set registration attended to true")
 class RegistrationAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'website', 'event', 'twitter', "volunteer", "press", 'confirmed', 'attended', 'creationDate')
     list_filter = ['event', 'confirmed', 'press', 'volunteer', 'attended', 'creationDate']
-    search_fields = ['name']
+    search_fields = ['name', 'email']
     actions = [export_as_csv_action(_("Export selected registrations as CSV file"), fields=['id', 'name', 'email', 'website', 'twitter', 'volunteer', 'press'], header=True), reg_attended]
     
 
