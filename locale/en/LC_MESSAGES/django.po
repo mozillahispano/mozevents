@@ -8,21 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-11 12:25+0000\n"
+"POT-Creation-Date: 2013-03-19 20:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: settings.py:89
-msgid "Spanish"
-msgstr ""
-
-#: settings.py:90
-msgid "English"
-msgstr ""
 
 #: django_countries/countries.py:5 django_countries/countries.py:256
 msgid "Afghanistan"
@@ -1072,7 +1065,11 @@ msgstr ""
 msgid "Export selected objects as CSV file"
 msgstr ""
 
-#: events/admin.py:61
+#: events/admin.py:59
+msgid "Set registration attended to true"
+msgstr ""
+
+#: events/admin.py:65
 msgid "Export selected registrations as CSV file"
 msgstr ""
 
@@ -1109,126 +1106,138 @@ msgstr ""
 msgid "The email doesn't match"
 msgstr ""
 
-#: events/models.py:20 events/models.py:55
+#: events/models.py:22 events/models.py:79
 msgid "Name"
 msgstr ""
 
-#: events/models.py:21
+#: events/models.py:23
 msgid "Slug"
 msgstr ""
 
-#: events/models.py:22 events/models.py:60
+#: events/models.py:24 events/models.py:84
 msgid "Creation date"
 msgstr ""
 
-#: events/models.py:23
+#: events/models.py:25
 msgid "Event date"
 msgstr ""
 
-#: events/models.py:24
+#: events/models.py:26
 msgid "Registration start date"
 msgstr ""
 
-#: events/models.py:25
+#: events/models.py:27
 msgid "Registration end date"
 msgstr ""
 
-#: events/models.py:26
+#: events/models.py:28
 msgid "Country"
 msgstr ""
 
-#: events/models.py:27
+#: events/models.py:29
 msgid "City"
 msgstr ""
 
-#: events/models.py:28 templates/events/detail.html:25
+#: events/models.py:30 templates/events/detail.html:25
 #: templates/events/registration-confirmed.html:24
 msgid "Address"
 msgstr ""
 
-#: events/models.py:28
+#: events/models.py:30
 msgid "The address should be searchable in Google Maps"
 msgstr ""
 
-#: events/models.py:29
+#: events/models.py:31 templates/events/detail.html:27
 msgid "Places"
 msgstr ""
 
-#: events/models.py:29
+#: events/models.py:31
 msgid "Number of places, leave blank for unlimited"
 msgstr ""
 
-#: events/models.py:30
+#: events/models.py:32
 msgid "Event description and program"
 msgstr ""
 
-#: events/models.py:31
+#: events/models.py:33
 msgid "Comments url"
 msgstr ""
 
-#: events/models.py:31
+#: events/models.py:33
 msgid "Link to comments at the forum"
 msgstr ""
 
-#: events/models.py:32
+#: events/models.py:34
 msgid "Active"
 msgstr ""
 
-#: events/models.py:33
+#: events/models.py:35
 msgid "Social tag"
 msgstr ""
 
-#: events/models.py:33
+#: events/models.py:35
 msgid ""
 "Tag for this event at Twitter and Flickr, e.g fx4madrid. Note: Do not add # "
 "to the tag, it will be added auto for Twitter."
 msgstr ""
 
-#: events/models.py:56
+#: events/models.py:80
 msgid "First name"
 msgstr ""
 
-#: events/models.py:57
+#: events/models.py:81
 msgid "Family name"
 msgstr ""
 
-#: events/models.py:61
+#: events/models.py:85
 msgid "Email"
 msgstr ""
 
-#: events/models.py:62
+#: events/models.py:86
 msgid "Twitter user"
 msgstr ""
 
-#: events/models.py:63
+#: events/models.py:87
 msgid "Press"
 msgstr ""
 
-#: events/models.py:63
+#: events/models.py:87
 msgid "Check this field if you are you from press or other media"
 msgstr ""
 
-#: events/models.py:64
+#: events/models.py:88
 msgid "I want to help as a volunteer"
 msgstr ""
 
-#: events/models.py:64
+#: events/models.py:88
 msgid ""
 "Check this field if you to want to help us at the event as a volunteer, we "
 "will contact you with more details"
 msgstr ""
 
-#: events/models.py:65
+#: events/models.py:89
 msgid "Website"
 msgstr ""
 
-#: events/models.py:66
+#: events/models.py:90
 msgid "Confirmed"
+msgstr ""
+
+#: events/models.py:91
+msgid "Attended to the event"
 msgstr ""
 
 #: events/utils.py:30
 #, python-format
 msgid "[%(name)s] Registration confirmation"
+msgstr ""
+
+#: mozevents/settings.py:38
+msgid "Spanish"
+msgstr ""
+
+#: mozevents/settings.py:39
+msgid "English"
 msgstr ""
 
 #: templates/404.html:5 templates/404.html.py:9
@@ -1299,11 +1308,11 @@ msgstr ""
 msgid "Comments and opinions about the event"
 msgstr ""
 
-#: templates/events/detail.html:32
+#: templates/events/detail.html:33
 msgid "Photos"
 msgstr ""
 
-#: templates/events/detail.html:38
+#: templates/events/detail.html:39
 msgid "Back to event listing"
 msgstr ""
 
@@ -1416,38 +1425,38 @@ msgstr ""
 msgid "by"
 msgstr ""
 
-#: templates/events/tweets.html:443
+#: templates/events/tweets.html:442
 msgid "??? ago"
 msgstr ""
 
-#: templates/events/tweets.html:445
+#: templates/events/tweets.html:444
 msgid "\" + Math.floor(diff) + \" seconds ago"
 msgstr ""
 
-#: templates/events/tweets.html:446
+#: templates/events/tweets.html:445
 msgid "1 minute ago"
 msgstr ""
 
-#: templates/events/tweets.html:447
+#: templates/events/tweets.html:446
 msgid "\" + Math.floor( diff / 60 ) + \" minutes ago"
 msgstr ""
 
-#: templates/events/tweets.html:448
+#: templates/events/tweets.html:447
 msgid "One hour ago"
 msgstr ""
 
-#: templates/events/tweets.html:449
+#: templates/events/tweets.html:448
 msgid "\" + Math.floor( diff / 3600 ) + \" hours ago"
 msgstr ""
 
-#: templates/events/tweets.html:450
+#: templates/events/tweets.html:449
 msgid "Yesterday"
 msgstr ""
 
-#: templates/events/tweets.html:451
+#: templates/events/tweets.html:450
 msgid "\" + day_diff + \" days ago"
 msgstr ""
 
-#: templates/events/tweets.html:452
+#: templates/events/tweets.html:451
 msgid "\" + Math.ceil( day_diff / 7 ) + \" weeks ago"
 msgstr ""
