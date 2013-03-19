@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 20:27+0100\n"
-"PO-Revision-Date: 2013-03-19 20:30+0100\n"
+"POT-Creation-Date: 2013-03-19 20:48+0100\n"
+"PO-Revision-Date: 2013-03-19 20:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1312,8 +1312,8 @@ msgid "Export selected objects as CSV file"
 msgstr "Exportar los objetos seleccionados como CSV"
 
 #: events/admin.py:59
-msgid "Set registration attended to true"
-msgstr "Marcar asistido a verdadero"
+msgid "This registration has attended to the event"
+msgstr "El registrado ha asistido al evento"
 
 #: events/admin.py:65
 msgid "Export selected registrations as CSV file"

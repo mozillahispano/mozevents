@@ -56,7 +56,7 @@ class EventAdmin(admin.ModelAdmin):
 	
 def reg_attended(modeladmin, request, queryset):
     queryset.update(attended=True)
-reg_attended.short_description = _("Set registration attended to true")
+reg_attended.short_description = _("This registration has attended to the event")
 
 class RegistrationAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'website', 'event', 'twitter', "volunteer", "press", 'confirmed', 'attended', 'creationDate')
