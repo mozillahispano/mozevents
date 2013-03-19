@@ -11,7 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 from os.path import dirname, join, realpath
 PROJECT_PATH = realpath(join(dirname(__file__), '..'))
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 SITE_ID = 1
