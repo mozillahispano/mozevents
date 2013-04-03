@@ -43,12 +43,23 @@ def export_as_csv_action(description=_("Export selected objects as CSV file"),
     export_as_csv.short_description = description
     return export_as_csv
 
+
+class RegistrationInline(admin.TabularInline):
+    model = Registration
+    list_display = ('name', 'email', 'website', 'event', 'twitter', 'volunteer', 'press', 'mailme', 'confirmed', 'attended', 'creationDate')
+    list_filter = ['confirmed', 'press', 'volunteer', 'attended', 'mailme', 'creationDate', 'event']
+    search_fields = ['name', 'email']
+    
 class EventAdmin(admin.ModelAdmin):
     # Autofill slugs
     prepopulated_fields = {"slug": ("name",)}
     list_display = ('name', 'eventDate', 'regStartDate', 'regEndDate', 'active')
     list_filter = ['active', 'regStartDate', 'country']
     search_fields = ['name']
+    
+    inlines = [
+	RegistrationInline,
+    ]
 
     # TinyMCE
     class Media:
@@ -59,8 +70,8 @@ def reg_attended(modeladmin, request, queryset):
 reg_attended.short_description = _("This registration has attended to the event")
 
 class RegistrationAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'website', 'event', 'twitter', "volunteer", "press", 'confirmed', 'attended', 'creationDate')
-    list_filter = ['event', 'confirmed', 'press', 'volunteer', 'attended', 'creationDate']
+    list_display = ('name', 'email', 'website', 'event', 'twitter', 'volunteer', 'press', 'mailme', 'confirmed', 'attended', 'creationDate')
+    list_filter = ['confirmed', 'press', 'volunteer', 'attended', 'mailme', 'creationDate', 'event']
     search_fields = ['name', 'email']
     actions = [export_as_csv_action(_("Export selected registrations as CSV file"), fields=['id', 'name', 'email', 'website', 'twitter', 'volunteer', 'press'], header=True), reg_attended]
     
