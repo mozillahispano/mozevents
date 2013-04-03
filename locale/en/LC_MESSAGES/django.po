@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 20:48+0100\n"
+"POT-Creation-Date: 2013-04-03 20:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1097,9 +1097,10 @@ msgid ""
 "All your data will be incorporated to a database and will be used to "
 "organice and control the event assistants and contact you with information "
 "relevant to this event. We will not share your information with anyone and "
-"we will delete all data once the event is over.<br />If you have any doubt "
-"or you want to correct or delete your information anytime, contacting us via "
-"email at eventos at mozilla-hispano.org"
+"we will delete all data once the event is over unless you specify the "
+"opposite on the form to get information about Mozilla.<br />If you have any "
+"doubt or you want to correct or delete your information anytime, contacting "
+"us via email at eventos at mozilla-hispano.org"
 msgstr ""
 
 #: events/forms.py:37
@@ -1220,10 +1221,20 @@ msgid "Website"
 msgstr ""
 
 #: events/models.py:90
-msgid "Confirmed"
+msgid "Keep my information after the event"
+msgstr ""
+
+#: events/models.py:90
+msgid ""
+"I allow Mozilla to contact me in the future with related information (about "
+"the community, next events...)"
 msgstr ""
 
 #: events/models.py:91
+msgid "Confirmed"
+msgstr ""
+
+#: events/models.py:92
 msgid "Attended to the event"
 msgstr ""
 
@@ -1409,7 +1420,7 @@ msgstr ""
 msgid "Fields marked with <span>*</span> are mandatory"
 msgstr ""
 
-#: templates/events/registration.html:93
+#: templates/events/registration.html:100
 msgid "Submit"
 msgstr ""
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 20:48+0100\n"
-"PO-Revision-Date: 2013-03-19 20:48+0100\n"
+"POT-Creation-Date: 2013-04-03 20:46+0200\n"
+"PO-Revision-Date: 2013-04-03 20:47+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1336,8 +1336,8 @@ msgid "I accept the privacy policy"
 msgstr "Acepto la política de privacidad"
 
 #: events/forms.py:24
-msgid "All your data will be incorporated to a database and will be used to organice and control the event assistants and contact you with information relevant to this event. We will not share your information with anyone and we will delete all data once the event is over.<br />If you have any doubt or you want to correct or delete your information anytime, contacting us via email at eventos at mozilla-hispano.org"
-msgstr "Todos tus datos serán incorporados a una base de datos y serán usados para organizar y controlar a los asistentes al evento y ponernos en contacto contigo con información relevante al evento. No compartiremos tu información con nadie y los datos serán borrados una vez que termine el evento.<br />Si tienes cualquier duda o quieres corregir o borrar tu información en cualquier momento, puedes contactar via correo electrónico con nosotros en eventos arroba mozilla-hispano.org"
+msgid "All your data will be incorporated to a database and will be used to organice and control the event assistants and contact you with information relevant to this event. We will not share your information with anyone and we will delete all data once the event is over unless you specify the opposite on the form to get information about Mozilla.<br />If you have any doubt or you want to correct or delete your information anytime, contacting us via email at eventos at mozilla-hispano.org"
+msgstr "Todos tus datos serán incorporados a una base de datos y serán usados para organizar y controlar a los asistentes al evento y ponernos en contacto contigo con información relevante al evento. No compartiremos tu información con nadie y los datos serán borrados una vez que termine el evento a menos que hayas indicado lo contrario en el formulario para recibir información de Mozilla.<br />Si tienes cualquier duda o quieres corregir o borrar tu información en cualquier momento, puedes contactar via correo electrónico con nosotros en eventos arroba mozilla-hispano.org"
 
 #: events/forms.py:37
 msgid "The email doesn't match"
@@ -1457,10 +1457,18 @@ msgid "Website"
 msgstr "Página web"
 
 #: events/models.py:90
+msgid "Keep my information after the event"
+msgstr "Guarda mi información tras el evento"
+
+#: events/models.py:90
+msgid "I allow Mozilla to contact me in the future with related information (about the community, next events...)"
+msgstr "Doy permiso a Mozilla para que me contacte en un futuro con información relacionada (sobre la comunidad, próximos eventos...)"
+
+#: events/models.py:91
 msgid "Confirmed"
 msgstr "Confirmado"
 
-#: events/models.py:91
+#: events/models.py:92
 msgid "Attended to the event"
 msgstr "Ha asistido al evento"
 
@@ -1649,7 +1657,7 @@ msgstr "¡Únete a la fiesta!"
 msgid "Fields marked with <span>*</span> are mandatory"
 msgstr "Los campos señalados con <span>*</span> son obligatorios"
 
-#: templates/events/registration.html:93
+#: templates/events/registration.html:100
 msgid "Submit"
 msgstr "Enviar"
 

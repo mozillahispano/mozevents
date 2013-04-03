@@ -77,6 +77,13 @@
 			{{ form.volunteer.errors }}
                         <p class="fieldInfo">{{ form.volunteer.help_text }}</p>
 	    </div>
+	    
+	    <div class="fieldWrapper">
+			<label {% if form.mailme.field.required %}class="required"{% endif %} for="id_mailme">{{ form.mailme.label }}</label>
+			{{ form.mailme }}
+			{{ form.mailme.errors }}
+                        <p class="fieldInfo">{{ form.mailme.help_text }}</p>
+	    </div>
 
 	    <div class="fieldWrapper">
 		{{ form.recaptcha }}

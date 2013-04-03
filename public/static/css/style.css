@@ -329,7 +329,7 @@ label {
     margin-bottom: 1em;
 }
 
-label[for=id_press], label[for=id_privacyPolicy], label[for=id_volunteer] {
+label[for=id_press], label[for=id_privacyPolicy], label[for=id_volunteer], label[for=id_mailme] {
     display: inline;
 }
 
