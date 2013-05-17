@@ -18,7 +18,7 @@
 
 <p id="formInfo">{% trans 'Fields marked with <span>*</span> are mandatory' %}.</p>
 
-{% if event.queueActive and event.places < 1 %}
+{% if event.queueActive and event.placesLeft < 1 %}
     <p><strong>{% trans 'Remember that this event is already full, your will be put in the queue and we will contact you in case a place is released' %}.</strong></p>
 {% endif %}
 
