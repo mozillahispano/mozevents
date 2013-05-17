@@ -100,9 +100,30 @@ def registration(request, id, slug):
             }
             
             return render_to_response('events/registration.html', data, context_instance=RequestContext(request))
-	    
-def confirmation(request, id, slug, hash):
+
+def decline(request, id, slug, hash):
+        '''
+		Handle links sent to email to decline registration
+		and set proper status for the record.
+	'''
+	event = get_object_or_404(Event, pk=id, active=True)
+        registration = get_object_or_404(Registration, hash=hash)
         
+	registration.status = "Declined"
+        registration.save()
+        
+        data = {
+            'registration': registration,
+	    'event': event
+        }
+
+        return render_to_response('events/registration-declined.html', data, context_instance=RequestContext(request))
+	
+def confirmation(request, id, slug, hash):
+        '''
+		Handle links sent to email to confirm registration
+		and set proper status for the record.
+	'''
 	event = get_object_or_404(Event, pk=id, active=True)
         registration = get_object_or_404(Registration, hash=hash)
         

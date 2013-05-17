@@ -16,15 +16,17 @@
 <p><strong>{% trans 'Thanks, your registration has been confirmed!' %}</strong></p>
 {% if event.queueActive and inQueue %}
     <p><strong>{% trans 'Remember that this event is already full, your will be put in the queue and we will contact you in case a place is released' %}.</strong></p>
-{% endif %}
-{% endif %}
-
+{% else %}
 <p>{% trans 'We are looking forward to meet you at' %} {{ event.name }}.</p>
 
 <p>{% trans 'Remember the details' %}:</p>
 
 <p><em>{% trans 'Date' %}:</em> <strong>{{ event.eventDate }}</strong></p>
 <p><em>{% trans 'Address' %}:</em> <a href="http://maps.google.es/maps?q={{ event.address }}">{{ event.address }}</a></p>
+{% endif %}
+{% endif %}
+
+<p><small>{% trans "If you can't go to the event, it would be nice if you cancel your registration using the link at the bottom of the first email we sent you" %}.</p></small>
 
 {% include "events/social-block.html" %}
 

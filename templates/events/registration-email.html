@@ -15,6 +15,10 @@
 {% trans 'Date:' %} {{ event.eventDate }}
 {% trans 'Address:' %} {{ event.address }}
 {% endif %}
+
+
 -- 
 {% trans 'http://www.mozilla-hispano.org' %}
 {% trans 'http://twitter.com/mozilla_hispano' %}
+{% trans "If you can't go to the event, it would be nice if you cancel your registration using the following link and let other person get your place" %}:
+{{ SITE_URL }}/{{ event.id }}/{{ event.slug }}/registration/decline/{{ reg.hash }}
