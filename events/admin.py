@@ -76,8 +76,8 @@ def reg_confirmed(modeladmin, request, queryset):
 reg_confirmed.short_description = _("Release a place for this registration")
 
 class RegistrationAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'website', 'event', 'twitter', 'volunteer', 'press', 'mailme', 'confirmed', 'attended', 'creationDate')
-    list_filter = ['confirmed', 'press', 'volunteer', 'attended', 'mailme', 'creationDate', 'event']
+    list_display = ('name', 'email', 'website', 'event', 'twitter', 'volunteer', 'press', 'status', 'mailme', 'creationDate')
+    list_filter = ['confirmed', 'press', 'volunteer', 'status', 'mailme', 'creationDate', 'event']
     search_fields = ['name', 'email']
     actions = [export_as_csv_action(_("Export selected registrations as CSV file"), fields=['id', 'name', 'email', 'website', 'twitter', 'volunteer', 'press'], header=True), reg_attended, reg_confirmed]
     
