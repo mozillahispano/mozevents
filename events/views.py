@@ -21,7 +21,7 @@ from django.utils.encoding import smart_str, smart_unicode
 # For random hashes
 import uuid
 
-from events.utils import newMail
+from events.utils import newMail, pendingMail
 
 def index(request):
         
@@ -100,24 +100,6 @@ def registration(request, id, slug):
             }
             
             return render_to_response('events/registration.html', data, context_instance=RequestContext(request))
-
-def decline(request, id, slug, hash):
-        '''
-		Handle links sent to email to decline registration
-		and set proper status for the record.
-	'''
-	event = get_object_or_404(Event, pk=id, active=True)
-        registration = get_object_or_404(Registration, hash=hash)
-        
-	registration.status = "Declined"
-        registration.save()
-        
-        data = {
-            'registration': registration,
-	    'event': event
-        }
-
-        return render_to_response('events/registration-declined.html', data, context_instance=RequestContext(request))
 	
 def confirmation(request, id, slug, hash):
         '''
@@ -134,23 +116,18 @@ def confirmation(request, id, slug, hash):
         # If already confirmed
         if registration.status == "Confirmed":
             alreadyConfirmed = True
-
-        if event.queueActive:
+	elif event.queueActive:
 		if event.placesLeft < 1:
-			registration.status = "Queued"
-			inQueue = True
+			# If it's a record that was on queue and got a place
+			if registration.status == "Pending":
+				registration.status = "Confirmed"
+			else:
+				registration.status = "Queued"
+				inQueue = True
 		else:
 			registration.status = "Confirmed"
         else:
             registration.status = "Confirmed"
-
-        #TODO: Remove it, legacy         
-	# If already confirmed
-	if registration.confirmed is True:
-		alreadyConfirmed = True
-	else:
-		registration.confirmed = True
-	#End legacy
         
         registration.save()
         
@@ -165,6 +142,35 @@ def confirmation(request, id, slug, hash):
             return render_to_response('events/registration-confirmed.html', data, context_instance=RequestContext(request))
         elif registration.status == "Queued":
             return render_to_response('events/registration-queued.html', data, context_instance=RequestContext(request))
+
+def decline(request, id, slug, hash):
+        '''
+		Handle links sent to email to decline registration
+		and set proper status for the record.
+	'''
+	event = get_object_or_404(Event, pk=id, active=True)
+        registration = get_object_or_404(Registration, hash=hash)
+        
+	registration.status = "Declined"
+        registration.save()
+	
+	# We release a place for the next one in queue and send him and email
+	# FIXME: I'm sure there is a better way to do this
+	if event.queueActive:
+		nextInQueueId = Registration.objects.filter(event=event.id, status="Queued").order_by('creationDate')[:1]
+		if nextInQueueId:
+			nextInQueue = Registration.objects.get(pk=nextInQueueId[0].id)
+			nextInQueue.status = "Pending"
+			nextInQueue.save()
+			#Email confirmation
+			pendingMail(event.id, nextInQueue.id)
+        
+        data = {
+            'registration': registration,
+	    'event': event
+        }
+
+        return render_to_response('events/registration-declined.html', data, context_instance=RequestContext(request))
 	
 def tweets(request, id, slug):
         

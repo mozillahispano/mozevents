@@ -123,6 +123,7 @@ class Registration(models.Model):
             * You confirm the email but place limit was reached: Queued
             * You get a spot from the queue and confirm: Confirmed
             * You get a spot from the queue and decline: Declined
+            * You were in queue and you get a place to confirm: Pending
             * You get a spot from the queue and don't answer in time: Expired
             * You were confirmed and check-in on the event: Attended
     '''
@@ -132,6 +133,7 @@ class Registration(models.Model):
         ('Declined', _("Declined")),
         ('Expired', _("Expired")),
         ('Queued', _("Queued")),
+        ('Pending', _("Pending")),
         ('Attended', _("Attended"))
     )
     

@@ -42,3 +42,27 @@ def newMail(event, registration):
 			[reg.email],
 			fail_silently = True
 	)
+
+def pendingMail(event, registration):
+	'''
+            Send an email noticing that you get a place from the queue
+	'''
+	event = Event.objects.get(pk=event)
+			
+	reg = Registration.objects.get(pk=registration)
+	
+	mailSubject = _("[%(name)s] You got a place!") % {'name': event.name}
+			
+	send_mail(
+		mailSubject,
+			get_template('events/registration-pendingEmail.html').render(
+				Context({
+					'event': event,
+					'reg': reg,
+					'SITE_URL': settings.SITE_URL,
+				})
+			),
+			settings.EMAIL_FROM,
+			[reg.email],
+			fail_silently = True
+	)
