@@ -48,7 +48,7 @@ class Event(models.Model):
         
         # If there are places left but any record is pending, no direct places should be offered
         # because they have to go to tue queue if available
-        if Registration.object.filter(event=self.id, status="Pending").count():
+        if Registration.objects.filter(event=self.id, status="Pending").count():
             places = 0
 
         return places
