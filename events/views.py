@@ -63,9 +63,11 @@ def registration(request, id, slug):
                 
                 registration = form.save(commit=False)
                 registration.event = event
-                registration.confirmed = False
+                registration.confirmed = False #TODO: Remove, legacy
+                registration.status = "Invited"
                 registration.hash = uuid.uuid1().hex
                 registration.name = smart_str(registration.firstName) + " " + smart_str(registration.familyName)
+                    
                 registration.save()
                 
                 #Email confirmation
@@ -103,14 +105,29 @@ def confirmation(request, id, slug, hash):
         
 	event = get_object_or_404(Event, pk=id, active=True)
         registration = get_object_or_404(Registration, hash=hash)
-	alreadyConfirmed = False
-	
+        
+        alreadyConfirmed = False
+        # If already confirmed
+        if registration.status == "Confirmed":
+            alreadyConfirmed = True
+
+        if event.queueActive:
+            if event.placesLeft < 1:
+                registration.status = "Queued"
+            else:
+                registration.status = "Confirmed"
+        else:
+            registration.status = "Confirmed"
+
+        #TODO: Remove it, legacy         
 	# If already confirmed
 	if registration.confirmed is True:
 		alreadyConfirmed = True
 	else:
 		registration.confirmed = True
-		registration.save()
+	#End legacy
+        
+        registration.save()
         
         data = {
             'registration': registration,
@@ -118,7 +135,10 @@ def confirmation(request, id, slug, hash):
 	    'alreadyConfirmed': alreadyConfirmed,
         }
 	
-	return render_to_response('events/registration-confirmed.html', data, context_instance=RequestContext(request))
+        if registration.status == "Confirmed":
+            return render_to_response('events/registration-confirmed.html', data, context_instance=RequestContext(request))
+        elif registration.status == "Queued":
+            return render_to_response('events/registration-queued.html', data, context_instance=RequestContext(request))
 	
 def tweets(request, id, slug):
         

@@ -33,6 +33,9 @@ class Event(models.Model):
     commentsUrl = models.CharField(_("Comments url"), max_length=200, help_text=_("Link to comments at the forum"), blank=True, null=True)
     active = models.BooleanField(_("Active"))
     twitterTag = models.CharField(_("Social tag"), max_length=50, help_text=_("Tag for this event at Twitter and Flickr, e.g fx4madrid. Note: Do not add # to the tag, it will be added auto for Twitter."))
+    queueActive = models.BooleanField(_("Queue active"))
+    queueSize = models.IntegerField(_("Queue max. size"), blank=True, null=True, help_text=_("Max. people on the queue, set 0 for no limit"))
+    queueWaitTime = models.IntegerField(_("Max. time to answer queue (hours)"), blank=True, null=True, help_text=_("Max. time a person has to answer when he get a place for the event (in hours)"))
     
     def placesLeft(self):
         '''
@@ -88,8 +91,29 @@ class Registration(models.Model):
     volunteer = models.BooleanField(_("I want to help as a volunteer"), help_text=_("Check this field if you to want to help us at the event as a volunteer, we will contact you with more details"))
     website = models.URLField(_("Website"), max_length=200, blank=True, null=True)
     mailme = models.BooleanField(_("Keep my information after the event"), help_text=_("I allow Mozilla to contact me in the future with related information (about the community, next events...)"))
-    confirmed = models.BooleanField(_("Confirmed"))
-    attended = models.BooleanField(_("Attended to the event"))
+    confirmed = models.BooleanField(_("Confirmed")) #TODO: Remove it, legacy
+    attended = models.BooleanField(_("Attended to the event")) #TODO: Remove it, legacy
+    
+    '''
+        Workflow:
+            * You fill the form: Invited
+            * You confirm the email: Confirmed
+            * You confirm the email but place limit was reached: Queued
+            * You get a spot from the queue and confirm: Confirmed
+            * You get a spot from the queue and decline: Declined
+            * You get a spot from the queue and don't answer in time: Expired
+            * You were confirmed and check-in on the event: Attended
+    '''
+    STATUS_CHOICES = (
+        ('Invited', _("Invited")),
+        ('Confirmed', _("Confirmed")),
+        ('Declined', _("Declined")),
+        ('Expired', _("Expired")),
+        ('Queued', _("Queued")),
+        ('Attended', _("Attended"))
+    )
+    
+    status = models.CharField(_("Status"), choices=STATUS_CHOICES, max_length=9)
     
     hash = models.CharField(max_length=200, editable=False)
     

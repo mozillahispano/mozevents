@@ -66,14 +66,20 @@ class EventAdmin(admin.ModelAdmin):
 	js = ('/static/js/tiny_mce/tiny_mce.js', '/static/js/textareas.js')
 	
 def reg_attended(modeladmin, request, queryset):
-    queryset.update(attended=True)
+    queryset.update(attended=True) #TODO: Remove it, legacy
+    queryset.update(status="Attended")
 reg_attended.short_description = _("This registration has attended to the event")
+
+def reg_confirmed(modeladmin, request, queryset):
+    queryset.update(status="Confirmed")
+    #TODO: Generate an email announcing that now he has a place in the event
+reg_confirmed.short_description = _("Release a place for this registration")
 
 class RegistrationAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'website', 'event', 'twitter', 'volunteer', 'press', 'mailme', 'confirmed', 'attended', 'creationDate')
     list_filter = ['confirmed', 'press', 'volunteer', 'attended', 'mailme', 'creationDate', 'event']
     search_fields = ['name', 'email']
-    actions = [export_as_csv_action(_("Export selected registrations as CSV file"), fields=['id', 'name', 'email', 'website', 'twitter', 'volunteer', 'press'], header=True), reg_attended]
+    actions = [export_as_csv_action(_("Export selected registrations as CSV file"), fields=['id', 'name', 'email', 'website', 'twitter', 'volunteer', 'press'], header=True), reg_attended, reg_confirmed]
     
 
 admin.site.register(Event, EventAdmin)
