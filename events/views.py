@@ -151,12 +151,14 @@ def decline(request, id, slug, hash):
 	event = get_object_or_404(Event, pk=id, active=True)
         registration = get_object_or_404(Registration, hash=hash)
         
+	prevStatus = registration.status
 	registration.status = "Declined"
         registration.save()
 	
 	# We release a place for the next one in queue and send him and email
+	# but only if his previous status was Confirmed or Pending
 	# FIXME: I'm sure there is a better way to do this
-	if event.queueActive:
+	if event.queueActive and prevStatus == "Confirmed" or prevStatus == "Pending":
 		nextInQueueId = Registration.objects.filter(event=event.id, status="Queued").order_by('creationDate')[:1]
 		if nextInQueueId:
 			nextInQueue = Registration.objects.get(pk=nextInQueueId[0].id)
