@@ -41,7 +41,7 @@ class Event(models.Model):
         '''
             Returns how many places an event has left
         '''
-        places = self.places - Registration.objects.filter(event=self.id).count()
+        places = self.places - Registration.objects.filter(event=self.id, status="Confirmed").count()
         # If we add people manually to the event, we dont want to show a negative count ;)
         if places < 0:
             places = 0
