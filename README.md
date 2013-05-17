@@ -32,8 +32,8 @@ Note: We asume you have running your virtual environment.
 Create and fill your local settings (database, email, url and recaptcha keys)
 
     $ cd mozevents
-    $ cp settings_local.py.example settings_local.py
-    $ vim settings_local.py
+    $ cp mozevents/settings_local.py.example mozevents/settings_local.py
+    $ vim mozevents/settings_local.py
 
 Fill the initial database
 
