@@ -45,6 +45,11 @@ class Event(models.Model):
         # If we add people manually to the event, we dont want to show a negative count ;)
         if places < 0:
             places = 0
+        
+        # If there are places left but any record is pending, no direct places should be offered
+        # because they have to go to tue queue if available
+        if Registration.object.filter(event=self.id, status="Pending").count():
+            places = 0
 
         return places
     
