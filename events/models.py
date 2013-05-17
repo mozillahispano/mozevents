@@ -56,7 +56,10 @@ class Event(models.Model):
         '''
         inQueue = Registration.objects.filter(event=self.id, status="Queued").count()
         
-        if self.queueSize - inQueue < 1:
+        # queueSize 0 is infinite
+        if self.queueSize == 0:
+            return False
+        elif self.queueSize - inQueue < 1:
             return True
         else:
             return False

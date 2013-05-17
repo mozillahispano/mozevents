@@ -62,6 +62,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -94,7 +95,8 @@ INSTALLED_APPS = (
     'south',
     'django_countries',
     'recaptcha',
-    'events'
+    'events',
+    'debug_toolbar'
 )
 
 CACHE_BACKEND = 'file://'+PROJECT_PATH+'/cache'

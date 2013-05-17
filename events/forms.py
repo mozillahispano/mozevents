@@ -15,7 +15,7 @@ class RegistrationForm(ModelForm):
 		model = Registration
 		# We should exclude event field, we'll fill it depending
                 # on the event
-		exclude = ('event',)
+		exclude = ('event', 'status')
 		
 	# Non DB fields
 	
