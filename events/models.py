@@ -113,7 +113,7 @@ class Registration(models.Model):
         ('Attended', _("Attended"))
     )
     
-    status = models.CharField(_("Status"), choices=STATUS_CHOICES, max_length=9)
+    status = models.CharField(_("Status"), choices=STATUS_CHOICES, max_length=9, default="Invited")
     
     hash = models.CharField(max_length=200, editable=False)
     
