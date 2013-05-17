@@ -14,7 +14,7 @@
 <p><strong>{% trans 'Ey, it seems that your registration was already confirmed!' %}</strong></p>
 {% else %}
 <p><strong>{% trans 'Thanks, your registration has been confirmed!' %}</strong></p>
-{% if event.queueActive and event.placesLeft < 1 %}
+{% if event.queueActive and inQueue %}
     <p><strong>{% trans 'Remember that this event is already full, your will be put in the queue and we will contact you in case a place is released' %}.</strong></p>
 {% endif %}
 {% endif %}

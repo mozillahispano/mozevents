@@ -107,15 +107,19 @@ def confirmation(request, id, slug, hash):
         registration = get_object_or_404(Registration, hash=hash)
         
         alreadyConfirmed = False
+	# placesLeft will change if confirmed, so we need a flag
+	inQueue = False
+	
         # If already confirmed
         if registration.status == "Confirmed":
             alreadyConfirmed = True
 
         if event.queueActive:
-            if event.placesLeft < 1:
-                registration.status = "Queued"
-            else:
-                registration.status = "Confirmed"
+		if event.placesLeft < 1:
+			registration.status = "Queued"
+			inQueue = True
+		else:
+			registration.status = "Confirmed"
         else:
             registration.status = "Confirmed"
 
@@ -133,6 +137,7 @@ def confirmation(request, id, slug, hash):
             'registration': registration,
 	    'event': event,
 	    'alreadyConfirmed': alreadyConfirmed,
+	    'inQueue': inQueue
         }
 	
         if registration.status == "Confirmed":
