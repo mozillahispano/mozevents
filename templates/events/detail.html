@@ -15,7 +15,7 @@
 </div>
 
 {% if event.registrationOpen %}
-    <p id="regButton"><span>{% trans "I am in!" %}</span><a href="/{{ event.id }}/{{ event.slug }}/registration/">{% trans 'Register here' %}</a></p>
+    <p id="regButton"><span>{% trans "I am in!" %}</span><a href="/{{ event.id }}/{{ event.slug }}/registration/">{% if event.queueActive and event.placesLeft < 1 and not event.queueFull %}{% trans 'Add me to queue' %}{% else %}{% trans 'Register here' %}{% endif %}</a></p>
 {% endif %}
 
 <h2>{{ event.name }}</h2>
