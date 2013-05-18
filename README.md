@@ -20,7 +20,7 @@ Clone this repo
 
     $ git clone git@github.com:mozillahispano/mozevents.git
 
-You'll need to install python packages used in this project. These are in ``requeriments.txt``.
+You'll need to install python packages used in this project. These are in ``requirements.txt``.
 The best way to install these packages is using ``pip``:
 
     $ pip install -r mozevents/requirements.txt
@@ -39,10 +39,10 @@ Fill the initial database
 
     $ python manage.py syndb
 
-Collect the static files
+Collect the static files (not required for local development with ``DEBUG=True``)
 
     $ python manage.py collectstatic
-    
+
 Run the testserver
 
     $ python manage.py runserver
