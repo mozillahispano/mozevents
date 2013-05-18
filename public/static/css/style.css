@@ -44,6 +44,40 @@ a:active {
 	color:#5278B6;
 }
 
+table {
+	border-collapse: collapse;
+    	border-spacing: 0;
+	background-color: #F6F6F1;
+	color: #333333;
+	width: 100%;
+	margin: 1em 0;
+}
+
+table th {
+	background-color: rgba(198, 198, 175, 0.5);
+	padding: 0.5em 3px;
+	text-align: left;
+}
+
+table th a {
+	color: #000000 !important;
+}
+
+table td {
+	padding: 0.5em 3px;
+	text-align: left;
+	vertical-align: top;
+	font-size: 0.91em;
+}
+
+table tr:nth-child(2n) {
+    background: none repeat scroll 0 0 rgba(198, 198, 175, 0.2);
+}
+
+table tr:hover {
+	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5);
+}
+
 #header {
     background-image: url("../img/header.png");
     height: 125px;

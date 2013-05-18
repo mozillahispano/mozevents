@@ -6,12 +6,54 @@
 
 {% block content %}
 
-{% if events %}
-<ul id="event-list">
-    {% for event in events %}
-    <li><a href="/{{ event.id }}/{{ event.slug }}/">{{ event.name }}</a> <small>({{ event.eventDate|date:"SHORT_DATE_FORMAT"}})</small></li>
-    {% endfor %}
-</ul>
+{% if nextEvents %}
+    <h2>{% trans 'Comming events' %}</h2>
+    <table>
+			<thead>
+				<tr>
+					<th>{% trans 'Name' %}</th>
+                                        <th>{% trans 'Date' %}</th>
+					<th>{% trans 'Country' %}</th>
+					<th>{% trans 'City' %}</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for event in nextEvents %}
+					<tr>
+						<td><a href="/{{ event.id }}/{{ event.slug }}/">{{ event.name }}</a></td>
+                                                <td>{{ event.eventDate|date:"SHORT_DATE_FORMAT" }}</td>
+						<td>{{ event.get_country_display }}</td>
+						<td>{{ event.city }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+    </table>
+{% endif %}
+
+{% if oldEvents %}
+    <h2>{% trans 'Past events' %}</h2>
+    <table>
+			<thead>
+				<tr>
+					<th>{% trans 'Name' %}</th>
+                                        <th>{% trans 'Date' %}</th>
+					<th>{% trans 'Country' %}</th>
+					<th>{% trans 'City' %}</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for event in oldEvents %}
+					<tr>
+						<td><a href="/{{ event.id }}/{{ event.slug }}/">{{ event.name }}</a></td>
+                                                <td>{{ event.eventDate|date:"SHORT_DATE_FORMAT" }}</td>
+						<td>{{ event.get_country_display }}</td>
+						<td>{{ event.city }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+    </table>
 {% endif %}
 
 {% endblock %}

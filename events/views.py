@@ -1,4 +1,5 @@
 # coding=utf-8
+import datetime
 import uuid
 
 from django.contrib.auth.decorators import login_required
@@ -16,10 +17,14 @@ from events.utils import newMail, pendingMail
 
 def index(request):
         
-        eventList = Event.objects.filter(active=True).order_by('-eventDate')
+	now = datetime.datetime.now()
+	
+        nextEvents = Event.objects.filter(active=True, eventDate__gte=now).order_by('-eventDate')
+	oldEvents = Event.objects.filter(active=True, eventDate__lt=now).order_by('-eventDate')
         
         data = {
-            'events': eventList,
+            'nextEvents': nextEvents,
+	    'oldEvents': oldEvents
         }
 	
 	return render_to_response('index.html', data, context_instance=RequestContext(request))

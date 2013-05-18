@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-18 23:14+0200\n"
-"PO-Revision-Date: 2013-05-18 23:16+0100\n"
+"POT-Creation-Date: 2013-05-19 00:24+0200\n"
+"PO-Revision-Date: 2013-05-19 00:25+0100\n"
 "Last-Translator: Nukeador <nukeador at gmail dot com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1134,7 +1134,8 @@ msgstr ""
 msgid "The email doesn't match"
 msgstr "El correo no coincide"
 
-#: events/models.py:16 events/models.py:103
+#: events/models.py:16 events/models.py:103 templates/index.html:14
+#: templates/index.html.py:39
 msgid "Name"
 msgstr "Nombre"
 
@@ -1158,11 +1159,11 @@ msgstr "Fecha de inicio de la inscripción"
 msgid "Registration end date"
 msgstr "Fecha de fin de la inscripción"
 
-#: events/models.py:22
+#: events/models.py:22 templates/index.html:16 templates/index.html.py:41
 msgid "Country"
 msgstr "País"
 
-#: events/models.py:23
+#: events/models.py:23 templates/index.html:17 templates/index.html.py:42
 msgid "City"
 msgstr "Ciudad"
 
@@ -1365,7 +1366,6 @@ msgid "Mozilla Events"
 msgstr "Eventos Mozilla"
 
 #: templates/base.html:6 templates/index.html:5 templates/events/tweets.html:6
-#: templates/stats/index.html:15
 msgid "Events"
 msgstr "Eventos"
 
@@ -1385,6 +1385,19 @@ msgstr "Visita la web de la comunidad"
 #: templates/base.html:40
 msgid "mozilla hispano"
 msgstr "mozilla hispano"
+
+#: templates/index.html:10
+msgid "Comming events"
+msgstr "Próximos eventos"
+
+#: templates/index.html:15 templates/index.html.py:40
+#: templates/events/registration-confirmed.html:24
+msgid "Date"
+msgstr "Fecha"
+
+#: templates/index.html:35
+msgid "Past events"
+msgstr "Eventos pasados"
 
 #: templates/events/detail.html:12 templates/events/social-block.html:5
 msgid "I will be at"
@@ -1471,10 +1484,6 @@ msgstr "Esperamos verte en"
 #: templates/events/registration-confirmed.html:22
 msgid "Remember the details"
 msgstr "Recuerda los detalles"
-
-#: templates/events/registration-confirmed.html:24
-msgid "Date"
-msgstr "Fecha"
 
 #: templates/events/registration-confirmed.html:29
 #: templates/events/registration-queued.html:17

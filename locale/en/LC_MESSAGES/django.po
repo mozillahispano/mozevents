@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-18 23:14+0200\n"
+"POT-Creation-Date: 2013-05-19 00:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1123,7 +1123,8 @@ msgstr ""
 msgid "The email doesn't match"
 msgstr ""
 
-#: events/models.py:16 events/models.py:103
+#: events/models.py:16 events/models.py:103 templates/index.html:14
+#: templates/index.html.py:39
 msgid "Name"
 msgstr ""
 
@@ -1147,11 +1148,11 @@ msgstr ""
 msgid "Registration end date"
 msgstr ""
 
-#: events/models.py:22
+#: events/models.py:22 templates/index.html:16 templates/index.html.py:41
 msgid "Country"
 msgstr ""
 
-#: events/models.py:23
+#: events/models.py:23 templates/index.html:17 templates/index.html.py:42
 msgid "City"
 msgstr ""
 
@@ -1342,7 +1343,6 @@ msgid "Mozilla Events"
 msgstr ""
 
 #: templates/base.html:6 templates/index.html:5 templates/events/tweets.html:6
-#: templates/stats/index.html:15
 msgid "Events"
 msgstr ""
 
@@ -1361,6 +1361,19 @@ msgstr ""
 
 #: templates/base.html:40
 msgid "mozilla hispano"
+msgstr ""
+
+#: templates/index.html:10
+msgid "Comming events"
+msgstr ""
+
+#: templates/index.html:15 templates/index.html.py:40
+#: templates/events/registration-confirmed.html:24
+msgid "Date"
+msgstr ""
+
+#: templates/index.html:35
+msgid "Past events"
 msgstr ""
 
 #: templates/events/detail.html:12 templates/events/social-block.html:5
@@ -1444,10 +1457,6 @@ msgstr ""
 
 #: templates/events/registration-confirmed.html:22
 msgid "Remember the details"
-msgstr ""
-
-#: templates/events/registration-confirmed.html:24
-msgid "Date"
 msgstr ""
 
 #: templates/events/registration-confirmed.html:29
