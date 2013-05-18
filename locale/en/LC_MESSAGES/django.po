@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-18 14:04+0200\n"
+"POT-Creation-Date: 2013-05-18 15:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1081,7 +1081,11 @@ msgstr ""
 msgid "Set as pending and send an email to confirm"
 msgstr ""
 
-#: events/admin.py:90
+#: events/admin.py:87
+msgid "[Privacy] Delete personal information"
+msgstr ""
+
+#: events/admin.py:93
 msgid "Export selected registrations as CSV file"
 msgstr ""
 
@@ -1263,43 +1267,35 @@ msgid ""
 "the community, next events...)"
 msgstr ""
 
-#: events/models.py:121 events/models.py:137
-msgid "Confirmed"
-msgstr ""
-
-#: events/models.py:121 events/models.py:122
-msgid "Obsolete"
-msgstr ""
-
-#: events/models.py:122
-msgid "Attended to the event"
-msgstr ""
-
-#: events/models.py:136
+#: events/models.py:134
 msgid "Invited"
 msgstr ""
 
-#: events/models.py:138
+#: events/models.py:135
+msgid "Confirmed"
+msgstr ""
+
+#: events/models.py:136
 msgid "Declined"
 msgstr ""
 
-#: events/models.py:139
+#: events/models.py:137
 msgid "Expired"
 msgstr ""
 
-#: events/models.py:140
+#: events/models.py:138
 msgid "Queued"
 msgstr ""
 
-#: events/models.py:141
+#: events/models.py:139
 msgid "Pending"
 msgstr ""
 
-#: events/models.py:142
+#: events/models.py:140
 msgid "Attended"
 msgstr ""
 
-#: events/models.py:145
+#: events/models.py:143
 msgid "Status"
 msgstr ""
 

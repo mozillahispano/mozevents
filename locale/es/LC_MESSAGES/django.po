@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-18 14:04+0200\n"
-"PO-Revision-Date: 2013-05-18 14:07+0100\n"
+"POT-Creation-Date: 2013-05-18 15:24+0200\n"
+"PO-Revision-Date: 2013-05-18 15:24+0100\n"
 "Last-Translator: Nukeador <nukeador at gmail dot com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1081,7 +1081,11 @@ msgstr "Declinar manualmente este registro"
 msgid "Set as pending and send an email to confirm"
 msgstr "Fijar como pendiente y enviar un correo para confirmar"
 
-#: events/admin.py:90
+#: events/admin.py:87
+msgid "[Privacy] Delete personal information"
+msgstr "[Privacidad] Borrar información personal"
+
+#: events/admin.py:93
 msgid "Export selected registrations as CSV file"
 msgstr "Exportar los registros seleccionados como CSV"
 
@@ -1282,43 +1286,35 @@ msgstr ""
 "Doy permiso a Mozilla para que me contacte en un futuro con información "
 "relacionada (sobre la comunidad, próximos eventos...)"
 
-#: events/models.py:121 events/models.py:137
-msgid "Confirmed"
-msgstr "Confirmado"
-
-#: events/models.py:121 events/models.py:122
-msgid "Obsolete"
-msgstr "Obsoleto"
-
-#: events/models.py:122
-msgid "Attended to the event"
-msgstr "Ha asistido al evento"
-
-#: events/models.py:136
+#: events/models.py:134
 msgid "Invited"
 msgstr "Invitado"
 
-#: events/models.py:138
+#: events/models.py:135
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#: events/models.py:136
 msgid "Declined"
 msgstr "Rechazado"
 
-#: events/models.py:139
+#: events/models.py:137
 msgid "Expired"
 msgstr "Expirado"
 
-#: events/models.py:140
+#: events/models.py:138
 msgid "Queued"
 msgstr "Encolado"
 
-#: events/models.py:141
+#: events/models.py:139
 msgid "Pending"
 msgstr "Pendiente"
 
-#: events/models.py:142
+#: events/models.py:140
 msgid "Attended"
 msgstr "Asistido"
 
-#: events/models.py:145
+#: events/models.py:143
 msgid "Status"
 msgstr "Estado"
 
@@ -1644,6 +1640,12 @@ msgstr "Hace \" + day_diff + \" días"
 #: templates/events/tweets.html:451
 msgid "\" + Math.ceil( day_diff / 7 ) + \" weeks ago"
 msgstr "Hace \" + Math.ceil( day_diff / 7 ) + \" semanas"
+
+#~ msgid "Obsolete"
+#~ msgstr "Obsoleto"
+
+#~ msgid "Attended to the event"
+#~ msgstr "Ha asistido al evento"
 
 #~ msgid "Twitter tag"
 #~ msgstr "Etiqueta en Twitter"
