@@ -37,7 +37,7 @@ Create and fill your local settings (database, email, url and recaptcha keys)
 
 Fill the initial database
 
-    $ python manage.py syndb
+    $ python manage.py syncdb
 
 Collect the static files
 
