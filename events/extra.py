@@ -1,6 +1,5 @@
 # coding=utf-8
 from django import forms
-from django.forms import forms
 from django.conf import settings
 from django.utils.encoding import smart_unicode
 from django.utils.translation import ugettext_lazy as _

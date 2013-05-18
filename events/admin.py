@@ -83,7 +83,7 @@ def reg_pending(modeladmin, request, queryset):
 reg_pending.short_description = _("Set as pending and send an email to confirm")
 
 def reg_privacy_clean(modeladmin, request, queryset):
-    queryset.update(name="Deleted", firstName="Name", familyName="Deleted", email="Deleted")
+    queryset.update(name="Deleted", firstName="Name", familyName="Deleted", email="deleted@deleted.com")
 reg_privacy_clean.short_description = _("[Privacy] Delete personal information")
 
 class RegistrationAdmin(admin.ModelAdmin):
