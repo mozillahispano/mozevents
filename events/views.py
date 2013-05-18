@@ -1,26 +1,16 @@
 # coding=utf-8
-from django.shortcuts import render_to_response, get_object_or_404
-from django.http import Http404
-from django.views.generic import TemplateView
-from django.template import RequestContext
+import uuid
 
-# Templates in Django need a "Context" to parse with, so we'll borrow this.
-# "Context"'s are really nothing more than a generic dict wrapped up in a
-# neat little function call.
+from django.http import Http404
 from django.template import Context
+from django.template import RequestContext
+from django.views.generic import TemplateView
+from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import smart_str, smart_unicode
+from django.shortcuts import render_to_response, get_object_or_404
 
 from events.models import Event, Registration
 from events.forms import RegistrationForm
-
-# l10n
-from django.utils.translation import ugettext_lazy as _
-
-# Magic funtions to handle some unicode strings
-from django.utils.encoding import smart_str, smart_unicode
-
-# For random hashes
-import uuid
-
 from events.utils import newMail, pendingMail
 
 def index(request):
@@ -154,7 +144,7 @@ def decline(request, id, slug, hash):
 	registration.status = "Declined"
         registration.save()
 	
-	# We release a place for the next one in queue and send him and email
+	#We release a place for the next one in queue and send him and email
 	# but only if his previous status was Confirmed or Pending
 	# FIXME: I'm sure there is a better way to do this
 	if event.queueActive and prevStatus == "Confirmed" or prevStatus == "Pending":
@@ -175,7 +165,7 @@ def decline(request, id, slug, hash):
 	
 def tweets(request, id, slug):
         
-        event = get_object_or_404(Event, id=id, active=True)
+	event = get_object_or_404(Event, id=id, active=True)
         
         data = {
             'event': event,

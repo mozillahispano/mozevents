@@ -1,24 +1,20 @@
 # coding=utf-8
-# This file contains some extra functions
 import datetime
 import string
 import hashlib
 
-from django.core.mail import send_mail
-# Emails using templates
-from django.template.loader import get_template
-from django.template import Context
-
 from django.conf import settings
+from django.template import Context
+from django.core.mail import send_mail
+from django.template.loader import get_template
+from django.utils.translation import ugettext_lazy as _
 
 from events.models import Event, Registration
-
-# l10n
-from django.utils.translation import ugettext_lazy as _
 
 # Special functions for unicode strings
 from django.utils.encoding import smart_str, smart_unicode
 
+# This file contains some extra functions
 def newMail(event, registration):
 	'''
             Send an email using a template

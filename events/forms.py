@@ -1,14 +1,11 @@
 # coding=utf-8
-from django.forms import ModelForm
-from events.models import Event, Registration
 from django import forms
-# l10n
+from django.forms import ModelForm
 from django.utils.translation import ugettext_lazy as _
-# Recaptcha custom field
-from events.extra import ReCaptchaField
-
-# Special functions for unicode strings
 from django.utils.encoding import smart_str, smart_unicode
+
+from events.models import Event, Registration
+from events.extra import ReCaptchaField
 
 class RegistrationForm(ModelForm):
 	class Meta:
