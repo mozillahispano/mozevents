@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-18 00:39+0200\n"
+"POT-Creation-Date: 2013-05-18 14:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1061,19 +1061,27 @@ msgstr ""
 msgid "United Republic of Tanzania"
 msgstr ""
 
-#: events/admin.py:13
+#: events/admin.py:11
 msgid "Export selected objects as CSV file"
 msgstr ""
 
-#: events/admin.py:71
+#: events/admin.py:68
 msgid "This registration has attended to the event"
 msgstr ""
 
-#: events/admin.py:76
-msgid "Release a place for this registration"
+#: events/admin.py:72
+msgid "Confirm manually place for this registration"
 msgstr ""
 
-#: events/admin.py:82
+#: events/admin.py:76
+msgid "Decline manually this registration"
+msgstr ""
+
+#: events/admin.py:83
+msgid "Set as pending and send an email to confirm"
+msgstr ""
+
+#: events/admin.py:90
 msgid "Export selected registrations as CSV file"
 msgstr ""
 
@@ -1111,7 +1119,7 @@ msgstr ""
 msgid "The email doesn't match"
 msgstr ""
 
-#: events/models.py:22 events/models.py:106
+#: events/models.py:22 events/models.py:109
 msgid "Name"
 msgstr ""
 
@@ -1119,7 +1127,7 @@ msgstr ""
 msgid "Slug"
 msgstr ""
 
-#: events/models.py:24 events/models.py:111
+#: events/models.py:24 events/models.py:114
 msgid "Creation date"
 msgstr ""
 
@@ -1207,91 +1215,91 @@ msgid ""
 "Max. time a person has to answer when he get a place for the event (in hours)"
 msgstr ""
 
-#: events/models.py:107
+#: events/models.py:110
 msgid "First name"
 msgstr ""
 
-#: events/models.py:108
+#: events/models.py:111
 msgid "Family name"
 msgstr ""
 
-#: events/models.py:112
+#: events/models.py:115
 msgid "Email"
 msgstr ""
 
-#: events/models.py:113
+#: events/models.py:116
 msgid "Twitter user"
 msgstr ""
 
-#: events/models.py:114
+#: events/models.py:117
 msgid "Press"
 msgstr ""
 
-#: events/models.py:114
+#: events/models.py:117
 msgid "Check this field if you are you from press or other media"
 msgstr ""
 
-#: events/models.py:115
+#: events/models.py:118
 msgid "I want to help as a volunteer"
 msgstr ""
 
-#: events/models.py:115
+#: events/models.py:118
 msgid ""
 "Check this field if you to want to help us at the event as a volunteer, we "
 "will contact you with more details"
 msgstr ""
 
-#: events/models.py:116
+#: events/models.py:119
 msgid "Website"
 msgstr ""
 
-#: events/models.py:117
+#: events/models.py:120
 msgid "Keep my information after the event"
 msgstr ""
 
-#: events/models.py:117
+#: events/models.py:120
 msgid ""
 "I allow Mozilla to contact me in the future with related information (about "
 "the community, next events...)"
 msgstr ""
 
-#: events/models.py:118 events/models.py:134
+#: events/models.py:121 events/models.py:137
 msgid "Confirmed"
 msgstr ""
 
-#: events/models.py:118 events/models.py:119
+#: events/models.py:121 events/models.py:122
 msgid "Obsolete"
 msgstr ""
 
-#: events/models.py:119
+#: events/models.py:122
 msgid "Attended to the event"
 msgstr ""
 
-#: events/models.py:133
+#: events/models.py:136
 msgid "Invited"
 msgstr ""
 
-#: events/models.py:135
+#: events/models.py:138
 msgid "Declined"
 msgstr ""
 
-#: events/models.py:136
+#: events/models.py:139
 msgid "Expired"
 msgstr ""
 
-#: events/models.py:137
+#: events/models.py:140
 msgid "Queued"
 msgstr ""
 
-#: events/models.py:138
+#: events/models.py:141
 msgid "Pending"
 msgstr ""
 
-#: events/models.py:139
+#: events/models.py:142
 msgid "Attended"
 msgstr ""
 
-#: events/models.py:142
+#: events/models.py:145
 msgid "Status"
 msgstr ""
 

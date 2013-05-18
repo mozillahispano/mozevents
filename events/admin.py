@@ -1,14 +1,12 @@
 # coding=utf-8
+import csv
+
 from django.contrib import admin
-
-from events.models import Event, Registration
-
-# l10n
+from django.http import HttpResponse
 from django.utils.translation import ugettext_lazy as _
 
-# For cvs exportation
-import csv
-from django.http import HttpResponse
+from events.models import Event, Registration
+from events.utils import newMail, pendingMail
 
 def export_as_csv_action(description=_("Export selected objects as CSV file"),
                          fields=None, exclude=None, header=True):
@@ -66,20 +64,30 @@ class EventAdmin(admin.ModelAdmin):
 	js = ('/static/js/tiny_mce/tiny_mce.js', '/static/js/textareas.js')
 	
 def reg_attended(modeladmin, request, queryset):
-    queryset.update(attended=True) #TODO: Remove it, legacy
     queryset.update(status="Attended")
 reg_attended.short_description = _("This registration has attended to the event")
 
 def reg_confirmed(modeladmin, request, queryset):
     queryset.update(status="Confirmed")
-    #TODO: Generate an email announcing that now he has a place in the event
-reg_confirmed.short_description = _("Release a place for this registration")
+reg_confirmed.short_description = _("Confirm manually place for this registration")
+
+def reg_declined(modeladmin, request, queryset):
+    queryset.update(status="Declined")
+reg_declined.short_description = _("Decline manually this registration")
+
+def reg_pending(modeladmin, request, queryset):
+    queryset.update(status="Pending")
+    
+    for obj in queryset:
+	pendingMail(obj.event.id, obj.id)
+reg_pending.short_description = _("Set as pending and send an email to confirm")
+
 
 class RegistrationAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'website', 'event', 'twitter', 'volunteer', 'press', 'status', 'mailme', 'creationDate')
     list_filter = ['confirmed', 'press', 'volunteer', 'status', 'mailme', 'creationDate', 'event']
     search_fields = ['name', 'email']
-    actions = [export_as_csv_action(_("Export selected registrations as CSV file"), fields=['id', 'name', 'email', 'website', 'twitter', 'volunteer', 'press'], header=True), reg_attended, reg_confirmed]
+    actions = [export_as_csv_action(_("Export selected registrations as CSV file"), fields=['id', 'name', 'email', 'website', 'twitter', 'volunteer', 'press'], header=True), reg_attended, reg_confirmed, reg_declined, reg_pending]
     
 
 admin.site.register(Event, EventAdmin)

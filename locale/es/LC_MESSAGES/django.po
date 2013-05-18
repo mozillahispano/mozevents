@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-18 00:39+0200\n"
-"PO-Revision-Date: 2013-05-18 00:40+0100\n"
+"POT-Creation-Date: 2013-05-18 14:04+0200\n"
+"PO-Revision-Date: 2013-05-18 14:07+0100\n"
 "Last-Translator: Nukeador <nukeador at gmail dot com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1061,19 +1061,27 @@ msgstr ""
 msgid "United Republic of Tanzania"
 msgstr ""
 
-#: events/admin.py:13
+#: events/admin.py:11
 msgid "Export selected objects as CSV file"
 msgstr "Exportar los objetos seleccionados como CSV"
 
-#: events/admin.py:71
+#: events/admin.py:68
 msgid "This registration has attended to the event"
 msgstr "El registrado ha asistido al evento"
 
-#: events/admin.py:76
-msgid "Release a place for this registration"
-msgstr "Liberar una plaza para este registro"
+#: events/admin.py:72
+msgid "Confirm manually place for this registration"
+msgstr "Confirmar manualmente una plaza para este registro"
 
-#: events/admin.py:82
+#: events/admin.py:76
+msgid "Decline manually this registration"
+msgstr "Declinar manualmente este registro"
+
+#: events/admin.py:83
+msgid "Set as pending and send an email to confirm"
+msgstr "Fijar como pendiente y enviar un correo para confirmar"
+
+#: events/admin.py:90
 msgid "Export selected registrations as CSV file"
 msgstr "Exportar los registros seleccionados como CSV"
 
@@ -1122,7 +1130,7 @@ msgstr ""
 msgid "The email doesn't match"
 msgstr "El correo no coincide"
 
-#: events/models.py:22 events/models.py:106
+#: events/models.py:22 events/models.py:109
 msgid "Name"
 msgstr "Nombre"
 
@@ -1130,7 +1138,7 @@ msgstr "Nombre"
 msgid "Slug"
 msgstr "Enlace permanente"
 
-#: events/models.py:24 events/models.py:111
+#: events/models.py:24 events/models.py:114
 msgid "Creation date"
 msgstr "Fecha de creación"
 
@@ -1222,35 +1230,35 @@ msgstr ""
 "Tiempo máximo que una persona tiene para responder una vez que tiene plaza "
 "para el evento (en horas)"
 
-#: events/models.py:107
+#: events/models.py:110
 msgid "First name"
 msgstr "Nombre"
 
-#: events/models.py:108
+#: events/models.py:111
 msgid "Family name"
 msgstr "Apellido"
 
-#: events/models.py:112
+#: events/models.py:115
 msgid "Email"
 msgstr "Correo"
 
-#: events/models.py:113
+#: events/models.py:116
 msgid "Twitter user"
 msgstr "Usuario de Twitter"
 
-#: events/models.py:114
+#: events/models.py:117
 msgid "Press"
 msgstr "Prensa"
 
-#: events/models.py:114
+#: events/models.py:117
 msgid "Check this field if you are you from press or other media"
 msgstr "Marca esta casilla si eres parte de la prensa u otros medios"
 
-#: events/models.py:115
+#: events/models.py:118
 msgid "I want to help as a volunteer"
 msgstr "Quiero ayudar como voluntario"
 
-#: events/models.py:115
+#: events/models.py:118
 msgid ""
 "Check this field if you to want to help us at the event as a volunteer, we "
 "will contact you with more details"
@@ -1258,15 +1266,15 @@ msgstr ""
 "Marca este campo si quieres ayudarnos en el evento como voluntario, "
 "contactaremos contigo con los detalles"
 
-#: events/models.py:116
+#: events/models.py:119
 msgid "Website"
 msgstr "Página web"
 
-#: events/models.py:117
+#: events/models.py:120
 msgid "Keep my information after the event"
 msgstr "Guarda mi información tras el evento"
 
-#: events/models.py:117
+#: events/models.py:120
 msgid ""
 "I allow Mozilla to contact me in the future with related information (about "
 "the community, next events...)"
@@ -1274,43 +1282,43 @@ msgstr ""
 "Doy permiso a Mozilla para que me contacte en un futuro con información "
 "relacionada (sobre la comunidad, próximos eventos...)"
 
-#: events/models.py:118 events/models.py:134
+#: events/models.py:121 events/models.py:137
 msgid "Confirmed"
 msgstr "Confirmado"
 
-#: events/models.py:118 events/models.py:119
+#: events/models.py:121 events/models.py:122
 msgid "Obsolete"
 msgstr "Obsoleto"
 
-#: events/models.py:119
+#: events/models.py:122
 msgid "Attended to the event"
 msgstr "Ha asistido al evento"
 
-#: events/models.py:133
+#: events/models.py:136
 msgid "Invited"
 msgstr "Invitado"
 
-#: events/models.py:135
+#: events/models.py:138
 msgid "Declined"
 msgstr "Rechazado"
 
-#: events/models.py:136
+#: events/models.py:139
 msgid "Expired"
 msgstr "Expirado"
 
-#: events/models.py:137
+#: events/models.py:140
 msgid "Queued"
 msgstr "Encolado"
 
-#: events/models.py:138
+#: events/models.py:141
 msgid "Pending"
 msgstr "Pendiente"
 
-#: events/models.py:139
+#: events/models.py:142
 msgid "Attended"
 msgstr "Asistido"
 
-#: events/models.py:142
+#: events/models.py:145
 msgid "Status"
 msgstr "Estado"
 
