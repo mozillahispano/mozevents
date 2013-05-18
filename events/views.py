@@ -184,7 +184,7 @@ def stats(request):
 	registered = registrations.count()
 	regAvg = registered / eventNo
 	attended = registrations.filter(status="Attended").count()
-	gSuccessRatio = round(float(registered) / float(attended), 2)
+	gSuccessRatio = round(float(attended) / float(registered)*100, 2)
         
         data = {
             'events': eventList,
