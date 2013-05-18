@@ -82,12 +82,15 @@ def reg_pending(modeladmin, request, queryset):
 	pendingMail(obj.event.id, obj.id)
 reg_pending.short_description = _("Set as pending and send an email to confirm")
 
+def reg_privacy_clean(modeladmin, request, queryset):
+    queryset.update(name="Deleted", firstName="Name", familyName="Deleted", email="Deleted")
+reg_privacy_clean.short_description = _("[Privacy] Delete personal information")
 
 class RegistrationAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'website', 'event', 'twitter', 'volunteer', 'press', 'status', 'mailme', 'creationDate')
-    list_filter = ['confirmed', 'press', 'volunteer', 'status', 'mailme', 'creationDate', 'event']
+    list_display = ('name', 'email', 'website', 'event', 'twitter', 'status', 'volunteer', 'press', 'mailme', 'creationDate')
+    list_filter = ['status', 'press', 'volunteer', 'mailme', 'creationDate', 'event']
     search_fields = ['name', 'email']
-    actions = [export_as_csv_action(_("Export selected registrations as CSV file"), fields=['id', 'name', 'email', 'website', 'twitter', 'volunteer', 'press'], header=True), reg_attended, reg_confirmed, reg_declined, reg_pending]
+    actions = [export_as_csv_action(_("Export selected registrations as CSV file"), fields=['id', 'name', 'email', 'website', 'twitter', 'volunteer', 'press'], header=True), reg_attended, reg_privacy_clean, reg_confirmed, reg_declined, reg_pending]
     
 
 admin.site.register(Event, EventAdmin)

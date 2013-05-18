@@ -118,8 +118,6 @@ class Registration(models.Model):
     volunteer = models.BooleanField(_("I want to help as a volunteer"), help_text=_("Check this field if you to want to help us at the event as a volunteer, we will contact you with more details"))
     website = models.URLField(_("Website"), max_length=200, blank=True, null=True)
     mailme = models.BooleanField(_("Keep my information after the event"), help_text=_("I allow Mozilla to contact me in the future with related information (about the community, next events...)"))
-    confirmed = models.BooleanField(_("Confirmed"), help_text=_("Obsolete"), default=False) #TODO: Remove it, legacy
-    attended = models.BooleanField(_("Attended to the event"), help_text=_("Obsolete"), default=False) #TODO: Remove it, legacy
     
     '''
         Workflow:

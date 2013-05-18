@@ -63,7 +63,6 @@ def registration(request, id, slug):
                 
                 registration = form.save(commit=False)
                 registration.event = event
-                registration.confirmed = False #TODO: Remove, legacy
                 registration.status = "Invited"
                 registration.hash = uuid.uuid1().hex
                 registration.name = smart_str(registration.firstName) + " " + smart_str(registration.familyName)
