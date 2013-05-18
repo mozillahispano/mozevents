@@ -1,8 +1,0 @@
-body {
-	text-align: center;
-}
-.clearfix {display:inline-block;} /*ie7 b*/
-#canvas {
-	width: 1024px;
-	text-align: left;
-}
