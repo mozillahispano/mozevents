@@ -5,13 +5,14 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 admin.autodiscover()
 
-# Importamos los los URLconf de nuestas apps
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^$', 'events.views.index'),
     (r'^i18n/', include('django.conf.urls.i18n')),
+    (r'^stats/', 'events.views.stats'),
 )
 
+# Our apps URLconfs
 urlpatterns += patterns('events.views',
     (r'^(?P<id>\d+)/(?P<slug>[-\w]+)/registration/confirm/(?P<hash>\w+)$', 'confirmation'),
     (r'^(?P<id>\d+)/(?P<slug>[-\w]+)/registration/decline/(?P<hash>\w+)$', 'decline'),

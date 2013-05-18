@@ -86,7 +86,7 @@ class Event(models.Model):
         '''
             Returns the number of people checked in as attended
         '''
-        attended = Registration.objects.filter(event=self.id, attended=True).count()
+        attended = Registration.objects.filter(event=self.id, status="Attended").count()
         
         return attended
     

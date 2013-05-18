@@ -13,15 +13,19 @@
 
 <link rel="stylesheet" href="/static/css/style.css" type="text/css" />
 
-<script type="text/javascript" src="/admin-media/js/jquery.min.js"></script>
+{% block css_extra %}{% endblock %}
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="/static/js/functions.js"></script>
 
- <script type="text/javascript">
- var RecaptchaOptions = {
-    theme : 'clean',
-    lang : 'es'
- };
- </script>
+<script type="text/javascript">
+    var RecaptchaOptions = {
+        theme : 'clean',
+	lang : 'es'
+    };
+</script>
+
+{% block js_extra %}{% endblock %}
  
 </head>
 

@@ -1,16 +1,17 @@
 # coding=utf-8
 import uuid
 
+from django.contrib.auth.decorators import login_required
 from django.http import Http404
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import Context
 from django.template import RequestContext
-from django.views.generic import TemplateView
 from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import smart_str, smart_unicode
-from django.shortcuts import render_to_response, get_object_or_404
+from django.views.generic import TemplateView
 
-from events.models import Event, Registration
 from events.forms import RegistrationForm
+from events.models import Event, Registration
 from events.utils import newMail, pendingMail
 
 def index(request):
@@ -172,3 +173,27 @@ def tweets(request, id, slug):
         }
 	
 	return render_to_response('events/tweets.html', data, context_instance=RequestContext(request))
+
+@login_required
+def stats(request):
+	
+	eventList = Event.objects.filter(active=True).order_by('eventDate')
+	registrations = Registration.objects
+	
+	eventNo = eventList.count()
+	registered = registrations.count()
+	regAvg = registered / eventNo
+	attended = registrations.filter(status="Attended").count()
+	gSuccessRatio = round(float(registered) / float(attended), 2)
+        
+        data = {
+            'events': eventList,
+	    'registrations' : registrations,
+	    'eventNo' : eventNo,
+	    'registered' : registered,
+	    'regAvg' : regAvg,
+	    'attended' : attended,
+	    'gSuccessRatio' : gSuccessRatio
+        }
+	
+	return render_to_response('stats/index.html', data, context_instance=RequestContext(request))
