@@ -2,6 +2,10 @@ from settings import *
 
 # Change these settings to fit your needs
 
+# Uncomment these two lines for local development:
+# DEBUG = True
+# TEMPLATE_DEBUG = DEBUG
+
 SITE_URL = "http://events.your-site.org"
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'events.your-site.org']
 SITE_TITLE = "Your site name"

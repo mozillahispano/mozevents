@@ -1,6 +1,7 @@
 from django.conf.urls import *
-
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 admin.autodiscover()
 
@@ -18,3 +19,5 @@ urlpatterns += patterns('events.views',
     (r'^(?P<id>\d+)/(?P<slug>[-\w]+)/tweets/$', 'tweets'),
     (r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', 'detail'),
 )
+
+urlpatterns += staticfiles_urlpatterns()
