@@ -35,15 +35,20 @@ class Event(models.Model):
         '''
             Returns how many places an event has left
         '''
-        places = self.places - Registration.objects.filter(event=self.id, status="Confirmed").count()
-        # If we add people manually to the event, we dont want to show a negative count ;)
-        if places < 0:
-            places = 0
         
-        # If there are places left but any record is pending, no direct places should be offered
-        # because they have to go to tue queue if available
-        if Registration.objects.filter(event=self.id, status="Pending").count():
-            places = 0
+        if self.places!=None:
+            places = self.places - Registration.objects.filter(event=self.id, status="Confirmed").count()
+            # If we add people manually to the event, we dont want to show a negative count ;)
+            if places < 0:
+                places = 0
+            
+            # If there are places left but any record is pending, no direct places should be offered
+            # because they have to go to the queue if available
+            if Registration.objects.filter(event=self.id, status="Pending").count():
+                places = 0
+        else:
+            # TODO: Think of a better fix for events with unlimited (None) places
+            return 'unlimited'
 
         return places
     
@@ -71,8 +76,10 @@ class Event(models.Model):
         '''
         now = datetime.datetime.now()
         
+        if now >= self.regStartDate and now <= self.regEndDate and self.placesLeft=='unlimited':
+            return True
         # If we have places left
-        if now >= self.regStartDate and now <= self.regEndDate and self.placesLeft > 0:
+        elif now >= self.regStartDate and now <= self.regEndDate and self.placesLeft > 0:
             return True
         # If there is no places left but queue is not full
         elif now >= self.regStartDate and now <= self.regEndDate and self.placesLeft < 1 and self.queueActive and not self.queueFull:
