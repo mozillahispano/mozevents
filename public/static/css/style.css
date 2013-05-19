@@ -420,3 +420,5 @@ ul.errorlist li {
     background: none !important;
     padding: 0 !important;
 }
+
+#map { height: 300px; }
