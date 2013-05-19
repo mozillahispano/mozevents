@@ -88,6 +88,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
+    'suit',
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
@@ -112,3 +113,7 @@ except Exception:
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = SITE_URL+'/media/'
+
+SUIT_CONFIG = {
+    'ADMIN_NAME': 'MozEvents',
+}
