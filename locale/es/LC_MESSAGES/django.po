@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-19 04:10+0200\n"
-"PO-Revision-Date: 2013-05-19 04:11+0100\n"
+"POT-Creation-Date: 2013-05-19 14:21+0200\n"
+"PO-Revision-Date: 2013-05-19 14:29+0100\n"
 "Last-Translator: Nukeador <nukeador at gmail dot com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1134,8 +1134,8 @@ msgstr ""
 msgid "The email doesn't match"
 msgstr "El correo no coincide"
 
-#: events/models.py:16 events/models.py:103 templates/index.html:14
-#: templates/index.html.py:39
+#: events/models.py:16 events/models.py:110 templates/index.html:22
+#: templates/index.html.py:47
 msgid "Name"
 msgstr "Nombre"
 
@@ -1143,7 +1143,7 @@ msgstr "Nombre"
 msgid "Slug"
 msgstr "Enlace permanente"
 
-#: events/models.py:18 events/models.py:108
+#: events/models.py:18 events/models.py:115
 msgid "Creation date"
 msgstr "Fecha de creación"
 
@@ -1159,11 +1159,11 @@ msgstr "Fecha de inicio de la inscripción"
 msgid "Registration end date"
 msgstr "Fecha de fin de la inscripción"
 
-#: events/models.py:22 templates/index.html:16 templates/index.html.py:41
+#: events/models.py:22 templates/index.html:24 templates/index.html.py:49
 msgid "Country"
 msgstr "País"
 
-#: events/models.py:23 templates/index.html:17 templates/index.html.py:42
+#: events/models.py:23 templates/index.html:25 templates/index.html.py:50
 msgid "City"
 msgstr "Ciudad"
 
@@ -1235,35 +1235,35 @@ msgstr ""
 "Tiempo máximo que una persona tiene para responder una vez que tiene plaza "
 "para el evento (en horas)"
 
-#: events/models.py:104
+#: events/models.py:111
 msgid "First name"
 msgstr "Nombre"
 
-#: events/models.py:105
+#: events/models.py:112
 msgid "Family name"
 msgstr "Apellido"
 
-#: events/models.py:109
+#: events/models.py:116
 msgid "Email"
 msgstr "Correo"
 
-#: events/models.py:110
+#: events/models.py:117
 msgid "Twitter user"
 msgstr "Usuario de Twitter"
 
-#: events/models.py:111
+#: events/models.py:118
 msgid "Press"
 msgstr "Prensa"
 
-#: events/models.py:111
+#: events/models.py:118
 msgid "Check this field if you are you from press or other media"
 msgstr "Marca esta casilla si eres parte de la prensa u otros medios"
 
-#: events/models.py:112
+#: events/models.py:119
 msgid "I want to help as a volunteer"
 msgstr "Quiero ayudar como voluntario"
 
-#: events/models.py:112
+#: events/models.py:119
 msgid ""
 "Check this field if you to want to help us at the event as a volunteer, we "
 "will contact you with more details"
@@ -1271,15 +1271,15 @@ msgstr ""
 "Marca este campo si quieres ayudarnos en el evento como voluntario, "
 "contactaremos contigo con los detalles"
 
-#: events/models.py:113
+#: events/models.py:120
 msgid "Website"
 msgstr "Página web"
 
-#: events/models.py:114
+#: events/models.py:121
 msgid "Keep my information after the event"
 msgstr "Guarda mi información tras el evento"
 
-#: events/models.py:114
+#: events/models.py:121
 msgid ""
 "I allow Mozilla to contact me in the future with related information (about "
 "the community, next events...)"
@@ -1287,35 +1287,35 @@ msgstr ""
 "Doy permiso a Mozilla para que me contacte en un futuro con información "
 "relacionada (sobre la comunidad, próximos eventos...)"
 
-#: events/models.py:128
+#: events/models.py:135
 msgid "Invited"
 msgstr "Invitado"
 
-#: events/models.py:129
+#: events/models.py:136
 msgid "Confirmed"
 msgstr "Confirmado"
 
-#: events/models.py:130
+#: events/models.py:137
 msgid "Declined"
 msgstr "Rechazado"
 
-#: events/models.py:131
+#: events/models.py:138
 msgid "Expired"
 msgstr "Expirado"
 
-#: events/models.py:132
+#: events/models.py:139
 msgid "Queued"
 msgstr "Encolado"
 
-#: events/models.py:133
+#: events/models.py:140
 msgid "Pending"
 msgstr "Pendiente"
 
-#: events/models.py:134
+#: events/models.py:141
 msgid "Attended"
 msgstr "Asistido"
 
-#: events/models.py:137
+#: events/models.py:144
 msgid "Status"
 msgstr "Estado"
 
@@ -1386,16 +1386,45 @@ msgstr "Visita la web de la comunidad"
 msgid "mozilla hispano"
 msgstr "mozilla hispano"
 
-#: templates/index.html:10
+#: templates/index.html:9
+msgid "Where is Mozilla?"
+msgstr "¿Dónde está Mozilla?"
+
+#: templates/index.html:12
+msgid ""
+"Here you can see some events which Mozilla community will be "
+"<strong>organising and require sign-up</strong>, and the topics on which our "
+"Mozillians will be speaking. If you are organizing an event and would like a "
+"Mozillian to participate, please send us an email to <em>eventos at mozilla-"
+"hispano.org</em>. If you are a Mozillian organising an event that's not "
+"listed here, let us know!"
+msgstr ""
+"Aquí puedes ver algunos eventos que la comunidad Mozilla está "
+"<strong>organizando y requieren registro</strong>, y los temas sobre los que "
+"nuestros Mozilleros hablarán. Si estás organizando un evento y quieres que "
+"un Mozillero participe, por favor envíanos un correo a <em>eventos arroba "
+"mozilla-hispano.org</em>. Si eres un Mozillero organizando un evento que no "
+"está listado aquí, ¡háznoslo saber!"
+
+#: templates/index.html:15
+msgid ""
+"You can also see <a href=\"https://www.mozilla-hispano.org/documentacion/"
+"Eventos\">a full list of events that Mozilla is participating</a>"
+msgstr ""
+"También puedes ver <a href=\"https://www.mozilla-hispano.org/documentacion/"
+"Eventos\">una lista completa de eventos en los que Mozilla está "
+"participando</a>"
+
+#: templates/index.html:18
 msgid "Coming events"
 msgstr "Próximos eventos"
 
-#: templates/index.html:15 templates/index.html.py:40
+#: templates/index.html:23 templates/index.html.py:48
 #: templates/events/registration-confirmed.html:24
 msgid "Date"
 msgstr "Fecha"
 
-#: templates/index.html:35
+#: templates/index.html:43
 msgid "Past events"
 msgstr "Eventos pasados"
 

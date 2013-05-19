@@ -6,6 +6,14 @@
 
 {% block content %}
 
+<h2 id="mainpage-title">{% trans 'Where is Mozilla?' %}</h2>
+
+<p>
+    {% trans "Here you can see some events which Mozilla community will be <strong>organising and require sign-up</strong>, and the topics on which our Mozillians will be speaking. If you are organizing an event and would like a Mozillian to participate, please send us an email to <em>eventos at mozilla-hispano.org</em>. If you are a Mozillian organising an event that's not listed here, let us know!" %}
+</p>
+
+<p>{% trans 'You can also see <a href="https://www.mozilla-hispano.org/documentacion/Eventos">a full list of events that Mozilla is participating</a>' %}.</p>
+
 {% if nextEvents %}
     <h2>{% trans 'Coming events' %}</h2>
     <table>
