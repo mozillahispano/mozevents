@@ -1,75 +1,123 @@
 {% load i18n %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class="windows no-js" lang="{{ LANG }}" dir="{{ DIR }}">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>{% block title %}{% trans 'Mozilla Events' %}{% endblock %} « {% trans 'Events' %} « {{ SITE_TITLE }}</title>
+  <meta charset="utf-8" />
+  <title>{% block title %}{% trans 'Mozilla Events' %}{% endblock %} « {% trans 'Events' %} « {{ SITE_TITLE }}</title>
 
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-<!--[if lt IE 7]>
-		<link rel="stylesheet" href="/static/css/iebugs.css" type="text/css" />
-<![endif]-->
+  <link rel="stylesheet" type="text/css" href="//www.mozilla.org/tabzilla/media/css/tabzilla.css" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/sandstone/sandstone-resp.less.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 
-<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+  {% block css_extra %}{% endblock %}
 
-{% block css_extra %}{% endblock %}
+  <!--[if lte IE 8]>
+    <script src="{% static 'js/libs/html5shiv.js' %}"></script>
+  <![endif]-->
+</head>
 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="/static/js/functions.js"></script>
+<!-- The four different themes of sandstone are, stone, sand, sky, space. Replace the class on the
+   body tag below, with the theme you wish to use for your project -->
+<body id="sandstone" class="sand">
+  <div id="outer-wrapper">
+    <div id="wrapper" class="clearfix">
+
+      {% block site_header %}
+        <header id="masthead">
+          <a href="http://www.mozilla.org/" id="tabzilla">{{ _('Mozilla') }}</a>
+          <div class="cf">
+            <nav id="nav-main" class="clearfix" role="menubar">
+              <span class="toggle" role="button" aria-controls="nav-main-menu" tabindex="0">{{ _('Menu') }}</span>
+              <ul role="menu" id="nav-main-menu">
+                <li role="menuitem" class="first"><a href="//www.mozilla.org/en-US/mission/">{{_('Mission')}}</a></li>
+                <li role="menuitem"><a href="//www.mozilla.org/en-US/about/">{{_('About')}}</a></li>
+                <li role="menuitem"><a href="//www.mozilla.org/en-US/products/">{{_('Products')}}</a></li>
+                <li role="menuitem"><a href="//www.mozilla.org/en-US/contribute/">{{_('Get Involved')}}</a></li>
+                <li role="menuitem" class="last">
+                  <form id="lang-selector" action="/i18n/setlang/" method="post">
+                    {% csrf_token %}
+                    <select name="language">
+                      {% for lang in LANGUAGES %}
+                        <option value="{{ lang.0 }}" {% if lang.0 == request.LANGUAGE_CODE %}selected="selected"{% endif %}>{{ lang.1 }}</option>
+                      {% endfor %}
+                    </select>
+                    <input type="submit" value="→" />
+                  </form>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div id="logo" class="cf">
+            <h2 class="mh">
+              <a href="{% trans 'http://www.mozilla-hispano.org' %}" title="{% trans 'Visit our community site' %}">{% trans 'mozilla hispano' %}</a>
+            </h2>
+            <h1><a href="/">{% trans 'Mozilla Events' %}</a></h1>
+          </div>
+
+          {% block alt_header %}{% endblock %}
+
+          {% block breadcrumbs %}{% endblock %}
+
+        </header>
+      {% endblock %}
+
+      <div id="main-content">
+        {% block content %}{% endblock %}
+      </div>
+
+      <div id="sidebar">
+        {% block sidebar %}{% endblock %}
+      </div>
+
+    </div>
+
+    {% block site_footer %}
+    <footer id="colophon">
+      <div class="row">
+        <div class="footer-logo">
+          <a href="http://mozilla.org"><img src="{% static 'img/sandstone/footer-mozilla.png' %}" alt="mozilla"></a>
+        </div>
+
+        <div class="footer-license">
+            <p>Portions of this content are &copy;1998–{{ current_year }} by individual mozilla.org contributors. Content available under a <a href="http://www.mozilla.org/foundation/licensing/website-content.html">Creative Commons license</a>.</p>
+            <p><a href="http://mozilla.org/b/en-US/contribute/page/">{{_('Contribute to this page')}}</a></p>
+        </div>
+        <ul class="footer-nav">
+          <li><a href="http://mozilla.org/about/contact.html#map-mountain_view">{{_('Contact Us')}}</a></li>
+          <li><a href="http://mozilla.org/privacy-policy.html">{{_('Privacy Policy')}}</a></li>
+          <li><a href="http://mozilla.org/about/legal.html">{{_('Legal Notices')}}</a></li>
+          <li><a href="http://mozilla.org/legal/fraud-report/index.html">{{_('Report Trademark Abuse')}}</a></li>
+        </ul>
+
+        {% block social %}
+        <ul class="footer-nav">
+          <li><a href="http://twitter.com/firefox">{{_('Twitter')}}</a></li>
+          <li><a href="http://facebook.com/Firefox">{{_('Facebook')}}</a></li>
+          <li><a href="https://affiliates.mozilla.org/">{{_('Firefox Affiliates')}}</a></li>
+        </ul>
+        {% endblock %}
+      </div>
+    </footer>
+    {% endblock %}
+  </div>
+
+<script type="text/javascript" src="{% static 'js/libs/jquery-1.8.3.js' %}"></script>
+<script src="//www.mozilla.org/tabzilla/media/js/tabzilla.js"></script>
+<script type="text/javascript" src="{% static 'js/site.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/functions.js' %}"></script>
 
 <script type="text/javascript">
-    var RecaptchaOptions = {
-        theme : 'clean',
-	lang : 'es'
-    };
+  var RecaptchaOptions = {
+    theme : 'clean',
+    lang : 'es'
+  };
 </script>
 
 {% block js_extra %}{% endblock %}
- 
-</head>
-
-<body>
-    
-<div id="canvas">
-		<div id="cripple">
-				<div id="header">
-						<div id="logo">
-								<h1><a href="/{% block eventURL %}{% endblock %}"><span>{% block titleheader %}{% trans 'Mozilla<br />Events' %}{% endblock %}</span></a></h1>
-						</div>
-						<div id="visit-box"><a href="{% trans 'http://www.mozilla-hispano.org' %}" title="{% trans 'Visit our community site' %}">{% trans 'mozilla hispano' %}</a></div>
-						<form id="langSelector" action="/i18n/setlang/" method="post">
-								{% csrf_token %}
-								<select name="language">
-								    {% for lang in LANGUAGES %}
-									<option value="{{ lang.0 }}" {% if lang.0 == request.LANGUAGE_CODE %}selected="selected"{% endif %}>{{ lang.1 }}</option>
-								    {% endfor %}
-								</select>
-								<input type="submit" value="→" />
-						</form>
-				</div>
-
-	<div class="clearfix" id="mainbody">
-
-		<div id="content">
-			<div class="maincontent">
-				<div class="maintext">
-				    {% block content %}{% endblock %}
-				</div>
-			</div>
-		</div>
-		
-		<div id="sidebar">
-		    {% block sidebar %}{% endblock %}
-		</div>
-	
-	</div>
-
-	</div><!-- Cuerpo -->
-</div><!-- tullido -->
-
-</div>
 
 </body>
-
 </html>

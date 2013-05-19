@@ -1,7 +1,6 @@
 $( document ).ready( function() {
 	/* Autosubmit l10n form */
-        
-	$( '#langSelector select' ).change( function() {
-		$("#langSelector").submit();
+	$( '#lang-selector select' ).change( function() {
+		$("#lang-selector").submit();
 	});
 });
