@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-20 10:24+0200\n"
-"PO-Revision-Date: 2013-05-20 10:24+0100\n"
+"PO-Revision-Date: 2013-05-20 11:10+0100\n"
 "Last-Translator: Rubén Martín <ruben@funge.uva.es>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -326,7 +326,7 @@ msgstr ""
 #: django_countries/countries.py:66
 #: django_countries/countries.py:321
 msgid "Dominican Republic"
-msgstr ""
+msgstr "República Dominicana"
 
 #: django_countries/countries.py:67
 #: django_countries/countries.py:322
@@ -726,7 +726,7 @@ msgstr ""
 #: django_countries/countries.py:146
 #: django_countries/countries.py:403
 msgid "Mexico"
-msgstr ""
+msgstr "México"
 
 #: django_countries/countries.py:147
 #: django_countries/countries.py:404
@@ -1046,7 +1046,7 @@ msgstr ""
 #: django_countries/countries.py:210
 #: django_countries/countries.py:472
 msgid "Spain"
-msgstr ""
+msgstr "España"
 
 #: django_countries/countries.py:211
 #: django_countries/countries.py:473
