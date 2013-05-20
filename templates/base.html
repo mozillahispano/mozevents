@@ -1,75 +1,321 @@
 {% load i18n %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class="windows no-js" lang="{{ LANG }}" dir="{{ DIR }}">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>{% block title %}{% trans 'Mozilla Events' %}{% endblock %} « {% trans 'Events' %} « {{ SITE_TITLE }}</title>
+  <meta charset="utf-8" />
+  <title>{% block title %}{% trans 'Mozilla Events' %}{% endblock %} « {% trans 'Events' %} « {{ SITE_TITLE }}</title>
 
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-<!--[if lt IE 7]>
-		<link rel="stylesheet" href="/static/css/iebugs.css" type="text/css" />
-<![endif]-->
+  <link rel="stylesheet" type="text/css" href="//www.mozilla.org/tabzilla/media/css/tabzilla.css" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/sandstone/sandstone-resp.less.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 
-<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+  {% block css_extra %}{% endblock %}
 
-{% block css_extra %}{% endblock %}
+  <!--[if lte IE 8]>
+    <script src="{% static 'js/libs/html5shiv.js' %}"></script>
+  <![endif]-->
 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="/static/js/functions.js"></script>
-
-<script type="text/javascript">
+  <script type="text/javascript">
     var RecaptchaOptions = {
-        theme : 'clean',
-	lang : 'es'
+      theme : 'clean',
+      lang : 'es'
     };
-</script>
-
-{% block js_extra %}{% endblock %}
- 
+  </script>
 </head>
 
-<body>
-    
-<div id="canvas">
-		<div id="cripple">
-				<div id="header">
-						<div id="logo">
-								<h1><a href="/{% block eventURL %}{% endblock %}"><span>{% block titleheader %}{% trans 'Mozilla<br />Events' %}{% endblock %}</span></a></h1>
-						</div>
-						<div id="visit-box"><a href="{% trans 'http://www.mozilla-hispano.org' %}" title="{% trans 'Visit our community site' %}">{% trans 'mozilla hispano' %}</a></div>
-						<form id="langSelector" action="/i18n/setlang/" method="post">
-								{% csrf_token %}
-								<select name="language">
-								    {% for lang in LANGUAGES %}
-									<option value="{{ lang.0 }}" {% if lang.0 == request.LANGUAGE_CODE %}selected="selected"{% endif %}>{{ lang.1 }}</option>
-								    {% endfor %}
-								</select>
-								<input type="submit" value="→" />
-						</form>
-				</div>
+<!-- The four different themes of sandstone are, stone, sand, sky, space. Replace the class on the
+   body tag below, with the theme you wish to use for your project -->
+<body id="sandstone" class="sand">
+  <div id="outer-wrapper">
+    <div id="wrapper" class="clearfix">
 
-	<div class="clearfix" id="mainbody">
+      {% block site_header %}
+        <header id="masthead">
+          <a href="http://www.mozilla.org/" id="tabzilla">{{ _('Mozilla') }}</a>
+          <div>
+            <nav id="nav-main" class="clearfix" role="menubar">
+              <span class="toggle" role="button" aria-controls="nav-main-menu" tabindex="0">{% static 'Menu' %}</span>
+              <ul role="menu" id="nav-main-menu">
+                <li role="menuitem" class="first">
+                  <a href="http://www.mozilla-hispano.org">
+                    Noticias
+                  </a>
+                </li>
+                <li class="dropdown" role="menuitem">
+                  <span>Asistencia</span>
+                  <ul>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/foro/" title="Foro de asistencia técnica">
+                        Foro de asistencia
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/documentacion/" title="Documentos, artículos y preguntas frecuentes de ayuda a los usuarios">
+                        Documentación
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown" role="menuitem">
+                  <span title="Ayuda a difundir Mozilla en español">Difusión</span>
+                  <ul>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/difusion/">
+                        Promociona Mozilla
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/foro/viewforum.php?f=6" title="Foro de difusión">
+                        Foros
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/documentacion/Eventos" title="Eventos Mozilla">
+                        Eventos
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/documentacion/Difusi%C3%B3n" title="Proyectos de difusión">
+                        Proyectos
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li role="menuitem">
+                  <a href="http://mozilla-hispano.org/podcast/">
+                    Podcast
+                  </a>
+                </li>
+                <li class="dropdown" role="menuitem">
+                  <span title="Desarrolla con Labs">Labs</span>
+                  <ul>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/labs/" title="Centro de desarrollo e innovación en la plataforma Mozilla">
+                        Blog y proyectos
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/foro/viewforum.php?f=25">
+                        Foros
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown" role="menuitem">
+                  <span>Comunidad</span>
+                  <ul>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/planet/" title="Artículos de opinión, mensajes y fotos de los miembros de la comunidad">
+                        Planet
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/documentacion/Colaboradores" title="Listado de colaboradores">
+                        Colaboradores
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/ar/">
+                        Argentina
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/bo/">
+                        Bolivia
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/co/">
+                        Colombia
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/cr/">
+                        Costa Rica
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/cl/">
+                        Chile
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/cu/">
+                        Cuba
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/es/">
+                        España
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/ec/">
+                        Ecuador
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/ni/">
+                        Nicaragua
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/mx/">
+                        México
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/py/">
+                        Paraguay
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/pe/">
+                        Perú
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/uy/">
+                        Uruguay
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/ve/">
+                        Venezuela
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown last" role="menuitem">
+                  <span title="Únete y colabora con Mozilla Hispano">Participa</span>
+                  <ul>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/documentacion/Colabora">
+                        Cómo participar
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/documentacion/Programa_de_mentores" title="Programa de mentores">
+                        Programa de mentores
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/documentacion/Recursos_para_colaboradores" title="Recursos para colaboradores">
+                        Recursos para colaboradores
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a href="http://mozilla-hispano.org/foro/viewforum.php?f=6">
+                        Foros
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
 
-		<div id="content">
-			<div class="maincontent">
-				<div class="maintext">
-				    {% block content %}{% endblock %}
-				</div>
-			</div>
-		</div>
-		
-		<div id="sidebar">
-		    {% block sidebar %}{% endblock %}
-		</div>
-	
-	</div>
+          <div id="logo">
+            <h1>
+              <a href="/">
+                <img src="{% static 'img/logo-mh.png' %}" alt="{% trans 'mozilla hispano' %}" />
+              </a>
+            </h1>
+          </div>
 
-	</div><!-- Cuerpo -->
-</div><!-- tullido -->
+          {% block alt_header %}{% endblock %}
 
-</div>
+          {% block breadcrumbs %}{% endblock %}
+
+        </header>
+      {% endblock %}
+
+      <div id="main-content">
+        {% block content %}{% endblock %}
+      </div>
+
+      <div id="sidebar">
+        {% block sidebar %}{% endblock %}
+      </div>
+
+    </div>
+
+    {% block site_footer %}
+    <footer id="colophon">
+      <div class="row">
+        <div class="footer-logo">
+          <a href="http://mozilla-hispano.org"><img src="{% static 'img/logo-mh-footer.png' %}" alt="mozilla hispano"></a>
+
+          <div class="cc">
+            <a href="http://mozilla-hispano.org/documentacion/Organizaci%C3%B3n_de_Mozilla_Hispano#Licencia" title="Licencia para el uso del contenido de este proyecto"><img src="http://mozilla-hispano.org/images/cc-by-sa.png" alt="cc-by-sa"/></a>
+          </div>
+          <form id="lang-selector" action="/i18n/setlang/" method="post">
+            {% csrf_token %}
+            <select name="language">
+              {% for lang in LANGUAGES %}
+                <option value="{{ lang.0 }}" {% if lang.0 == request.LANGUAGE_CODE %}selected="selected"{% endif %}>{{ lang.1 }}</option>
+              {% endfor %}
+            </select>
+            <input type="submit" value="→" />
+          </form>
+        </div>
+        <nav class="footer-nav">
+          <strong>Acerca de</strong>
+          <ul>
+            <li><a href="http://mozilla-hispano.org/documentacion/Organizaci%C3%B3n_de_Mozilla_Hispano" title="Conoce más sobre el proyecto">Acerca de Mozilla Hispano</a></li>
+            <li><a href="http://mozilla-hispano.org/documentacion/Organizaci%C3%B3n_de_Mozilla_Hispano#Contacto" title="Contacta con el proyecto">Contacto</a></li>
+            <li><a href="http://mozilla-hispano.org/documentacion/Colabora" title="Colabora con el proyecto">Colabora</a></li>
+            <li><a href="http://mozilla-hispano.org/comunidad/">Comunidad</a></li>
+            <li><a href="http://mozilla-hispano.org/marca/">Uso de marca y logos</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav">
+          <strong>Comunidad</strong>
+          <ul>
+            <li><a href="http://mozilla-hispano.org/">Noticias</a></li>
+            <li><a href="http://mozilla-hispano.org/foro/">Foro</a></li>
+            <li><a href="http://mozilla-hispano.org/documentacion/">Documentación</a></li>
+            <li><a href="http://mozilla-hispano.org/planet/">Planet</a></li>
+            <li><a href="http://mozilla-hispano.org/labs/">Labs</a></li>
+            <li><a href="http://mozilla-hispano.org/difusion/">Difusión</a></li>
+          </ul>
+        </nav>
+         <nav class="footer-nav">
+          <strong>Webs Mozilla</strong>
+          <ul>
+            <li><a href="http://addons.mozilla.org/es-ES/">Mozilla Addons</a></li>
+            <li><a href="http://developer.mozilla.org/es">Mozilla Developer Network</a></li>
+            <li><a href="http://www.mozilla.org/es-ES/newsletter/">Boletín Firefox</a></li>
+            <li><a href="http://input.mozilla.com/es/">Firefox Input</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav">
+          <strong>Únete</strong>
+          <ul>
+            <li><a href="http://mozilla-hispano.org/documentacion/Difusi%C3%B3n">Difusión</a></li>
+            <li><a href="http://mozilla-hispano.org/documentacion/Asistencia">Asistencia</a></li>
+            <li><a href="http://mozilla-hispano.org/documentacion/Noticias">Noticias</a></li>
+            <li><a href="http://mozilla-hispano.org/documentacion/Localizaci%C3%B3n">Localización</a></li>
+            <li><a href="http://mozilla-hispano.org/documentacion/Labs">Labs</a></li>
+            <li><a href="http://mozilla-hispano.org/documentacion/Control_de_calidad">Control de calidad</a></li>
+            <li><a href="http://mozilla-hispano.org/documentacion/Administraci%C3%B3n_t%C3%A9cnica">Adm. Técnica</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </footer>
+    {% endblock %}
+  </div>
+
+<script type="text/javascript" src="{% static 'js/libs/jquery-1.8.3.js' %}"></script>
+<script src="//www.mozilla.org/tabzilla/media/js/tabzilla.js"></script>
+<script type="text/javascript" src="{% static 'js/site.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/functions.js' %}"></script>
+
+{% block js_extra %}{% endblock %}
 
 </body>
-
 </html>
