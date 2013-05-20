@@ -48,25 +48,110 @@ a[hreflang]:after {
 a[hreflang=es]:after {content: '';} /* Desactivar los que son en espa�ol con sintaxis de css2 */
 
 a:link {
-    color:#264373;
+    color: #264373;
 }
 a:visited {
-    color:#264373;
+    color: #264373;
 }
 a:hover {
-    color:#5278B6;
+    color: #5278B6;
 }
 a:active {
-    color:#5278B6;
+    color: #5278B6;
 }
 
-#lang-selector {
-    float: right;
+/* Sandstone tweaks start here */
+#masthead {
+    height: 100px;
+    position: relative;
 }
+
+#masthead nav li a,
+#masthead nav li span {
+    color: #484848;
+    font-size: 12px;
+    padding: 10px 9px;
+}
+
+#masthead nav li:hover > a,
+#masthead nav li:hover > span {
+    background: #fff;
+    text-decoration: none
+}
+
+#masthead nav li.dropdown {
+    display: relative;
+}
+
+#masthead nav li.dropdown ul {
+    display: none;
+}
+
+#masthead nav li.dropdown:hover ul {
+    background: #f0f0f0;
+    display: block;
+    position: absolute;
+    top: 36px;
+    width: 190px;
+    z-index: 100;
+}
+
+#masthead nav li.dropdown ul li {
+    display: block;
+}
+
+#masthead nav li.dropdown ul a {
+    display: block;
+    padding: 5px 10px;
+}
+
+#logo {
+    left: 0;
+    position: absolute;
+    top: 10px;
+}
+
+#main-content {
+    width: 72%;
+    padding-bottom:3em;
+    padding-right: 1%;
+    float: left;
+}
+
+#colophon {
+    background: #222222;
+}
+
+#colophon .footer-logo {
+    text-align: center;
+    width: 200px;
+}
+
+#colophon .cc {
+    padding: 10px;
+    text-align: center;
+}
+
+#colophon .footer-nav {
+    width: 160px;
+}
+
+#colophon .footer-nav strong {
+    color: #777;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+
+#colophon a,
+#colophon a:link,
+#colophon a:visited {
+    color: #aaa;
+}
+/* Sandstone tweaks end here */
 
 table {
     border-collapse: collapse;
-        border-spacing: 0;
+    border-spacing: 0;
     background-color: #F6F6F1;
     color: #333333;
     width: 100%;
@@ -96,20 +181,6 @@ table tr:nth-child(2n) {
 
 table tr:hover {
     background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5);
-}
-
-#logo h2.mh {
-    float: right;
-    margin: 0;
-    padding: 0;
-}
-
-#main-content {
-    border-right: 1px solid #dfe6ec;
-    width: 72%;
-    padding-bottom:3em;
-    padding-right: 1%;
-    float: left;
 }
 
 #sidebar {
@@ -221,13 +292,13 @@ table tr:hover {
 }
 
 .maincontent h2#mainpage-title {
-	margin: 1em 0;
-	color: rgb(171, 24, 26);
-	font: 2em "Bebas Neue","League Gothic",Haettenschweiler,"Arial Narrow",sans-serif;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	text-shadow: 3px 3px 0px rgba(170, 160, 130, 0.5);
-	text-align: center;
+    margin: 1em 0;
+    color: rgb(171, 24, 26);
+    font: 2em "Bebas Neue","League Gothic",Haettenschweiler,"Arial Narrow",sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0px rgba(170, 160, 130, 0.5);
+    text-align: center;
 }
 
 .maincontent h2{
@@ -283,6 +354,7 @@ table tr:hover {
 /* Event box */
 
 .event-detail {
+    background: #fff;
     -moz-border-radius:5px 5px 5px 5px;
     -moz-box-shadow:0.1em 0.1em 0.6em grey;
     border-radius:5px 5px 5px 5px;
@@ -291,8 +363,8 @@ table tr:hover {
     -webkit-box-shadow:0.1em 0.1em 0.6em grey;
     border:1px solid #E3E3E3;
     padding:0;
-         margin-bottom: 3em;
-        width: 400px;
+    margin-bottom: 3em;
+    width: 400px;
 }
 
 .event-detail p {
