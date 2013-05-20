@@ -1,14 +1,14 @@
 {% load i18n %}
 {% load staticfiles %}
 <!DOCTYPE html>
-<html class="windows no-js" lang="{{ LANG }}" dir="{{ DIR }}">
+<html class="windows no-js" lang="{{ request.LANGUAGE_CODE }}" dir="{{ DIR }}">
 <head>
   <meta charset="utf-8" />
   <title>{% block title %}{% trans 'Mozilla Events' %}{% endblock %} « {% trans 'Events' %} « {{ SITE_TITLE }}</title>
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-  <link rel="stylesheet" type="text/css" href="//www.mozilla.org/tabzilla/media/css/tabzilla.css" />
+  <link href="//mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/sandstone/sandstone-resp.less.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 
@@ -311,7 +311,7 @@
   </div>
 
 <script type="text/javascript" src="{% static 'js/libs/jquery-1.8.3.js' %}"></script>
-<script src="//www.mozilla.org/tabzilla/media/js/tabzilla.js"></script>
+<script src="//mozorg.cdn.mozilla.net/{{ request.LANGUAGE_CODE }}/tabzilla/tabzilla.js"></script>
 <script type="text/javascript" src="{% static 'js/site.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/functions.js' %}"></script>
 
