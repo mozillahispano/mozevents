@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-19 14:21+0200\n"
+"POT-Creation-Date: 2013-05-20 10:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1338,28 +1338,19 @@ msgid ""
 "to eventos arroba mozilla-hispano.org"
 msgstr ""
 
-#: templates/base.html:6
+#: templates/base.html:7
 msgid "Mozilla Events"
 msgstr ""
 
-#: templates/base.html:6 templates/index.html:5 templates/events/tweets.html:6
+#: templates/base.html:7 templates/index.html:5 templates/events/tweets.html:6
 msgid "Events"
 msgstr ""
 
-#: templates/base.html:38
-msgid "Mozilla<br />Events"
+#: templates/base.html:37
+msgid "Mozilla"
 msgstr ""
 
-#: templates/base.html:40 templates/events/registration-email.html:21
-#: templates/events/registration-pendingEmail.html:19
-msgid "http://www.mozilla-hispano.org"
-msgstr ""
-
-#: templates/base.html:40
-msgid "Visit our community site"
-msgstr ""
-
-#: templates/base.html:40
+#: templates/base.html:224
 msgid "mozilla hispano"
 msgstr ""
 
@@ -1541,6 +1532,11 @@ msgstr ""
 msgid "Address:"
 msgstr ""
 
+#: templates/events/registration-email.html:21
+#: templates/events/registration-pendingEmail.html:19
+msgid "http://www.mozilla-hispano.org"
+msgstr ""
+
 #: templates/events/registration-email.html:22
 #: templates/events/registration-pendingEmail.html:20
 msgid "http://twitter.com/mozilla_hispano"
@@ -1576,7 +1572,7 @@ msgid "We will contact you if a place is released"
 msgstr ""
 
 #: templates/events/registration.html:13
-msgid "Join the party!"
+msgid "See you soon!"
 msgstr ""
 
 #: templates/events/registration.html:19
