@@ -233,7 +233,7 @@
         </header>
       {% endblock %}
 
-      <div id="main-content">
+      <div id="main-content" class="{% block contentClass %}{% endblock %}">
         {% block content %}{% endblock %}
       </div>
 

@@ -118,6 +118,16 @@ a:active {
     float: left;
 }
 
+#main-content.mainpage {
+    width: 100%;
+}
+
+#main-content.mainpage #mainpage-desc{
+    padding: 0px 6em;
+    text-align: justify;
+    font-size: 0.9em;
+}
+
 #colophon {
     background: #222222;
 }
@@ -291,16 +301,6 @@ table tr:hover {
     padding: 1em;
 }
 
-.maincontent h2#mainpage-title {
-    margin: 1em 0;
-    color: rgb(171, 24, 26);
-    font: 2em "Bebas Neue","League Gothic",Haettenschweiler,"Arial Narrow",sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-shadow: 3px 3px 0px rgba(170, 160, 130, 0.5);
-    text-align: center;
-}
-
 .maincontent h2{
     font-size: 1.75em;
     margin-bottom:0.5em;
@@ -349,6 +349,16 @@ table tr:hover {
 
 .maincontent h2 {
     border: none !important;
+}
+
+h2#mainpage-title {
+    margin: 1em 0;
+    color: rgb(171, 24, 26);
+    font: 2em "Bebas Neue","League Gothic",Haettenschweiler,"Arial Narrow",sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0px rgba(170, 160, 130, 0.5);
+    text-align: center;
 }
 
 /* Event box */
