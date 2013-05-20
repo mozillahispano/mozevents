@@ -255,10 +255,6 @@ table tr:hover {
     text-shadow: 0 1px 0 #C2E3C1;
 }
 
-#formInfo {
-    text-align: right;
-}
-
 #formInfo span {
     color: red;
 }
@@ -407,10 +403,6 @@ label {
 
 label[for=id_press], label[for=id_privacyPolicy], label[for=id_volunteer], label[for=id_mailme] {
     display: inline;
-}
-
-input[type=checkbox] {
-    margin-right: 7px;
 }
 
 label.required {
