@@ -181,24 +181,29 @@ def tweets(request, id, slug):
 
 @login_required
 def stats(request):
-	
-	eventList = Event.objects.filter(active=True).order_by('eventDate')
-	registrations = Registration.objects
-	
-	eventNo = eventList.count()
-	registered = registrations.count()
-	regAvg = registered / eventNo
-	attended = registrations.filter(status="Attended").count()
-	gSuccessRatio = round(float(attended) / float(registered)*100, 2)
-        
-        data = {
-            'events': eventList,
-	    'registrations' : registrations,
-	    'eventNo' : eventNo,
-	    'registered' : registered,
-	    'regAvg' : regAvg,
-	    'attended' : attended,
-	    'gSuccessRatio' : gSuccessRatio
-        }
-	
-	return render_to_response('stats/index.html', data, context_instance=RequestContext(request))
+    """Global stats page."""
+    eventList = Event.objects.filter(active=True).order_by('eventDate')
+    registrations = Registration.objects
+
+    eventNo = eventList.count()
+    registered = registrations.count()
+    regAvg = registered / eventNo
+    attended = registrations.filter(status='Attended').count()
+
+    if registered > 0:
+        gSuccessRatio = round(float(attended) / float(registered)*100, 2)
+    else:
+        gSuccessRatio = 0
+
+    data = {
+        'events': eventList,
+        'registrations' : registrations,
+        'eventNo' : eventNo,
+        'registered' : registered,
+        'regAvg' : regAvg,
+        'attended' : attended,
+        'gSuccessRatio' : gSuccessRatio,
+    }
+
+    return render_to_response(
+        'stats/index.html', data, context_instance=RequestContext(request))
