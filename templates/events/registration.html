@@ -22,92 +22,100 @@
     <p><strong>{% trans 'Remember that this event is already full, your will be put in the queue and we will contact you in case a place is released' %}.</strong></p>
 {% endif %}
 
-<form id="reg-form" method="post" action="" enctype="multipart/form-data">{% csrf_token %}
-	{{ form.non_field_errors }}
-	{{ form.id }}
+<form id="reg-form" method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    {{ form.id }}
 
-            <div class="fieldWrapper">
-			<label {% if form.firstName.field.required %}class="required"{% endif %} for="id_firstName">{{ form.firstName.label }}:</label>
-			{{ form.firstName }}
-			{{ form.firstName.errors }}
-                        <p class="fieldInfo">{{ form.firstName.help_text }}</p>
-	    </div>
-            
-            <div class="fieldWrapper">
-			<label {% if form.familyName.field.required %}class="required"{% endif %} for="id_familyName">{{ form.familyName.label }}:</label>
-			{{ form.familyName }}
-			{{ form.familyName.errors }}
-                        <p class="fieldInfo">{{ form.familyName.help_text }}</p>
-	    </div>
-            
-            <div class="fieldWrapper">
-			<label {% if form.email.field.required %}class="required"{% endif %} for="id_email">{{ form.email.label }}:</label>
-			{{ form.email }}
-			{{ form.email.errors }}
-                        <p class="fieldInfo">{{ form.email.help_text }}</p>
-	    </div>
-            
-            <div class="fieldWrapper">
-			<label {% if form.emailConfirm.field.required %}class="required"{% endif %} for="id_emailConfirm">{{ form.emailConfirm.label }}:</label>
-			{{ form.emailConfirm }}
-			{{ form.emailConfirm.errors }}
-                        <p class="fieldInfo">{{ form.emailConfirm.help_text }}</p>
-	    </div>
-            
-            <div class="fieldWrapper">
-			<label {% if form.twitter.field.required %}class="required"{% endif %} for="id_twitter">{{ form.twitter.label }}:</label>
-			{{ form.twitter }}
-			{{ form.twitter.errors }}
-                        <p class="fieldInfo">{{ form.twitter.help_text }}</p>
-	    </div>
-            
-            <div class="fieldWrapper">
-			<label {% if form.website.field.required %}class="required"{% endif %} for="id_website">{{ form.website.label }}:</label>
-			{{ form.website }}
-			{{ form.website.errors }}
-                        <p class="fieldInfo">{{ form.website.help_text }}</p>
-	    </div>
-            
-            <div class="fieldWrapper">
-			<label {% if form.press.field.required %}class="required"{% endif %} for="id_press">{{ form.press.label }}</label>
-			{{ form.press }}
-			{{ form.press.errors }}
-                        <p class="fieldInfo">{{ form.press.help_text }}</p>
-	    </div>
-            
-            <div class="fieldWrapper">
-			<label {% if form.volunteer.field.required %}class="required"{% endif %} for="id_volunteer">{{ form.volunteer.label }}</label>
-			{{ form.volunteer }}
-			{{ form.volunteer.errors }}
-                        <p class="fieldInfo">{{ form.volunteer.help_text }}</p>
-	    </div>
-	    
-	    <div class="fieldWrapper">
-			<label {% if form.mailme.field.required %}class="required"{% endif %} for="id_mailme">{{ form.mailme.label }}</label>
-			{{ form.mailme }}
-			{{ form.mailme.errors }}
-                        <p class="fieldInfo">{{ form.mailme.help_text }}</p>
-	    </div>
+    <div class="fieldWrapper">
+        <label {% if form.firstName.field.required %}class="required"{% endif %} for="id_firstName">{{ form.firstName.label }}:</label>
+        {{ form.firstName }}
+        {{ form.firstName.errors }}
+        <p class="fieldInfo">{{ form.firstName.help_text }}</p>
+    </div>
 
-	    <div class="fieldWrapper">
-		{{ form.recaptcha }}
-		{{ form.recaptcha.errors }}
-		<p class="fieldInfo">{{ form.recaptcha.help_text }}</p>
-	    </div>
-            
-	    <div class="fieldWrapper">
-		<label {% if form.privacyPolicy.field.required %}class="required"{% endif %} for="id_privacyPolicy">{{ form.privacyPolicy.label }}</label> {{ form.privacyPolicy }}
-		{{ form.privacyPolicy.errors }}
-		<p class="fieldInfo">{{ form.privacyPolicy.help_text|safe }}</p>
-	    </div>
-            
-	<input type="submit" value="{% trans 'Submit' %}" />
+    <div class="fieldWrapper">
+        <label {% if form.familyName.field.required %}class="required"{% endif %} for="id_familyName">{{ form.familyName.label }}:</label>
+        {{ form.familyName }}
+        {{ form.familyName.errors }}
+        <p class="fieldInfo">{{ form.familyName.help_text }}</p>
+    </div>
+
+    <div class="fieldWrapper">
+        <label {% if form.email.field.required %}class="required"{% endif %} for="id_email">{{ form.email.label }}:</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+        <p class="fieldInfo">{{ form.email.help_text }}</p>
+    </div>
+
+    <div class="fieldWrapper">
+        <label {% if form.emailConfirm.field.required %}class="required"{% endif %} for="id_emailConfirm">{{ form.emailConfirm.label }}:</label>
+        {{ form.emailConfirm }}
+        {{ form.emailConfirm.errors }}
+        <p class="fieldInfo">{{ form.emailConfirm.help_text }}</p>
+    </div>
+
+    <div class="fieldWrapper">
+        <label {% if form.twitter.field.required %}class="required"{% endif %} for="id_twitter">{{ form.twitter.label }}:</label>
+        {{ form.twitter }}
+        {{ form.twitter.errors }}
+        <p class="fieldInfo">{{ form.twitter.help_text }}</p>
+    </div>
+
+    <div class="fieldWrapper">
+        <label {% if form.website.field.required %}class="required"{% endif %} for="id_website">{{ form.website.label }}:</label>
+        {{ form.website }}
+        {{ form.website.errors }}
+        <p class="fieldInfo">{{ form.website.help_text }}</p>
+    </div>
+
+    <div class="fieldWrapper">
+        <label {% if form.press.field.required %}class="required"{% endif %} for="id_press">
+            {{ form.press }}
+            {{ form.press.label }}
+        </label>
+        {{ form.press.errors }}
+        <p class="fieldInfo">{{ form.press.help_text }}</p>
+    </div>
+
+    <div class="fieldWrapper">
+        <label {% if form.volunteer.field.required %}class="required"{% endif %} for="id_volunteer">
+            {{ form.volunteer }}
+            {{ form.volunteer.label }}
+        </label>
+        {{ form.volunteer.errors }}
+        <p class="fieldInfo">{{ form.volunteer.help_text }}</p>
+    </div>
+
+    <div class="fieldWrapper">
+        <label {% if form.mailme.field.required %}class="required"{% endif %} for="id_mailme">
+            {{ form.mailme }}
+            {{ form.mailme.label }}
+        </label>
+        {{ form.mailme.errors }}
+        <p class="fieldInfo">{{ form.mailme.help_text }}</p>
+    </div>
+
+    <div class="fieldWrapper">
+        {{ form.recaptcha }}
+        {{ form.recaptcha.errors }}
+        <p class="fieldInfo">{{ form.recaptcha.help_text }}</p>
+    </div>
+
+    <div class="fieldWrapper">
+        <label {% if form.privacyPolicy.field.required %}class="required"{% endif %} for="id_privacyPolicy">
+            {{ form.privacyPolicy }}
+            {{ form.privacyPolicy.label }}
+        </label>
+        {{ form.privacyPolicy.errors }}
+        <p class="fieldInfo">{{ form.privacyPolicy.help_text|safe }}</p>
+    </div>
+
+    <input class="button" type="submit" value="{% trans 'Submit' %}" />
 </form>
 
 {% endblock %}
 
 {% block sidebar %}
-    
-{% include "events/twitter-widget.html" %}
-
+    {% include "events/twitter-widget.html" %}
 {% endblock %}
