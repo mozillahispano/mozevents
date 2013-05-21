@@ -22,9 +22,9 @@
 
 <div class="event-detail">
     <p class="event-date"><strong>{{ event.eventDate }}</strong></p>
-    <p class="event-addr"><em>{% trans 'Address' %}:</em> <a href="http://maps.google.es/maps?q={{ event.address }}">{{ event.address }}</a></p>
+    <p class="event-addr"><em>{% trans 'Address' %}:</em> <a href="http://maps.google.es/maps?q={{ event.address }}+{{ event.city }}">{{ event.address }}, {{ event.city }}</a> ({{ event.get_country_display }})</p>
+    {% if event.registrationOpen %}{% if event.places %}<p class="event-places"><em>{% trans 'Places' %}:</em> {{ event.placesLeft }}/{{ event.places }}</p>{% endif %}{% endif %}
     {% if event.commentsUrl %}<p class="event-comment"><a href="{{ event.commentsUrl }}">{% trans 'Comments and opinions about the event' %}</a></p>{% endif %}
-    {% if event.registrationOpen %}{% if event.places %}<p>{% trans 'Places' %}: {{ event.placesLeft }}/{{ event.places }}</p>{% endif %}{% endif %}
 </div>
 
 {{ event.description|safe}}
@@ -38,6 +38,10 @@
 {% endblock %}
 
 {% block sidebar %}
+
+<div id="event-map">   
+<iframe width="235" height="230" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.es/maps?q={{ event.address }}+{{ event.city }}&amp;ie=UTF8&amp;t=m&amp;z=16&amp;iwloc=near&amp;output=embed"></iframe>
+</div> 
     
 {% include "events/twitter-widget.html" %}
 

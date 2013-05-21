@@ -196,12 +196,17 @@ table tr:hover {
 #sidebar {
     width: 24%;
     margin-top: 0px;
-    border-left: 1px solid #dfe6ec;
     float: right;
-    background-image: url(../img/sidebar-shadow.png);
-    background-position: top;
-    background-repeat: repeat-x;
-    background-color: #e8f3ff;
+}
+
+#sidebar #event-map {
+    width: 235px;
+    margin: auto;
+}
+
+#sidebar #event-map iframe {
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 6px;
 }
 
 #regButton {
@@ -390,6 +395,10 @@ h2#mainpage-title {
 
 .event-detail p.event-comment {
     background: url("../img/event-comment.png") no-repeat scroll 6px 7px transparent !important;
+}
+
+.event-detail p.event-places {
+    background: url("../img/event-places.png") no-repeat scroll 6px 7px transparent !important;
 }
 
 .event-name {
