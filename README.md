@@ -2,6 +2,24 @@
 
 This django app allows you to set up an event system for you meetings, talks, parties...
 
+### Features
+
+* Upcoming and past events listing.
+* Event registration.
+* Scheduled registration time range.
+* Places limit.
+* Places queue and auto handling/emailing new available places.
+* Automatic emails for confirmation and declination.
+* Attendees check-in feature for the day of the event.
+* Twitter, flickr and google maps integration.
+* Basic global stats.
+* Mozilla sandstone theme.
+* Full localization support.
+
+You can see it working here:
+
+https://eventos.mozilla-hispano.org
+
 ### License
 
 Check ``LICENSE`` file.
