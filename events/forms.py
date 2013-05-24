@@ -36,5 +36,11 @@ class RegistrationForm(ModelForm):
 		if email != emailConfirm:
 			msg = _("The email doesn't match")
 			self._errors["emailConfirm"] = self.error_class([msg])
-                        
+                
+                #Cleaning twitter usernames
+                twitter = cleaned_data.get("twitter")
+                twitter = twitter[twitter.rfind('/') + 1 : ]
+                twitter = twitter[twitter.rfind('@') + 1 : ]
+                self.cleaned_data["twitter"] = twitter
+       
 		return cleaned_data
