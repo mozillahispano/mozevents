@@ -90,7 +90,7 @@ class RegistrationAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'website', 'event', 'twitter', 'status', 'volunteer', 'press', 'mailme', 'creationDate')
     list_filter = ['status', 'press', 'volunteer', 'mailme', 'creationDate', 'event']
     search_fields = ['name', 'email']
-    actions = [export_as_csv_action(_("Export selected registrations as CSV file"), fields=['id', 'name', 'email', 'website', 'twitter', 'volunteer', 'press'], header=True), reg_attended, reg_privacy_clean, reg_confirmed, reg_declined, reg_pending]
+    actions = [export_as_csv_action(_("Export selected registrations as CSV file"), fields=['id', 'name', 'email', 'website', 'twitter', 'volunteer', 'press', 'status'], header=True), reg_attended, reg_privacy_clean, reg_confirmed, reg_declined, reg_pending]
     
 
 admin.site.register(Event, EventAdmin)
