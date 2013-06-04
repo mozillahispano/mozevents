@@ -1,6 +1,7 @@
 from django import forms
-from django.utils.safestring import mark_safe
 from django.conf import settings
+from django.utils.safestring import mark_safe
+
 # Recaptcha stuff
 import recaptcha.recaptcha as captcha
 

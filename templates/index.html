@@ -4,14 +4,68 @@
 
 {% block title %}{% trans 'Events' %}{% endblock %}
 
+{% block contentClass %}mainpage{% endblock %}
+
 {% block content %}
 
-{% if events %}
-<ul id="event-list">
-    {% for event in events %}
-    <li><a href="/{{ event.id }}/{{ event.slug }}/">{{ event.name }}</a> <small>({{ event.eventDate|date:"SHORT_DATE_FORMAT"}})</small></li>
-    {% endfor %}
-</ul>
+<h2 id="mainpage-title">{% trans 'Where is Mozilla?' %}</h2>
+
+<div id="mainpage-desc">
+    <p>
+	{% trans "Here you can see some events which Mozilla community will be <strong>organising and require sign-up</strong>, and the topics on which our Mozillians will be speaking. If you are organizing an event and would like a Mozillian to participate, please send us an email to <em>eventos at mozilla-hispano.org</em>. If you are a Mozillian organising an event that's not listed here, let us know!" %}
+    </p>
+    
+    <p>{% trans 'You can also see <a href="https://www.mozilla-hispano.org/documentacion/Eventos">a full list of events that Mozilla is participating</a>' %}.</p>
+</div>
+
+{% if nextEvents %}
+    <h2>{% trans 'Coming events' %}</h2>
+    <table>
+			<thead>
+				<tr>
+					<th>{% trans 'Name' %}</th>
+                                        <th>{% trans 'Date' %}</th>
+					<th>{% trans 'Country' %}</th>
+					<th>{% trans 'City' %}</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for event in nextEvents %}
+					<tr>
+						<td><a href="/{{ event.id }}/{{ event.slug }}/">{{ event.name }}</a></td>
+                                                <td>{{ event.eventDate|date:"SHORT_DATE_FORMAT" }}</td>
+						<td>{{ event.get_country_display }}</td>
+						<td>{{ event.city }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+    </table>
+{% endif %}
+
+{% if oldEvents %}
+    <h2>{% trans 'Past events' %}</h2>
+    <table>
+			<thead>
+				<tr>
+					<th>{% trans 'Name' %}</th>
+                                        <th>{% trans 'Date' %}</th>
+					<th>{% trans 'Country' %}</th>
+					<th>{% trans 'City' %}</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for event in oldEvents %}
+					<tr>
+						<td><a href="/{{ event.id }}/{{ event.slug }}/">{{ event.name }}</a></td>
+                                                <td>{{ event.eventDate|date:"SHORT_DATE_FORMAT" }}</td>
+						<td>{{ event.get_country_display }}</td>
+						<td>{{ event.city }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+    </table>
 {% endif %}
 
 {% endblock %}

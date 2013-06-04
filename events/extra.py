@@ -1,17 +1,14 @@
 # coding=utf-8
-# Our custom fields
-
-from django.forms import forms
-#l10n
+from django import forms
+from django.conf import settings
+from django.utils.encoding import smart_unicode
 from django.utils.translation import ugettext_lazy as _
 
 # Recaptcha stuff
-from django.conf import settings
-from django import forms
-from django.utils.encoding import smart_unicode
 from events.widgets import ReCaptcha
 import recaptcha.recaptcha as captcha
 
+# Our custom fields
 class ReCaptchaField(forms.CharField):
     default_error_messages = {
         'captcha_invalid': _('Invalid captcha')

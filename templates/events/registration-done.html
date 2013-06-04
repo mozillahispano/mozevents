@@ -14,6 +14,10 @@
 
 <p>{% trans 'We have sent an email to' %} <em>{{ registration.email }}</em> {% trans 'with the instructions to confirm it' %}.</p>
 
+{% if event.queueActive and event.placesLeft < 1 %}
+    <p><strong>{% trans 'Remember that this event is already full, your will be put in the queue and we will contact you in case a place is released' %}.</strong></p>
+{% endif %}
+
 {% include "events/social-block.html" %}
 
 <p class="back-link">« <a href="{{ SITE_URL }}/{{ event.id }}/{{ event.slug }}/">{% trans 'Back to' %} {{ event.name }}</a></p>

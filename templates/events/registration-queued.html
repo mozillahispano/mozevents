@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{{ event.name }} - {% trans 'Registration' %}{% endblock %}
+{% block titleheader %}{{ event.name }}{% endblock %}
+{% block eventURL %}{{ event.id }}/{{ event.slug }}/{% endblock %}
+
+{% block content %}
+
+<h2><a href="/{{ event.id }}/{{ event.slug }}/">{{ event.name }}</a> - {% trans 'Registration' %}</h2>
+
+<p>{% trans 'Thanks for registering!' %}</p>
+<p><strong>{% trans 'Unfortunately we are full, your registration is now in QUEUE' %}.</strong></p>
+<p><strong>{% trans 'We will contact you if a place is released' %}.</strong></p>
+
+<p><small>{% trans "If you can't go to the event, it would be nice if you cancel your registration using the link at the bottom of the first email we sent you" %}.</p></small>
+
+{% include "events/social-block.html" %}
+
+<p class="back-link">« <a href="{{ SITE_URL }}/{{ event.id }}/{{ event.slug }}/">{% trans 'Back to' %} {{ event.name }}</a></p>
+    
+{% endblock %}
+
+{% block sidebar %}
+  
+{% include "events/twitter-widget.html" %}
+
+{% endblock %}

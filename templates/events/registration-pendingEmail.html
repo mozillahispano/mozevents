@@ -1,0 +1,20 @@
+{% load i18n %}
+{% trans 'Hi' %} {{ reg.firstName }},
+
+{% trans 'A place from the queue has been relased for' %} {{ event.name }}.
+
+{% trans 'Important! You must confirm your attendance as soon as possible by clicking on the following link' %}:
+
+{{ SITE_URL }}/{{ event.id }}/{{ event.slug }}/registration/confirm/{{ reg.hash }}
+
+{% trans 'Here you have the event details' %}:
+
+{% trans 'Date:' %} {{ event.eventDate }}
+{% trans 'Address:' %} {{ event.address }}
+
+{% trans "If you can't go to the event, it would be nice if you cancel your registration using the following link and let other person get your place" %}:
+
+{{ SITE_URL }}/{{ event.id }}/{{ event.slug }}/registration/decline/{{ reg.hash }}
+-- 
+{% trans 'http://www.mozilla-hispano.org' %}
+{% trans 'http://twitter.com/mozilla_hispano' %}

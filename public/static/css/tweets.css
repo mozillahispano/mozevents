@@ -16,17 +16,17 @@
 	src: url('../fonts/MuseoSans_500.otf');
 }
 
-body,html{
+body, html {
     font-family: MuseoSans; /* Font prefetch */
     margin:0;
     padding:0;
 }
-html{
+
+html {
     min-height: 100%;
-    /*-moz-transition-property: background-color;
-    -moz-transition-duration: 3s;*/
 }
-h2{
+
+h2 {
     margin: 0;
 }
 
@@ -34,13 +34,13 @@ h2 a {
 	color: #FFFFFF;
     text-decoration: none;
 }
-canvas{
+canvas {
     position: absolute;
     top:0px;
     left: 0px;
 }
 
-#help{
+#help {
     position: relative;
     background: no-repeat url(../img/fxlogo.png);
     color: #fff;
@@ -54,7 +54,7 @@ canvas{
     z-index: 3;
 }
 
-#load{
+#load {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -69,7 +69,7 @@ canvas{
     font-size: 40px;
 }
 
-body{
+body {
    background-image: -moz-radial-gradient(center 45deg, cover, #F89F1D 0%, #F25626 100%);
    background: #F89F1D;
 }

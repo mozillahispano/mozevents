@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block css_extra %}
+    <link rel="stylesheet" href="/static/js/rickshaw/rickshaw.min.css" type="text/css" />
+{% endblock %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Stats' %}{% endblock %}
+
+{% block content %}
+
+<h2>{% trans 'Event stats' %}</h2>
+
+<h3>{% trans 'General' %}</h3>
+
+<p><strong>{% trans 'Total number of events' %}</strong>: {{ eventNo }}</p>
+<p><strong>{% trans 'Total number of registrations' %}</strong>: {{ registered }} ({% trans 'Average' %}: {{ regAvg }})</p>
+<p><strong>{% trans 'Total people attended' %}</strong>: {{ attended }}</p>
+<p><strong>{% trans 'Global success ratio' %}</strong>: {{ gSuccessRatio }} %</p>
+
+<h3>{% trans 'Attendees per event' %}</h3>
+
+<div id="chart"></div>
+
+{% endblock %}
+
+{% block js_extra %}
+<script type="text/javascript" src="/static/js/rickshaw/vendor/d3.min.js"></script>
+<script type="text/javascript" src="/static/js/rickshaw/vendor/d3.layout.min.js"></script>
+<script type="text/javascript" src="/static/js/rickshaw/rickshaw.min.js"></script>
+<script>
+var data = [
+    {% for e in events %}
+        { x: {{ forloop.counter0 }}, y: {{ e.peopleAttended }} }, 
+    {% endfor %}
+];
+
+var graph = new Rickshaw.Graph( {
+    element: document.querySelector("#chart"),
+    width: 600,
+    height: 250,
+    renderer: 'bar',
+    series: [
+        {
+            color: 'lightblue',
+            data: data
+        }
+    ]
+} );
+
+var yAxis = new Rickshaw.Graph.Axis.Y({
+    graph: graph
+});
+
+yAxis.render();
+
+graph.render();
+</script>
+{% endblock %}

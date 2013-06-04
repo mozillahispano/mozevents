@@ -7,10 +7,18 @@
 
 {{ SITE_URL }}/{{ event.id }}/{{ event.slug }}/registration/confirm/{{ reg.hash }}
 
+{% if event.queueActive and event.placesLeft < 1 %}
+{% trans 'Remember that this event is already full, your will be put in the queue and we will contact you in case a place is released' %}.
+{% else %}
 {% trans 'Here you have the event details' %}:
 
 {% trans 'Date:' %} {{ event.eventDate }}
 {% trans 'Address:' %} {{ event.address }}
+{% endif %}
+
+
 -- 
 {% trans 'http://www.mozilla-hispano.org' %}
 {% trans 'http://twitter.com/mozilla_hispano' %}
+{% trans "If you can't go to the event, it would be nice if you cancel your registration using the following link and let other person get your place" %}:
+{{ SITE_URL }}/{{ event.id }}/{{ event.slug }}/registration/decline/{{ reg.hash }}

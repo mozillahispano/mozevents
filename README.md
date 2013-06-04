@@ -2,6 +2,24 @@
 
 This django app allows you to set up an event system for you meetings, talks, parties...
 
+### Features
+
+* Upcoming and past events listing.
+* Event registration.
+* Scheduled registration time range.
+* Places limit.
+* Places queue and auto handling/emailing new available places.
+* Automatic emails for confirmation and declination.
+* Attendees check-in feature for the day of the event.
+* Twitter, flickr and google maps integration.
+* Basic global stats.
+* Mozilla sandstone theme.
+* Full localization support.
+
+You can see it working here:
+
+https://eventos.mozilla-hispano.org
+
 ### License
 
 Check ``LICENSE`` file.
@@ -20,7 +38,7 @@ Clone this repo
 
     $ git clone git@github.com:mozillahispano/mozevents.git
 
-You'll need to install python packages used in this project. These are in ``requeriments.txt``.
+You'll need to install python packages used in this project. These are in ``requirements.txt``.
 The best way to install these packages is using ``pip``:
 
     $ pip install -r mozevents/requirements.txt
@@ -32,17 +50,17 @@ Note: We asume you have running your virtual environment.
 Create and fill your local settings (database, email, url and recaptcha keys)
 
     $ cd mozevents
-    $ cp settings_local.py.example settings_local.py
-    $ vim settings_local.py
+    $ cp mozevents/settings_local.py.example mozevents/settings_local.py
+    $ vim mozevents/settings_local.py
 
 Fill the initial database
 
-    $ python manage.py syndb
+    $ python manage.py syncdb
 
-Collect the static files
+Collect the static files (not required for local development with ``DEBUG=True``)
 
     $ python manage.py collectstatic
-    
+
 Run the testserver
 
     $ python manage.py runserver

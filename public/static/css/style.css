@@ -1,142 +1,272 @@
 /*
-	Design: javfox
-	markup: Nukeador
+    Design: javfox
+    markup: Nukeador
 */
 
-@import  url('undohtml.css');
-
 @font-face {
-	font-family: MuseoSans;
-	src: url('../fonts/MuseoSans_500.otf');
+    font-family: MuseoSans;
+    src: url('../fonts/MuseoSans_500.otf');
 }
 
-body {
-	background-color: #E2E2E2;
-	background-image: url(../img/canvas-bg.png);
-	color: Black;
-	font-family: 'Lucida Grande',Geneva,Arial,Trebuchet,Verdana,Helvetica,sans-serif;
-	font-size: 62.5%;
-	text-align: inherit;
+/* ==========================================================================
+   Clearfix
+   ========================================================================== */
+
+/*
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before, .clearfix:before,
+.cf:after, .clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after, .clearfix:after {
+    clear: both;
+}
+
+/**
+* For IE 6/7 only
+* Include this rule to trigger hasLayout and contain floats.
+*/
+.cf, .clearfix {
+    *zoom: 1;
 }
 
 /* Links */
 a[hreflang]:after {
-	content: ' ('attr(hreflang)')';
-	font-size: 80%;
+    content: ' ('attr(hreflang)')';
+    font-size: 80%;
 }
 
 a[hreflang=es]:after {content: '';} /* Desactivar los que son en espa�ol con sintaxis de css2 */
-.clearfix:after {content: "."; display:block; height:0; clear:both; visibility:hidden;}
-.clearfix {display:block;} /*opera & safari */
-/*ie6 and no IE mac*/
-/* Hides from IE-mac \*/ * html .clearfix {height: 1%;} /* End hide from IE-mac */
 
 a:link {
-	color:#264373;
+    color: #264373;
 }
 a:visited {
-	color:#264373;
+    color: #264373;
 }
 a:hover {
-	color:#5278B6;
+    color: #5278B6;
 }
 a:active {
-	color:#5278B6;
+    color: #5278B6;
 }
 
-#header {
-    background-image: url("../img/header.png");
-    height: 125px;
+/* Sandstone tweaks start here */
+#masthead {
+    height: 100px;
     position: relative;
 }
 
-#header h1 a {
-    color: #D86214;
-    display: block;
-    font-family: MuseoSans;
-    font-size: 29px;
-    height: 90px;
-    margin: 22px 0 0 418px;
-    overflow: hidden;
-    position: absolute;
-    text-align: center;
-    text-shadow: 1px 1px #CCCCCC;
-    vertical-align: middle;
-    width: 251px;
-}
-
-#header h1 a span {
-}
-
-#header #visit-box {
-  background: url("../img/visit-box.png") no-repeat scroll 0 0 transparent;
-  display: block;
-  height: 49px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 118px;
-}
-
-#header #visit-box a {
-    color: #FFFFFF;
-    display: block;
+#masthead nav li a,
+#masthead nav li span {
+    color: #484848;
     font-size: 12px;
-    font-weight: bold;
-    line-height: 34px;
+    padding: 10px 9px;
+}
+
+#masthead nav li:hover > a,
+#masthead nav li:hover > span {
+    background: #fff;
+    text-decoration: none
+}
+
+#masthead nav li.dropdown {
+    display: relative;
+}
+
+#masthead nav li.dropdown ul {
+    display: none;
+}
+
+#masthead nav li.dropdown:hover ul {
+    background: #f0f0f0;
+    display: block;
+    position: absolute;
+    top: 36px;
+    width: 190px;
+    z-index: 100;
+}
+
+#masthead nav li.dropdown ul li {
+    display: block;
+}
+
+#masthead nav li.dropdown ul a {
+    display: block;
+    padding: 5px 10px;
+}
+
+#logo {
+    left: 0;
+    position: absolute;
+    top: 10px;
+}
+
+nav#social {
+    margin-top: 55px;
+    width: 228px;
+    position: absolute;
+    right: 0px;
+}
+
+nav#social li {
+    float: left;
+    width: 28px;
+    height: 29px;
+    margin: 0 0 12px 10px;
+    opacity: 0.8;
+}
+
+nav#social li:hover {
+        opacity: 1;
+}
+
+nav#social a {
+        text-indent: -10000em;
+        display: block;
+        width: 28px;
+        height: 29px;
+}
+
+nav#social a#twitter-icon {
+        background: url("../img/twitter-icon28.png") no-repeat;
+        /*margin: -34px 200px 0 0;*/
+}
+
+nav#social a#facebook-icon {
+        background: url("../img/facebook-icon28.png") no-repeat;
+}
+
+nav#social a#gplus-icon {
+        background: url("../img/gplus-icon28.png") no-repeat;
+}
+
+nav#social a#youtube-icon {
+        background: url("../img/youtube-icon28.png") no-repeat;
+}
+
+nav#social a#flickr-icon {
+        background: url("../img/flickr-icon28.png") no-repeat;
+}
+
+nav#social a#rss-icon {
+        background: url("../img/rss-icon28.png") no-repeat;
+}
+
+nav#social a#twitter-icon:hover,
+nav#social a#rss-icon:hover, 
+nav#social a#flickr-icon:hover,
+nav#social a#gplus-icon:hover,
+nav#social a#facebook-icon:hover,
+nav#social a#youtube-icon:hover {
+        opacity: 1;
+}
+
+#main-content {
+    width: 72%;
+    padding-bottom:3em;
+    padding-right: 1%;
+    float: left;
+}
+
+#main-content.mainpage {
+    width: 100%;
+}
+
+#main-content.mainpage #mainpage-desc{
+    padding: 0px 6em;
+    text-align: justify;
+    font-size: 0.9em;
+}
+
+#colophon {
+    background: #222222;
+}
+
+#colophon .footer-logo {
     text-align: center;
-    font-family: MuseoSans;
-    text-shadow: 1px 1px #555555;
-    height: 30px;
-    width: 118px;
+    width: 200px;
 }
 
-#header form#langSelector {
-	float: right;
-	margin-top: 88px;
-        margin-right: 4px;
+#colophon .cc {
+    padding: 10px;
+    text-align: center;
 }
 
-#header form#langSelector input[type="submit"] {
-	display: none;
+#colophon .footer-nav {
+    width: 160px;
 }
 
-#canvas {
-	max-width: 1024px;
-	min-width: 690px;
-	margin: 0px auto;
+#colophon .footer-nav strong {
+    color: #777;
+    line-height: 40px;
+    text-transform: uppercase;
 }
 
-#cripple {
-    -moz-box-shadow: #777 0 0 2em;
-    -webkit-box-shadow: #777 0 0 2em;
-    box-shadow: #777 0 0 2em;
-    min-width: 950px;
+#colophon a,
+#colophon a:link,
+#colophon a:visited {
+    color: #aaa;
+}
+/* Sandstone tweaks end here */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #F6F6F1;
+    color: #333333;
+    width: 100%;
+    margin: 1em 0;
 }
 
-#content {
-	border-right: 1px solid #dfe6ec;
-	width: 76%;
-	margin-right: -3px;
-	padding-bottom:3em;
-	float: left;
-	min-width: 720px;
+table th {
+    background-color: rgba(198, 198, 175, 0.5);
+    padding: 0.5em 3px;
+    text-align: left;
 }
 
-#mainbody {
-    background: url("../img/footer-bg.png") no-repeat scroll center bottom #FFFFFF;
-    padding-bottom: 175px;
+table th a {
+    color: #000000 !important;
+}
+
+table td {
+    padding: 0.5em 3px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 0.91em;
+}
+
+table tr:nth-child(2n) {
+    background: none repeat scroll 0 0 rgba(198, 198, 175, 0.2);
+}
+
+table tr:hover {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5);
 }
 
 #sidebar {
-	width: 24%;
-	margin-top: 0px;
-	border-left: 1px solid #dfe6ec;
-	float: right;
-	background-image: url(../img/sidebar-shadow.png);
-	background-position: top;
-	background-repeat: repeat-x;
-	background-color: #e8f3ff;
+    width: 24%;
+    margin-top: 0px;
+    float: right;
+}
+
+#sidebar #event-map {
+    width: 235px;
+    margin: auto;
+}
+
+#sidebar #event-map iframe {
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 6px;
 }
 
 #regButton {
@@ -154,11 +284,11 @@ a:active {
     float: right;
     font-size: 2em;
     height: 68px;
-    margin: 53px 0 0 463px;
+    margin: 3em 0 0 463px;
     overflow: visible;
     padding-bottom: 0;
     position: absolute;
-    width: 228px;
+    width: 245px;
 }
 
 #regButton span {
@@ -172,7 +302,7 @@ a:active {
     background: url("../img/panda.png") no-repeat scroll -7px 0 transparent;
     color: #23441E;
     display: block;
-    font-size: 0.8em;
+    font-size: 0.7em;
     height: 47px;
     margin: -21px 0 0;
     padding: 45px 0 0 59px;
@@ -190,10 +320,6 @@ a:active {
     text-shadow: 0 1px 0 #C2E3C1;
 }
 
-#formInfo {
-    text-align: right;
-}
-
 #formInfo span {
     color: red;
 }
@@ -204,7 +330,6 @@ a:active {
 
 #social {
     float: right;
-    width: 290px;
 }
 
 #flickrLink {
@@ -233,95 +358,111 @@ a:active {
 }
 
 .maincontent, .portada-extra{
-	margin: 2em 1em 0em;
-	padding: 1em;
+    margin: 2em 1em 0em;
+    padding: 1em;
 }
+
 .maincontent h2{
-	font-size: 1.75em;
-	margin-bottom:0.5em;
-	border-bottom:1px dotted;
+    font-size: 1.75em;
+    margin-bottom:0.5em;
+    border-bottom:1px dotted;
 }
 .maincontent .maintext{
-	padding: 0 0 2em 0em;
-	font-size:1.3em;
+    padding: 0 0 2em 0em;
+    font-size:1.3em;
 
 }
 
 /* Elements  inside maincontent */
 .maincontent .maintext p{
-	padding-bottom:1em;
-	line-height: 1.3em;
+    padding-bottom:1em;
+    line-height: 1.3em;
 }
 .maincontent .maintext ul {
-	list-style-type:none;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	margin-left:0em;
-	padding-left:2em;
-	list-style-type:none;
+    list-style-type:none;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left:0em;
+    padding-left:2em;
+    list-style-type:none;
 }
 .maincontent .maintext ul li {
-	background:transparent url(../img/bullet.gif) no-repeat scroll 0pt 3px;
-	padding-left:1.5em;
-	margin-bottom:0.3em;
+    background:transparent url(../img/bullet.gif) no-repeat scroll 0pt 3px;
+    padding-left:1.5em;
+    margin-bottom:0.3em;
 }
 .maincontent .maintext ol {
-	list-style-type:none;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	margin-left:0em;
-	padding-left:3.6em;
+    list-style-type:none;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left:0em;
+    padding-left:3.6em;
 }
 .maincontent .maintext ol li {
-	margin-bottom:0.3em;
-	list-style-type: decimal;
+    margin-bottom:0.3em;
+    list-style-type: decimal;
 }
 
 .maincontent .maintext h3 {
-	font-size:1.1em;
-	margin-bottom:1em;
+    font-size:1.1em;
+    margin-bottom:1em;
 }
 
 .maincontent h2 {
-	border: none !important;
+    border: none !important;
+}
+
+h2#mainpage-title {
+    margin: 1em 0;
+    color: rgb(171, 24, 26);
+    font: 2em "Bebas Neue","League Gothic",Haettenschweiler,"Arial Narrow",sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0px rgba(170, 160, 130, 0.5);
+    text-align: center;
 }
 
 /* Event box */
 
 .event-detail {
-	-moz-border-radius:5px 5px 5px 5px;
-	-moz-box-shadow:0.1em 0.1em 0.6em grey;
-	border-radius:5px 5px 5px 5px;
-	box-shadow:0.1em 0.1em 0.6em grey;
-	-webkit-border-radius:5px 5px 5px 5px;
-	-webkit-box-shadow:0.1em 0.1em 0.6em grey;
-	border:1px solid #E3E3E3;
-	padding:0;
-         margin-bottom: 3em;
-        width: 400px;
+    background: #FCFCFC;
+    -moz-border-radius:5px 5px 5px 5px;
+    -moz-box-shadow:0.1em 0.1em 0.6em grey;
+    border-radius:5px 5px 5px 5px;
+    box-shadow:0.1em 0.1em 0.6em grey;
+    -webkit-border-radius:5px 5px 5px 5px;
+    -webkit-box-shadow:0.1em 0.1em 0.6em grey;
+    border:1px solid #E3E3E3;
+    padding:0;
+    margin: 2em 0;
+    width: 400px;
 }
 
 .event-detail p {
-	border-bottom:1px solid #E3E3E3;
-	padding:0.4em 1em 0.4em 29px !important;
-	line-height: 20px !important;
+    border-bottom:1px solid #E3E3E3;
+    padding:5px 0px 5px 29px !important;
+    line-height: 20px !important;
+    margin: 0;
 }
 
 .event-detail p.event-date {
-	background: url("../img/event-date.png") no-repeat scroll 6px 7px transparent !important;
+    background: url("../img/event-date.png") no-repeat scroll 6px 7px transparent !important;
 }
 
 .event-detail p.event-addr {
-	background: url("../img/event-addr.png") no-repeat scroll 6px 7px transparent !important;
+    background: url("../img/event-addr.png") no-repeat scroll 6px 7px transparent !important;
 }
 
 .event-detail p.event-comment {
-	background: url("../img/event-comment.png") no-repeat scroll 6px 7px transparent !important;
+    background: url("../img/event-comment.png") no-repeat scroll 6px 7px transparent !important;
 }
 
-.back-link {
-    font-size: 0.85em;
-    margin-top: 2em;
+.event-detail p.event-places {
+    background: url("../img/event-places.png") no-repeat scroll 6px 7px transparent !important;
+}
+
+.event-name {
+    clear: both;
 }
 
 label {
@@ -333,17 +474,13 @@ label[for=id_press], label[for=id_privacyPolicy], label[for=id_volunteer], label
     display: inline;
 }
 
-input[type=checkbox] {
-    margin-right: 7px;
-}
-
 label.required {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 label.required:after {
-	content: " *";
-	color: red;
+    content: " *";
+    color: red;
 }
 
 .fieldInfo {
@@ -367,7 +504,7 @@ label.required:after {
 #id_emailConfirm,
 #id_twitter,
 #id_website {
-	width: 15em;
+    width: 15em;
 }
 
 ul.errorlist {

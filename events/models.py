@@ -1,18 +1,12 @@
 # coding=utf-8
-from django.db import models
-from django.forms import ModelForm
-
 import datetime
 
-# l10n
+from django.db import models
+from django.forms import ModelForm
 from django.utils.translation import ugettext_lazy as _
-
-# Country list from django-countries
-from django_countries.countries import COUNTRIES
-
 from django.utils.encoding import smart_str, smart_unicode
 
-# Models
+from django_countries.countries import COUNTRIES
 
 class Event(models.Model):
     '''
@@ -33,17 +27,48 @@ class Event(models.Model):
     commentsUrl = models.CharField(_("Comments url"), max_length=200, help_text=_("Link to comments at the forum"), blank=True, null=True)
     active = models.BooleanField(_("Active"))
     twitterTag = models.CharField(_("Social tag"), max_length=50, help_text=_("Tag for this event at Twitter and Flickr, e.g fx4madrid. Note: Do not add # to the tag, it will be added auto for Twitter."))
+    queueActive = models.BooleanField(_("Queue active"))
+    queueSize = models.IntegerField(_("Queue max. size"), blank=True, null=True, help_text=_("Max. people on the queue, set 0 for no limit"))
+    queueWaitTime = models.IntegerField(_("Max. time to answer queue (hours)"), blank=True, null=True, help_text=_("Max. time a person has to answer when he get a place for the event (in hours)"))
     
     def placesLeft(self):
         '''
             Returns how many places an event has left
         '''
-        places = self.places - Registration.objects.filter(event=self.id).count()
-        # If we add people manually to the event, we dont want to show a negative count ;)
-        if places < 0:
-            places = 0
+        
+        if self.places!=None:
+            places = self.places - Registration.objects.filter(event=self.id, status="Confirmed").count()
+            # If we add people manually to the event, we dont want to show a negative count ;)
+            if places < 0:
+                places = 0
+            
+            # If there are places left but any record is pending, no direct places should be offered
+            # because they have to go to the queue if available
+            if Registration.objects.filter(event=self.id, status="Pending").count():
+                places = 0
+        else:
+            # TODO: Think of a better fix for events with unlimited (None) places
+            return 'unlimited'
 
         return places
+    
+    placesLeft = property(placesLeft)
+    
+    def queueFull(self):
+        '''
+            Returns if the queue is full
+        '''
+        inQueue = Registration.objects.filter(event=self.id, status="Queued").count()
+        
+        # queueSize 0 is infinite
+        if self.queueSize == 0:
+            return False
+        elif self.queueSize - inQueue < 1:
+            return True
+        else:
+            return False
+        
+    queueFull = property(queueFull)
     
     def registrationOpen(self):
         '''
@@ -51,7 +76,13 @@ class Event(models.Model):
         '''
         now = datetime.datetime.now()
         
-        if now >= self.regStartDate and now <= self.regEndDate and self.placesLeft > 0:
+        if now >= self.regStartDate and now <= self.regEndDate and self.placesLeft=='unlimited':
+            return True
+        # If we have places left
+        elif now >= self.regStartDate and now <= self.regEndDate and self.placesLeft > 0:
+            return True
+        # If there is no places left but queue is not full
+        elif now >= self.regStartDate and now <= self.regEndDate and self.placesLeft < 1 and self.queueActive and not self.queueFull:
             return True
         else:
             return False
@@ -62,7 +93,7 @@ class Event(models.Model):
         '''
             Returns the number of people checked in as attended
         '''
-        attended = Registration.objects.filter(event=self.id, attended=True).count()
+        attended = Registration.objects.filter(event=self.id, status="Attended").count()
         
         return attended
     
@@ -88,8 +119,29 @@ class Registration(models.Model):
     volunteer = models.BooleanField(_("I want to help as a volunteer"), help_text=_("Check this field if you to want to help us at the event as a volunteer, we will contact you with more details"))
     website = models.URLField(_("Website"), max_length=200, blank=True, null=True)
     mailme = models.BooleanField(_("Keep my information after the event"), help_text=_("I allow Mozilla to contact me in the future with related information (about the community, next events...)"))
-    confirmed = models.BooleanField(_("Confirmed"))
-    attended = models.BooleanField(_("Attended to the event"))
+    
+    '''
+        Workflow:
+            * You fill the form: Invited
+            * You confirm the email: Confirmed
+            * You confirm the email but place limit was reached: Queued
+            * You get a spot from the queue and confirm: Confirmed
+            * You get a spot from the queue and decline: Declined
+            * You were in queue and you get a place to confirm: Pending
+            * You get a spot from the queue and don't answer in time: Expired
+            * You were confirmed and check-in on the event: Attended
+    '''
+    STATUS_CHOICES = (
+        ('Invited', _("Invited")),
+        ('Confirmed', _("Confirmed")),
+        ('Declined', _("Declined")),
+        ('Expired', _("Expired")),
+        ('Queued', _("Queued")),
+        ('Pending', _("Pending")),
+        ('Attended', _("Attended"))
+    )
+    
+    status = models.CharField(_("Status"), choices=STATUS_CHOICES, max_length=9, default="Invited")
     
     hash = models.CharField(max_length=200, editable=False)
     

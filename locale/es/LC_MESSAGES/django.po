@@ -7,15 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-03 20:46+0200\n"
-"PO-Revision-Date: 2013-04-03 20:47+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2013-05-20 10:24+0200\n"
+"PO-Revision-Date: 2013-05-20 11:10+0100\n"
+"Last-Translator: Rubén Martín <ruben@funge.uva.es>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: django_countries/countries.py:5
 #: django_countries/countries.py:256
@@ -325,7 +326,7 @@ msgstr ""
 #: django_countries/countries.py:66
 #: django_countries/countries.py:321
 msgid "Dominican Republic"
-msgstr ""
+msgstr "República Dominicana"
 
 #: django_countries/countries.py:67
 #: django_countries/countries.py:322
@@ -725,7 +726,7 @@ msgstr ""
 #: django_countries/countries.py:146
 #: django_countries/countries.py:403
 msgid "Mexico"
-msgstr ""
+msgstr "México"
 
 #: django_countries/countries.py:147
 #: django_countries/countries.py:404
@@ -1045,7 +1046,7 @@ msgstr ""
 #: django_countries/countries.py:210
 #: django_countries/countries.py:472
 msgid "Spain"
-msgstr ""
+msgstr "España"
 
 #: django_countries/countries.py:211
 #: django_countries/countries.py:473
@@ -1307,181 +1308,252 @@ msgstr ""
 msgid "United Republic of Tanzania"
 msgstr ""
 
-#: events/admin.py:13
+#: events/admin.py:11
 msgid "Export selected objects as CSV file"
 msgstr "Exportar los objetos seleccionados como CSV"
 
-#: events/admin.py:59
+#: events/admin.py:68
 msgid "This registration has attended to the event"
 msgstr "El registrado ha asistido al evento"
 
-#: events/admin.py:65
+#: events/admin.py:72
+msgid "Confirm manually place for this registration"
+msgstr "Confirmar manualmente una plaza para este registro"
+
+#: events/admin.py:76
+msgid "Decline manually this registration"
+msgstr "Declinar manualmente este registro"
+
+#: events/admin.py:83
+msgid "Set as pending and send an email to confirm"
+msgstr "Fijar como pendiente y enviar un correo para confirmar"
+
+#: events/admin.py:87
+msgid "[Privacy] Delete personal information"
+msgstr "[Privacidad] Borrar información personal"
+
+#: events/admin.py:93
 msgid "Export selected registrations as CSV file"
 msgstr "Exportar los registros seleccionados como CSV"
 
-#: events/extra.py:17
+#: events/extra.py:14
 msgid "Invalid captcha"
 msgstr "Captcha no válido"
 
-#: events/forms.py:22
+#: events/forms.py:19
 msgid "Confirm email address"
 msgstr "Confirmar dirección de correo"
 
-#: events/forms.py:23
+#: events/forms.py:20
 msgid "To avoid automatical registrations, you have to fill this field with the two words above. If you arent able to read them, you can reload a different ones from the arrows icon."
 msgstr "Para evitar registros automáticos, debes rellenar este campo con las dos palabras en la parte superior. Si no eres capaz de leerlas, puedes cargar otras diferentes desde el icono de las flechas."
 
-#: events/forms.py:24
+#: events/forms.py:21
 msgid "I accept the privacy policy"
 msgstr "Acepto la política de privacidad"
 
-#: events/forms.py:24
+#: events/forms.py:21
 msgid "All your data will be incorporated to a database and will be used to organice and control the event assistants and contact you with information relevant to this event. We will not share your information with anyone and we will delete all data once the event is over unless you specify the opposite on the form to get information about Mozilla.<br />If you have any doubt or you want to correct or delete your information anytime, contacting us via email at eventos at mozilla-hispano.org"
 msgstr "Todos tus datos serán incorporados a una base de datos y serán usados para organizar y controlar a los asistentes al evento y ponernos en contacto contigo con información relevante al evento. No compartiremos tu información con nadie y los datos serán borrados una vez que termine el evento a menos que hayas indicado lo contrario en el formulario para recibir información de Mozilla.<br />Si tienes cualquier duda o quieres corregir o borrar tu información en cualquier momento, puedes contactar via correo electrónico con nosotros en eventos arroba mozilla-hispano.org"
 
-#: events/forms.py:37
+#: events/forms.py:34
 msgid "The email doesn't match"
 msgstr "El correo no coincide"
 
-#: events/models.py:22
-#: events/models.py:79
+#: events/models.py:16
+#: events/models.py:110
+#: templates/index.html:22
+#: templates/index.html.py:47
 msgid "Name"
 msgstr "Nombre"
 
-#: events/models.py:23
+#: events/models.py:17
 msgid "Slug"
 msgstr "Enlace permanente"
 
-#: events/models.py:24
-#: events/models.py:84
+#: events/models.py:18
+#: events/models.py:115
 msgid "Creation date"
 msgstr "Fecha de creación"
 
-#: events/models.py:25
+#: events/models.py:19
 msgid "Event date"
 msgstr "Fecha del evento"
 
-#: events/models.py:26
+#: events/models.py:20
 msgid "Registration start date"
 msgstr "Fecha de inicio de la inscripción"
 
-#: events/models.py:27
+#: events/models.py:21
 msgid "Registration end date"
 msgstr "Fecha de fin de la inscripción"
 
-#: events/models.py:28
+#: events/models.py:22
+#: templates/index.html:24
+#: templates/index.html.py:49
 msgid "Country"
 msgstr "País"
 
-#: events/models.py:29
+#: events/models.py:23
+#: templates/index.html:25
+#: templates/index.html.py:50
 msgid "City"
 msgstr "Ciudad"
 
-#: events/models.py:30
+#: events/models.py:24
 #: templates/events/detail.html:25
-#: templates/events/registration-confirmed.html:24
+#: templates/events/registration-confirmed.html:25
 msgid "Address"
 msgstr "Dirección"
 
-#: events/models.py:30
+#: events/models.py:24
 msgid "The address should be searchable in Google Maps"
 msgstr "La dirección debe ser una cadena que Google Maps encuentre"
 
-#: events/models.py:31
+#: events/models.py:25
 #: templates/events/detail.html:27
 msgid "Places"
 msgstr "Plazas"
 
-#: events/models.py:31
+#: events/models.py:25
 msgid "Number of places, leave blank for unlimited"
 msgstr "Número de plazas, en blanco para ilimitadas"
 
-#: events/models.py:32
+#: events/models.py:26
 msgid "Event description and program"
 msgstr "Descripción del evento y programa"
 
-#: events/models.py:33
+#: events/models.py:27
 msgid "Comments url"
 msgstr "Url de comentarios"
 
-#: events/models.py:33
+#: events/models.py:27
 msgid "Link to comments at the forum"
 msgstr "Enlace a los comentarios en el foro"
 
-#: events/models.py:34
+#: events/models.py:28
 msgid "Active"
 msgstr "Activo"
 
-#: events/models.py:35
+#: events/models.py:29
 msgid "Social tag"
 msgstr "Etiqueta social"
 
-#: events/models.py:35
+#: events/models.py:29
 msgid "Tag for this event at Twitter and Flickr, e.g fx4madrid. Note: Do not add # to the tag, it will be added auto for Twitter."
 msgstr "Etiqueta para este evento en Twitter y Flickr, e.j fx4madrid. Nota: No añadas # a la etiqueta, se añadirá automáticamente para Twitter."
 
-#: events/models.py:80
+#: events/models.py:30
+msgid "Queue active"
+msgstr "Cola activa"
+
+#: events/models.py:31
+msgid "Queue max. size"
+msgstr "Tamaño máx. de la cola"
+
+#: events/models.py:31
+msgid "Max. people on the queue, set 0 for no limit"
+msgstr "Personas máx. en la cola, 0 para ilimitado"
+
+#: events/models.py:32
+msgid "Max. time to answer queue (hours)"
+msgstr "Tiempo máximo para responder la cola (horas)"
+
+#: events/models.py:32
+msgid "Max. time a person has to answer when he get a place for the event (in hours)"
+msgstr "Tiempo máximo que una persona tiene para responder una vez que tiene plaza para el evento (en horas)"
+
+#: events/models.py:111
 msgid "First name"
 msgstr "Nombre"
 
-#: events/models.py:81
+#: events/models.py:112
 msgid "Family name"
 msgstr "Apellido"
 
-#: events/models.py:85
+#: events/models.py:116
 msgid "Email"
 msgstr "Correo"
 
-#: events/models.py:86
+#: events/models.py:117
 msgid "Twitter user"
 msgstr "Usuario de Twitter"
 
-#: events/models.py:87
+#: events/models.py:118
 msgid "Press"
 msgstr "Prensa"
 
-#: events/models.py:87
+#: events/models.py:118
 msgid "Check this field if you are you from press or other media"
 msgstr "Marca esta casilla si eres parte de la prensa u otros medios"
 
-#: events/models.py:88
+#: events/models.py:119
 msgid "I want to help as a volunteer"
 msgstr "Quiero ayudar como voluntario"
 
-#: events/models.py:88
+#: events/models.py:119
 msgid "Check this field if you to want to help us at the event as a volunteer, we will contact you with more details"
 msgstr "Marca este campo si quieres ayudarnos en el evento como voluntario, contactaremos contigo con los detalles"
 
-#: events/models.py:89
+#: events/models.py:120
 msgid "Website"
 msgstr "Página web"
 
-#: events/models.py:90
+#: events/models.py:121
 msgid "Keep my information after the event"
 msgstr "Guarda mi información tras el evento"
 
-#: events/models.py:90
+#: events/models.py:121
 msgid "I allow Mozilla to contact me in the future with related information (about the community, next events...)"
 msgstr "Doy permiso a Mozilla para que me contacte en un futuro con información relacionada (sobre la comunidad, próximos eventos...)"
 
-#: events/models.py:91
+#: events/models.py:135
+msgid "Invited"
+msgstr "Invitado"
+
+#: events/models.py:136
 msgid "Confirmed"
 msgstr "Confirmado"
 
-#: events/models.py:92
-msgid "Attended to the event"
-msgstr "Ha asistido al evento"
+#: events/models.py:137
+msgid "Declined"
+msgstr "Rechazado"
 
-#: events/utils.py:30
+#: events/models.py:138
+msgid "Expired"
+msgstr "Expirado"
+
+#: events/models.py:139
+msgid "Queued"
+msgstr "Encolado"
+
+#: events/models.py:140
+msgid "Pending"
+msgstr "Pendiente"
+
+#: events/models.py:141
+msgid "Attended"
+msgstr "Asistido"
+
+#: events/models.py:144
+msgid "Status"
+msgstr "Estado"
+
+#: events/utils.py:26
 #, python-format
 msgid "[%(name)s] Registration confirmation"
 msgstr "[%(name)s] Confirmación de registro"
 
-#: mozevents/settings.py:38
+#: events/utils.py:50
+#, python-format
+msgid "[%(name)s] You got a place!"
+msgstr "[%(name)s] ¡Tienes plaza!"
+
+#: mozevents/settings.py:36
 msgid "Spanish"
 msgstr "Español"
 
-#: mozevents/settings.py:39
+#: mozevents/settings.py:37
 msgid "English"
 msgstr "Inglés"
 
@@ -1503,32 +1575,49 @@ msgstr "Error del servidor"
 msgid "Sorry, our server find and error and can not continue, please send a report to eventos arroba mozilla-hispano.org"
 msgstr "Lo sentimos, nuestro servidor ha encontrado un error y no puede seguir, por favor envía un aviso a eventos arroba mozilla-hispano.org"
 
-#: templates/base.html:6
+#: templates/base.html:7
 msgid "Mozilla Events"
 msgstr "Eventos Mozilla"
 
-#: templates/base.html:6
+#: templates/base.html:7
 #: templates/index.html:5
 #: templates/events/tweets.html:6
 msgid "Events"
 msgstr "Eventos"
 
-#: templates/base.html:34
-msgid "Mozilla<br />Events"
-msgstr "Eventos<br />Mozilla"
+#: templates/base.html:37
+msgid "Mozilla"
+msgstr "Mozilla"
 
-#: templates/base.html:36
-#: templates/events/registration-email.html:15
-msgid "http://www.mozilla-hispano.org"
-msgstr "http://www.mozilla-hispano.org"
-
-#: templates/base.html:36
-msgid "Visit our community site"
-msgstr "Visita la web de la comunidad"
-
-#: templates/base.html:36
+#: templates/base.html:224
 msgid "mozilla hispano"
 msgstr "mozilla hispano"
+
+#: templates/index.html:9
+msgid "Where is Mozilla?"
+msgstr "¿Dónde está Mozilla?"
+
+#: templates/index.html:12
+msgid "Here you can see some events which Mozilla community will be <strong>organising and require sign-up</strong>, and the topics on which our Mozillians will be speaking. If you are organizing an event and would like a Mozillian to participate, please send us an email to <em>eventos at mozilla-hispano.org</em>. If you are a Mozillian organising an event that's not listed here, let us know!"
+msgstr "Aquí puedes ver algunos eventos que la comunidad Mozilla está <strong>organizando y requieren registro</strong>, y los temas sobre los que nuestros Mozilleros hablarán. Si estás organizando un evento y quieres que un Mozillero participe, por favor envíanos un correo a <em>eventos arroba mozilla-hispano.org</em>. Si eres un Mozillero organizando un evento que no está listado aquí, ¡háznoslo saber!"
+
+#: templates/index.html:15
+msgid "You can also see <a href=\"https://www.mozilla-hispano.org/documentacion/Eventos\">a full list of events that Mozilla is participating</a>"
+msgstr "También puedes ver <a href=\"https://www.mozilla-hispano.org/documentacion/Eventos\">una lista completa de eventos en los que Mozilla está participando</a>"
+
+#: templates/index.html:18
+msgid "Coming events"
+msgstr "Próximos eventos"
+
+#: templates/index.html:23
+#: templates/index.html.py:48
+#: templates/events/registration-confirmed.html:24
+msgid "Date"
+msgstr "Fecha"
+
+#: templates/index.html:43
+msgid "Past events"
+msgstr "Eventos pasados"
 
 #: templates/events/detail.html:12
 #: templates/events/social-block.html:5
@@ -1550,6 +1639,10 @@ msgid "I am in!"
 msgstr "¡Me apunto!"
 
 #: templates/events/detail.html:18
+msgid "Add me to queue"
+msgstr "Añademe a la cola"
+
+#: templates/events/detail.html:18
 msgid "Register here"
 msgstr "Inscríbete aquí"
 
@@ -1557,11 +1650,11 @@ msgstr "Inscríbete aquí"
 msgid "Comments and opinions about the event"
 msgstr "Comentarios y opiniones sobre el evento"
 
-#: templates/events/detail.html:33
+#: templates/events/detail.html:32
 msgid "Photos"
 msgstr "Fotos"
 
-#: templates/events/detail.html:39
+#: templates/events/detail.html:36
 msgid "Back to event listing"
 msgstr "Volver a la lista de eventos"
 
@@ -1573,8 +1666,12 @@ msgstr "Ver todas las fotos con la etiqueta"
 #: templates/events/registration-closed.html:11
 #: templates/events/registration-confirmed.html:5
 #: templates/events/registration-confirmed.html:11
+#: templates/events/registration-declined.html:5
+#: templates/events/registration-declined.html:11
 #: templates/events/registration-done.html:5
 #: templates/events/registration-done.html:11
+#: templates/events/registration-queued.html:5
+#: templates/events/registration-queued.html:11
 #: templates/events/registration.html:5
 #: templates/events/registration.html:11
 msgid "Registration"
@@ -1592,22 +1689,36 @@ msgstr "Ey, ¡parece que tu inscripción ya fue confirmada!"
 msgid "Thanks, your registration has been confirmed!"
 msgstr "Gracias, ¡tu inscripción ha sido confirmada!"
 
-#: templates/events/registration-confirmed.html:19
+#: templates/events/registration-confirmed.html:18
+#: templates/events/registration-done.html:18
+#: templates/events/registration-email.html:11
+#: templates/events/registration.html:22
+msgid "Remember that this event is already full, your will be put in the queue and we will contact you in case a place is released"
+msgstr "Recuerda que este evento ya está lleno, se te pondrá en la cola y contactará si alguna plaza se libera"
+
+#: templates/events/registration-confirmed.html:20
 msgid "We are looking forward to meet you at"
 msgstr "Esperamos verte en"
 
-#: templates/events/registration-confirmed.html:21
+#: templates/events/registration-confirmed.html:22
 msgid "Remember the details"
 msgstr "Recuerda los detalles"
 
-#: templates/events/registration-confirmed.html:23
-msgid "Date"
-msgstr "Fecha"
+#: templates/events/registration-confirmed.html:29
+#: templates/events/registration-queued.html:17
+msgid "If you can't go to the event, it would be nice if you cancel your registration using the link at the bottom of the first email we sent you"
+msgstr "Si no puedes ir al evento, agradeceríamos que cancelaras tu registro usando el enlace que aparece en el pie del primer correo que te enviamos"
 
-#: templates/events/registration-confirmed.html:28
-#: templates/events/registration-done.html:19
+#: templates/events/registration-confirmed.html:33
+#: templates/events/registration-declined.html:17
+#: templates/events/registration-done.html:23
+#: templates/events/registration-queued.html:21
 msgid "Back to"
 msgstr "Volver a"
+
+#: templates/events/registration-declined.html:13
+msgid "We are sorry for not seeing you at the event, but thanks for notifing, your registration has been deleted"
+msgstr "Lamentamos no poderte ver en el evento, pero gracias por informar, tu registro ha sido borrado"
 
 #: templates/events/registration-done.html:13
 msgid "Thanks, your registration has been saved"
@@ -1622,6 +1733,7 @@ msgid "with the instructions to confirm it"
 msgstr "con las instrucciones para confirmarlo"
 
 #: templates/events/registration-email.html:2
+#: templates/events/registration-pendingEmail.html:2
 msgid "Hi"
 msgstr "Hola"
 
@@ -1633,31 +1745,65 @@ msgstr "Gracias por inscribirte a"
 msgid "Important! You must confirm your attendance by clicking on the following address"
 msgstr "¡Importante! Debes confirmar tu asistencia haciendo clic en la siguiente dirección"
 
-#: templates/events/registration-email.html:10
+#: templates/events/registration-email.html:13
+#: templates/events/registration-pendingEmail.html:10
 msgid "Here you have the event details"
 msgstr "Aquí están los detalles del evento"
 
-#: templates/events/registration-email.html:12
+#: templates/events/registration-email.html:15
+#: templates/events/registration-pendingEmail.html:12
 msgid "Date:"
 msgstr "Fecha:"
 
-#: templates/events/registration-email.html:13
+#: templates/events/registration-email.html:16
+#: templates/events/registration-pendingEmail.html:13
 msgid "Address:"
 msgstr "Dirección:"
 
-#: templates/events/registration-email.html:16
+#: templates/events/registration-email.html:21
+#: templates/events/registration-pendingEmail.html:19
+msgid "http://www.mozilla-hispano.org"
+msgstr "http://www.mozilla-hispano.org"
+
+#: templates/events/registration-email.html:22
+#: templates/events/registration-pendingEmail.html:20
 msgid "http://twitter.com/mozilla_hispano"
 msgstr "http://twitter.com/mozilla_hispano"
 
+#: templates/events/registration-email.html:23
+#: templates/events/registration-pendingEmail.html:15
+msgid "If you can't go to the event, it would be nice if you cancel your registration using the following link and let other person get your place"
+msgstr "Si no puedes ir al evento, agradeceríamos que cancelaras tu registro usando el siguiente enlace para permitir que otra persona use tu plaza"
+
+#: templates/events/registration-pendingEmail.html:4
+msgid "A place from the queue has been relased for"
+msgstr "Se ha liberado una plaza de la cola para"
+
+#: templates/events/registration-pendingEmail.html:6
+msgid "Important! You must confirm your attendance as soon as possible by clicking on the following link"
+msgstr "¡Importante! Debes confirmar tu asistencia lo antes posible haciendo clic en el siguiente enlace"
+
+#: templates/events/registration-queued.html:13
+msgid "Thanks for registering!"
+msgstr "¡Gracias por inscribirte!"
+
+#: templates/events/registration-queued.html:14
+msgid "Unfortunately we are full, your registration is now in QUEUE"
+msgstr "Desafortunadamente estamos llenos, tu registro está ahora en la COLA"
+
+#: templates/events/registration-queued.html:15
+msgid "We will contact you if a place is released"
+msgstr "Contactaremos contigo si se libera alguna plaza"
+
 #: templates/events/registration.html:13
-msgid "Join the party!"
-msgstr "¡Únete a la fiesta!"
+msgid "See you soon!"
+msgstr "¡Nos vemos!"
 
 #: templates/events/registration.html:19
 msgid "Fields marked with <span>*</span> are mandatory"
 msgstr "Los campos señalados con <span>*</span> son obligatorios"
 
-#: templates/events/registration.html:100
+#: templates/events/registration.html:104
 msgid "Submit"
 msgstr "Enviar"
 
@@ -1708,6 +1854,54 @@ msgstr "Hace \" + day_diff + \" días"
 #: templates/events/tweets.html:451
 msgid "\" + Math.ceil( day_diff / 7 ) + \" weeks ago"
 msgstr "Hace \" + Math.ceil( day_diff / 7 ) + \" semanas"
+
+#: templates/stats/index.html:15
+msgid "Stats"
+msgstr "Estadísticas"
+
+#: templates/stats/index.html:19
+msgid "Event stats"
+msgstr "Estadísticas de eventos"
+
+#: templates/stats/index.html:21
+msgid "General"
+msgstr "General"
+
+#: templates/stats/index.html:23
+msgid "Total number of events"
+msgstr "Número total de eventos"
+
+#: templates/stats/index.html:24
+msgid "Total number of registrations"
+msgstr "Número total de registros"
+
+#: templates/stats/index.html:24
+msgid "Average"
+msgstr "Media"
+
+#: templates/stats/index.html:25
+msgid "Total people attended"
+msgstr "Asistentes totales"
+
+#: templates/stats/index.html:26
+msgid "Global success ratio"
+msgstr "Índice global de éxito"
+
+#: templates/stats/index.html:28
+msgid "Attendees per event"
+msgstr "Asistentes por evento"
+
+#~ msgid "Mozilla<br />Events"
+#~ msgstr "Eventos<br />Mozilla"
+
+#~ msgid "Visit our community site"
+#~ msgstr "Visita la web de la comunidad"
+
+#~ msgid "Join the party!"
+#~ msgstr "¡Únete a la fiesta!"
+
+#~ msgid "Obsolete"
+#~ msgstr "Obsoleto"
 
 #~ msgid "Twitter tag"
 #~ msgstr "Etiqueta en Twitter"

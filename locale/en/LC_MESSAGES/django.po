@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-03 20:46+0200\n"
+"POT-Creation-Date: 2013-05-20 10:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1061,38 +1061,54 @@ msgstr ""
 msgid "United Republic of Tanzania"
 msgstr ""
 
-#: events/admin.py:13
+#: events/admin.py:11
 msgid "Export selected objects as CSV file"
 msgstr ""
 
-#: events/admin.py:59
+#: events/admin.py:68
 msgid "This registration has attended to the event"
 msgstr ""
 
-#: events/admin.py:65
+#: events/admin.py:72
+msgid "Confirm manually place for this registration"
+msgstr ""
+
+#: events/admin.py:76
+msgid "Decline manually this registration"
+msgstr ""
+
+#: events/admin.py:83
+msgid "Set as pending and send an email to confirm"
+msgstr ""
+
+#: events/admin.py:87
+msgid "[Privacy] Delete personal information"
+msgstr ""
+
+#: events/admin.py:93
 msgid "Export selected registrations as CSV file"
 msgstr ""
 
-#: events/extra.py:17
+#: events/extra.py:14
 msgid "Invalid captcha"
 msgstr ""
 
-#: events/forms.py:22
+#: events/forms.py:19
 msgid "Confirm email address"
 msgstr ""
 
-#: events/forms.py:23
+#: events/forms.py:20
 msgid ""
 "To avoid automatical registrations, you have to fill this field with the two "
 "words above. If you arent able to read them, you can reload a different ones "
 "from the arrows icon."
 msgstr ""
 
-#: events/forms.py:24
+#: events/forms.py:21
 msgid "I accept the privacy policy"
 msgstr ""
 
-#: events/forms.py:24
+#: events/forms.py:21
 msgid ""
 "All your data will be incorporated to a database and will be used to "
 "organice and control the event assistants and contact you with information "
@@ -1103,151 +1119,202 @@ msgid ""
 "us via email at eventos at mozilla-hispano.org"
 msgstr ""
 
-#: events/forms.py:37
+#: events/forms.py:34
 msgid "The email doesn't match"
 msgstr ""
 
-#: events/models.py:22 events/models.py:79
+#: events/models.py:16 events/models.py:110 templates/index.html:22
+#: templates/index.html.py:47
 msgid "Name"
 msgstr ""
 
-#: events/models.py:23
+#: events/models.py:17
 msgid "Slug"
 msgstr ""
 
-#: events/models.py:24 events/models.py:84
+#: events/models.py:18 events/models.py:115
 msgid "Creation date"
 msgstr ""
 
-#: events/models.py:25
+#: events/models.py:19
 msgid "Event date"
 msgstr ""
 
-#: events/models.py:26
+#: events/models.py:20
 msgid "Registration start date"
 msgstr ""
 
-#: events/models.py:27
+#: events/models.py:21
 msgid "Registration end date"
 msgstr ""
 
-#: events/models.py:28
+#: events/models.py:22 templates/index.html:24 templates/index.html.py:49
 msgid "Country"
 msgstr ""
 
-#: events/models.py:29
+#: events/models.py:23 templates/index.html:25 templates/index.html.py:50
 msgid "City"
 msgstr ""
 
-#: events/models.py:30 templates/events/detail.html:25
-#: templates/events/registration-confirmed.html:24
+#: events/models.py:24 templates/events/detail.html:25
+#: templates/events/registration-confirmed.html:25
 msgid "Address"
 msgstr ""
 
-#: events/models.py:30
+#: events/models.py:24
 msgid "The address should be searchable in Google Maps"
 msgstr ""
 
-#: events/models.py:31 templates/events/detail.html:27
+#: events/models.py:25 templates/events/detail.html:27
 msgid "Places"
 msgstr ""
 
-#: events/models.py:31
+#: events/models.py:25
 msgid "Number of places, leave blank for unlimited"
 msgstr ""
 
-#: events/models.py:32
+#: events/models.py:26
 msgid "Event description and program"
 msgstr ""
 
-#: events/models.py:33
+#: events/models.py:27
 msgid "Comments url"
 msgstr ""
 
-#: events/models.py:33
+#: events/models.py:27
 msgid "Link to comments at the forum"
 msgstr ""
 
-#: events/models.py:34
+#: events/models.py:28
 msgid "Active"
 msgstr ""
 
-#: events/models.py:35
+#: events/models.py:29
 msgid "Social tag"
 msgstr ""
 
-#: events/models.py:35
+#: events/models.py:29
 msgid ""
 "Tag for this event at Twitter and Flickr, e.g fx4madrid. Note: Do not add # "
 "to the tag, it will be added auto for Twitter."
 msgstr ""
 
-#: events/models.py:80
+#: events/models.py:30
+msgid "Queue active"
+msgstr ""
+
+#: events/models.py:31
+msgid "Queue max. size"
+msgstr ""
+
+#: events/models.py:31
+msgid "Max. people on the queue, set 0 for no limit"
+msgstr ""
+
+#: events/models.py:32
+msgid "Max. time to answer queue (hours)"
+msgstr ""
+
+#: events/models.py:32
+msgid ""
+"Max. time a person has to answer when he get a place for the event (in hours)"
+msgstr ""
+
+#: events/models.py:111
 msgid "First name"
 msgstr ""
 
-#: events/models.py:81
+#: events/models.py:112
 msgid "Family name"
 msgstr ""
 
-#: events/models.py:85
+#: events/models.py:116
 msgid "Email"
 msgstr ""
 
-#: events/models.py:86
+#: events/models.py:117
 msgid "Twitter user"
 msgstr ""
 
-#: events/models.py:87
+#: events/models.py:118
 msgid "Press"
 msgstr ""
 
-#: events/models.py:87
+#: events/models.py:118
 msgid "Check this field if you are you from press or other media"
 msgstr ""
 
-#: events/models.py:88
+#: events/models.py:119
 msgid "I want to help as a volunteer"
 msgstr ""
 
-#: events/models.py:88
+#: events/models.py:119
 msgid ""
 "Check this field if you to want to help us at the event as a volunteer, we "
 "will contact you with more details"
 msgstr ""
 
-#: events/models.py:89
+#: events/models.py:120
 msgid "Website"
 msgstr ""
 
-#: events/models.py:90
+#: events/models.py:121
 msgid "Keep my information after the event"
 msgstr ""
 
-#: events/models.py:90
+#: events/models.py:121
 msgid ""
 "I allow Mozilla to contact me in the future with related information (about "
 "the community, next events...)"
 msgstr ""
 
-#: events/models.py:91
+#: events/models.py:135
+msgid "Invited"
+msgstr ""
+
+#: events/models.py:136
 msgid "Confirmed"
 msgstr ""
 
-#: events/models.py:92
-msgid "Attended to the event"
+#: events/models.py:137
+msgid "Declined"
 msgstr ""
 
-#: events/utils.py:30
+#: events/models.py:138
+msgid "Expired"
+msgstr ""
+
+#: events/models.py:139
+msgid "Queued"
+msgstr ""
+
+#: events/models.py:140
+msgid "Pending"
+msgstr ""
+
+#: events/models.py:141
+msgid "Attended"
+msgstr ""
+
+#: events/models.py:144
+msgid "Status"
+msgstr ""
+
+#: events/utils.py:26
 #, python-format
 msgid "[%(name)s] Registration confirmation"
 msgstr ""
 
-#: mozevents/settings.py:38
+#: events/utils.py:50
+#, python-format
+msgid "[%(name)s] You got a place!"
+msgstr ""
+
+#: mozevents/settings.py:36
 msgid "Spanish"
 msgstr ""
 
-#: mozevents/settings.py:39
+#: mozevents/settings.py:37
 msgid "English"
 msgstr ""
 
@@ -1271,28 +1338,53 @@ msgid ""
 "to eventos arroba mozilla-hispano.org"
 msgstr ""
 
-#: templates/base.html:6
+#: templates/base.html:7
 msgid "Mozilla Events"
 msgstr ""
 
-#: templates/base.html:6 templates/index.html:5 templates/events/tweets.html:6
+#: templates/base.html:7 templates/index.html:5 templates/events/tweets.html:6
 msgid "Events"
 msgstr ""
 
-#: templates/base.html:34
-msgid "Mozilla<br />Events"
+#: templates/base.html:37
+msgid "Mozilla"
 msgstr ""
 
-#: templates/base.html:36 templates/events/registration-email.html:15
-msgid "http://www.mozilla-hispano.org"
-msgstr ""
-
-#: templates/base.html:36
-msgid "Visit our community site"
-msgstr ""
-
-#: templates/base.html:36
+#: templates/base.html:224
 msgid "mozilla hispano"
+msgstr ""
+
+#: templates/index.html:9
+msgid "Where is Mozilla?"
+msgstr ""
+
+#: templates/index.html:12
+msgid ""
+"Here you can see some events which Mozilla community will be "
+"<strong>organising and require sign-up</strong>, and the topics on which our "
+"Mozillians will be speaking. If you are organizing an event and would like a "
+"Mozillian to participate, please send us an email to <em>eventos at mozilla-"
+"hispano.org</em>. If you are a Mozillian organising an event that's not "
+"listed here, let us know!"
+msgstr ""
+
+#: templates/index.html:15
+msgid ""
+"You can also see <a href=\"https://www.mozilla-hispano.org/documentacion/"
+"Eventos\">a full list of events that Mozilla is participating</a>"
+msgstr ""
+
+#: templates/index.html:18
+msgid "Coming events"
+msgstr ""
+
+#: templates/index.html:23 templates/index.html.py:48
+#: templates/events/registration-confirmed.html:24
+msgid "Date"
+msgstr ""
+
+#: templates/index.html:43
+msgid "Past events"
 msgstr ""
 
 #: templates/events/detail.html:12 templates/events/social-block.html:5
@@ -1312,6 +1404,10 @@ msgid "I am in!"
 msgstr ""
 
 #: templates/events/detail.html:18
+msgid "Add me to queue"
+msgstr ""
+
+#: templates/events/detail.html:18
 msgid "Register here"
 msgstr ""
 
@@ -1319,11 +1415,11 @@ msgstr ""
 msgid "Comments and opinions about the event"
 msgstr ""
 
-#: templates/events/detail.html:33
+#: templates/events/detail.html:32
 msgid "Photos"
 msgstr ""
 
-#: templates/events/detail.html:39
+#: templates/events/detail.html:36
 msgid "Back to event listing"
 msgstr ""
 
@@ -1335,8 +1431,12 @@ msgstr ""
 #: templates/events/registration-closed.html:11
 #: templates/events/registration-confirmed.html:5
 #: templates/events/registration-confirmed.html:11
+#: templates/events/registration-declined.html:5
+#: templates/events/registration-declined.html:11
 #: templates/events/registration-done.html:5
 #: templates/events/registration-done.html:11
+#: templates/events/registration-queued.html:5
+#: templates/events/registration-queued.html:11
 #: templates/events/registration.html:5 templates/events/registration.html:11
 msgid "Registration"
 msgstr ""
@@ -1353,21 +1453,41 @@ msgstr ""
 msgid "Thanks, your registration has been confirmed!"
 msgstr ""
 
-#: templates/events/registration-confirmed.html:19
+#: templates/events/registration-confirmed.html:18
+#: templates/events/registration-done.html:18
+#: templates/events/registration-email.html:11
+#: templates/events/registration.html:22
+msgid ""
+"Remember that this event is already full, your will be put in the queue and "
+"we will contact you in case a place is released"
+msgstr ""
+
+#: templates/events/registration-confirmed.html:20
 msgid "We are looking forward to meet you at"
 msgstr ""
 
-#: templates/events/registration-confirmed.html:21
+#: templates/events/registration-confirmed.html:22
 msgid "Remember the details"
 msgstr ""
 
-#: templates/events/registration-confirmed.html:23
-msgid "Date"
+#: templates/events/registration-confirmed.html:29
+#: templates/events/registration-queued.html:17
+msgid ""
+"If you can't go to the event, it would be nice if you cancel your "
+"registration using the link at the bottom of the first email we sent you"
 msgstr ""
 
-#: templates/events/registration-confirmed.html:28
-#: templates/events/registration-done.html:19
+#: templates/events/registration-confirmed.html:33
+#: templates/events/registration-declined.html:17
+#: templates/events/registration-done.html:23
+#: templates/events/registration-queued.html:21
 msgid "Back to"
+msgstr ""
+
+#: templates/events/registration-declined.html:13
+msgid ""
+"We are sorry for not seeing you at the event, but thanks for notifing, your "
+"registration has been deleted"
 msgstr ""
 
 #: templates/events/registration-done.html:13
@@ -1383,6 +1503,7 @@ msgid "with the instructions to confirm it"
 msgstr ""
 
 #: templates/events/registration-email.html:2
+#: templates/events/registration-pendingEmail.html:2
 msgid "Hi"
 msgstr ""
 
@@ -1396,31 +1517,69 @@ msgid ""
 "address"
 msgstr ""
 
-#: templates/events/registration-email.html:10
+#: templates/events/registration-email.html:13
+#: templates/events/registration-pendingEmail.html:10
 msgid "Here you have the event details"
 msgstr ""
 
-#: templates/events/registration-email.html:12
+#: templates/events/registration-email.html:15
+#: templates/events/registration-pendingEmail.html:12
 msgid "Date:"
 msgstr ""
 
-#: templates/events/registration-email.html:13
+#: templates/events/registration-email.html:16
+#: templates/events/registration-pendingEmail.html:13
 msgid "Address:"
 msgstr ""
 
-#: templates/events/registration-email.html:16
+#: templates/events/registration-email.html:21
+#: templates/events/registration-pendingEmail.html:19
+msgid "http://www.mozilla-hispano.org"
+msgstr ""
+
+#: templates/events/registration-email.html:22
+#: templates/events/registration-pendingEmail.html:20
 msgid "http://twitter.com/mozilla_hispano"
 msgstr ""
 
+#: templates/events/registration-email.html:23
+#: templates/events/registration-pendingEmail.html:15
+msgid ""
+"If you can't go to the event, it would be nice if you cancel your "
+"registration using the following link and let other person get your place"
+msgstr ""
+
+#: templates/events/registration-pendingEmail.html:4
+msgid "A place from the queue has been relased for"
+msgstr ""
+
+#: templates/events/registration-pendingEmail.html:6
+msgid ""
+"Important! You must confirm your attendance as soon as possible by clicking "
+"on the following link"
+msgstr ""
+
+#: templates/events/registration-queued.html:13
+msgid "Thanks for registering!"
+msgstr ""
+
+#: templates/events/registration-queued.html:14
+msgid "Unfortunately we are full, your registration is now in QUEUE"
+msgstr ""
+
+#: templates/events/registration-queued.html:15
+msgid "We will contact you if a place is released"
+msgstr ""
+
 #: templates/events/registration.html:13
-msgid "Join the party!"
+msgid "See you soon!"
 msgstr ""
 
 #: templates/events/registration.html:19
 msgid "Fields marked with <span>*</span> are mandatory"
 msgstr ""
 
-#: templates/events/registration.html:100
+#: templates/events/registration.html:104
 msgid "Submit"
 msgstr ""
 
@@ -1470,4 +1629,40 @@ msgstr ""
 
 #: templates/events/tweets.html:451
 msgid "\" + Math.ceil( day_diff / 7 ) + \" weeks ago"
+msgstr ""
+
+#: templates/stats/index.html:15
+msgid "Stats"
+msgstr ""
+
+#: templates/stats/index.html:19
+msgid "Event stats"
+msgstr ""
+
+#: templates/stats/index.html:21
+msgid "General"
+msgstr ""
+
+#: templates/stats/index.html:23
+msgid "Total number of events"
+msgstr ""
+
+#: templates/stats/index.html:24
+msgid "Total number of registrations"
+msgstr ""
+
+#: templates/stats/index.html:24
+msgid "Average"
+msgstr ""
+
+#: templates/stats/index.html:25
+msgid "Total people attended"
+msgstr ""
+
+#: templates/stats/index.html:26
+msgid "Global success ratio"
+msgstr ""
+
+#: templates/stats/index.html:28
+msgid "Attendees per event"
 msgstr ""
