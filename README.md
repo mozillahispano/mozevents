@@ -65,6 +65,12 @@ Run the testserver
 
     $ python manage.py runserver
 
+#### Run tests
+
+To run tests
+
+    $ python manage.py test
+
 #### Apache
 
 If you want to run on Apache2 server, you will have to install ``libapache2-mod-wsgi`` module and create a virtual host.
