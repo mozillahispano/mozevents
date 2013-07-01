@@ -15,169 +15,181 @@ from events.forms import RegistrationForm
 from events.models import Event, Registration
 from events.utils import newMail, pendingMail
 
+
 def index(request):
-        
-	now = datetime.datetime.now()
-	
-        nextEvents = Event.objects.filter(active=True, eventDate__gte=now).order_by('eventDate')
-	oldEvents = Event.objects.filter(active=True, eventDate__lt=now).order_by('-eventDate')
-        
-        data = {
-            'nextEvents': nextEvents,
-	    'oldEvents': oldEvents
-        }
-	
-	return render_to_response('index.html', data, context_instance=RequestContext(request))
-        
+    """Events index (home) page."""
+    now = datetime.datetime.now()
+
+    nextEvents = Event.objects.filter(
+        active=True, eventDate__gte=now).order_by('eventDate')
+    oldEvents = Event.objects.filter(
+        active=True, eventDate__lt=now).order_by('-eventDate')
+
+    data = {
+        'nextEvents': nextEvents,
+        'oldEvents': oldEvents,
+    }
+
+    return render_to_response(
+        'index.html', data, context_instance=RequestContext(request))
+
+
 def detail(request, id, slug):
-        
-        event = get_object_or_404(Event, id=id, active=True)
-        
-        data = {
-            'event': event,
-        }
-	
-	return render_to_response('events/detail.html', data, context_instance=RequestContext(request))
-        
+    """Event details page."""
+    event = get_object_or_404(Event, id=id, active=True)
+
+    data = {
+        'event': event,
+    }
+
+    return render_to_response(
+        'events/detail.html', data, context_instance=RequestContext(request))
+
+
 def registration(request, id, slug):
-        
-        event = get_object_or_404(Event, id=id, active=True)
-        
-        data = {
-                    'event': event,
-        }
-        
-        # If registration is closed, we should display a different page
-	if event.registrationOpen is False:
-		return render_to_response("events/registration-closed.html", data)
-                
-        if request.method == "POST":
-            
-            form = RegistrationForm(request.POST, request.FILES)
-            
-            if form.is_valid():
-                
-                registration = form.save(commit=False)
-                registration.event = event
-                registration.status = "Invited"
-                registration.hash = uuid.uuid1().hex
-                registration.name = smart_str(registration.firstName) + " " + smart_str(registration.familyName)
-                    
-                registration.save()
-                
-                #Email confirmation
-                newMail(event.id, registration.id)
-		
-		data = {
-			'event': event,
-			'form': form,
-			'registration': registration,
-                }
-                
-                return render_to_response('events/registration-done.html', data, context_instance=RequestContext(request))
-                
-            else:
-		
-		data = {
-                    'event': event,
-                    'form': form,
-		}
-                
-                return render_to_response('events/registration.html', data, context_instance=RequestContext(request))
-                
-        else:
-            
-            form=RegistrationForm(instance = event)
-            
+    """Event registrations page."""
+    event = get_object_or_404(Event, id=id, active=True)
+
+    # If registration is closed, we should display a different page
+    if event.registrationOpen is False:
+        return render_to_response(
+            "events/registration-closed.html", {'event': event})
+
+    if request.method == "POST":
+        form = RegistrationForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            registration = form.save(commit=False)
+            registration.event = event
+            registration.status = "Invited"
+            registration.hash = uuid.uuid1().hex
+            registration.name = '%s %s' % (
+                smart_str(registration.firstName),
+                smart_str(registration.familyName))
+
+            registration.save()
+
+            # Email confirmation
+            newMail(event.id, registration.id)
+
             data = {
-                    'event': event,
-                    'form': form,
+                'event': event,
+                'form': form,
+                'registration': registration,
             }
-            
-            return render_to_response('events/registration.html', data, context_instance=RequestContext(request))
-	
+
+            return render_to_response(
+                'events/registration-done.html',
+                data,
+                context_instance=RequestContext(request))
+
+    else:
+        form = RegistrationForm(instance=event)
+
+    return render_to_response(
+        'events/registration.html',
+        {'event': event, 'form': form},
+        context_instance=RequestContext(request))
+
+
 def confirmation(request, id, slug, hash):
-        '''
-		Handle links sent to email to confirm registration
-		and set proper status for the record.
-	'''
-	event = get_object_or_404(Event, pk=id, active=True)
-        registration = get_object_or_404(Registration, hash=hash)
-        
-        alreadyConfirmed = False
-	# placesLeft will change if confirmed, so we need a flag
-	inQueue = False
-	
-        # If already confirmed
-        if registration.status == "Confirmed":
-            alreadyConfirmed = True
-	elif event.queueActive:
-		if event.placesLeft < 1:
-			# If it's a record that was on queue and got a place
-			if registration.status == "Pending":
-				registration.status = "Confirmed"
-			else:
-				registration.status = "Queued"
-				inQueue = True
-		else:
-			registration.status = "Confirmed"
+    """
+    Handle links sent to email to confirm registration
+    and set proper status for the record.
+    """
+    event = get_object_or_404(Event, pk=id, active=True)
+    registration = get_object_or_404(Registration, hash=hash)
+
+    alreadyConfirmed = False
+
+    # placesLeft will change if confirmed, so we need a flag
+    inQueue = False
+
+    # If already confirmed
+    if registration.status == "Confirmed":
+        alreadyConfirmed = True
+    elif event.queueActive:
+        if event.placesLeft < 1:
+            # If it's a record that was on queue and got a place
+            if registration.status == "Pending":
+                registration.status = "Confirmed"
+            else:
+                registration.status = "Queued"
+                inQueue = True
         else:
             registration.status = "Confirmed"
-        
-        registration.save()
-        
-        data = {
-            'registration': registration,
-	    'event': event,
-	    'alreadyConfirmed': alreadyConfirmed,
-	    'inQueue': inQueue
-        }
-	
-        if registration.status == "Confirmed":
-            return render_to_response('events/registration-confirmed.html', data, context_instance=RequestContext(request))
-        elif registration.status == "Queued":
-            return render_to_response('events/registration-queued.html', data, context_instance=RequestContext(request))
+    else:
+        registration.status = "Confirmed"
+
+    registration.save()
+
+    data = {
+        'registration': registration,
+        'event': event,
+        'alreadyConfirmed': alreadyConfirmed,
+        'inQueue': inQueue,
+    }
+
+    if registration.status == "Confirmed":
+        return render_to_response(
+            'events/registration-confirmed.html',
+            data,
+            context_instance=RequestContext(request))
+
+    return render_to_response(
+        'events/registration-queued.html',
+        data,
+        context_instance=RequestContext(request))
+
 
 def decline(request, id, slug, hash):
-        '''
-		Handle links sent to email to decline registration
-		and set proper status for the record.
-	'''
-	event = get_object_or_404(Event, pk=id, active=True)
-        registration = get_object_or_404(Registration, hash=hash)
-        
-	prevStatus = registration.status
-	registration.status = "Declined"
-        registration.save()
-	
-	#We release a place for the next one in queue and send him and email
-	# but only if his previous status was Confirmed or Pending
-	# FIXME: I'm sure there is a better way to do this
-	if event.queueActive and prevStatus == "Confirmed" or prevStatus == "Pending":
-		nextInQueueId = Registration.objects.filter(event=event.id, status="Queued").order_by('creationDate')[:1]
-		if nextInQueueId:
-			nextInQueue = Registration.objects.get(pk=nextInQueueId[0].id)
-			nextInQueue.status = "Pending"
-			nextInQueue.save()
-			#Email confirmation
-			pendingMail(event.id, nextInQueue.id)
-        
-        data = {
-            'registration': registration,
-	    'event': event
-        }
+    """
+    Handle links sent to email to decline registration
+    and set proper status for the record.
+    """
+    event = get_object_or_404(Event, pk=id, active=True)
+    registration = get_object_or_404(Registration, hash=hash)
 
-        return render_to_response('events/registration-declined.html', data, context_instance=RequestContext(request))
-	
+    prevStatus = registration.status
+    registration.status = "Declined"
+    registration.save()
+
+    # We release a place for the next one in queue and send him and email
+    # but only if his previous status was Confirmed or Pending
+    # FIXME: I'm sure there is a better way to do this
+    if (event.queueActive and prevStatus == "Confirmed" or
+        prevStatus == "Pending"):
+
+        nextInQueueId = Registration.objects.filter(
+            event=event.id, status="Queued").order_by('creationDate')[:1]
+
+        if nextInQueueId:
+            nextInQueue = Registration.objects.get(pk=nextInQueueId[0].id)
+            nextInQueue.status = "Pending"
+            nextInQueue.save()
+            # Email confirmation
+            pendingMail(event.id, nextInQueue.id)
+
+    data = {
+        'registration': registration,
+        'event': event
+    }
+
+    return render_to_response(
+        'events/registration-declined.html',
+        data,
+        context_instance=RequestContext(request))
+
+
 def tweets(request, id, slug):
-        
-	event = get_object_or_404(Event, id=id, active=True)
-        
-        data = {
-            'event': event,
-        }
-	
-	return render_to_response('events/tweets.html', data, context_instance=RequestContext(request))
+    """Event tweets page."""
+    event = get_object_or_404(Event, id=id, active=True)
+
+    return render_to_response(
+        'events/tweets.html',
+        {'event': event},
+        context_instance=RequestContext(request))
+
 
 @login_required
 def stats(request):
