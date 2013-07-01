@@ -95,7 +95,8 @@ INSTALLED_APPS = (
     'south',
     'django_countries',
     'recaptcha',
-    'events'
+    'events',
+    'django_nose',
 )
 
 CACHE_BACKEND = 'file://'+PROJECT_PATH+'/cache'
@@ -117,3 +118,5 @@ MEDIA_URL = SITE_URL+'/media/'
 SUIT_CONFIG = {
     'ADMIN_NAME': 'MozEvents',
 }
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'

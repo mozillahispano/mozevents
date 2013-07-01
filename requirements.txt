@@ -6,3 +6,5 @@ oauth==1.0.1
 oauthlib==0.3.8
 requests==1.1.0
 django-suit
+django-nose==1.1
+pyquery==1.2.4
