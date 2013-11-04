@@ -1,5 +1,5 @@
 <uwsgi>
-    <socket>/var/www/eventosdjangoapp.socket</socket>
+    <socket>/tmp/eventosdjangoapp.socket</socket>
     <master/>
     <workers>2</workers>
     <pidfile>/var/lib/mozevents/uwsgi.pid</pidfile>
