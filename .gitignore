@@ -6,3 +6,8 @@ __init__.py
 settings_local.py
 migrations
 /static
+/bin/
+/include/
+/lib/
+/local/
+/man/

@@ -37,19 +37,28 @@ It's recomendable too, use a virtual environment for python (``virtualenv`` or s
 Clone this repo
 
     $ git clone git@github.com:mozillahispano/mozevents.git
+    
+You should be using a ``virtualenv`` for this project, and ``pip``,``libmysqlclient-dev``, ``python-dev``, and ``libssl-dev`` are needed for install some packages from pip.
+
+    $ sudo aptitude install pip libmysqlclient-dev python-dev libssl-dev
+    $ sudo pip install virtualenv
+
+Create and enable the ``virtualenv``, project is at ``/var/lib/mozevents``:
+
+    $ cd /var/lib/
+    $ virtualenv mozevents
+    $ cd mozevents
+    $ source bin/activate
 
 You'll need to install python packages used in this project. These are in ``requirements.txt``.
 The best way to install these packages is using ``pip``:
 
-    $ pip install -r mozevents/requirements.txt
-
-Note: We asume you have running your virtual environment.
+    $ pip install -r requirements.txt
 
 #### Configure your local site
 
 Create and fill your local settings (database, email, url and recaptcha keys)
 
-    $ cd mozevents
     $ cp mozevents/settings_local.py.example mozevents/settings_local.py
     $ vim mozevents/settings_local.py
 
@@ -71,60 +80,52 @@ To run tests
 
     $ python manage.py test
 
-#### Apache
-
-If you want to run on Apache2 server, you will have to install ``libapache2-mod-wsgi`` module and create a virtual host.
-
-Here it's an example, change information if needed:
-
-```
-<VirtualHost *:80>
-        DocumentRoot /var/lib/mozevents/public
-        ServerAdmin admin@email.com
-        ServerName admin@email.com
-        ErrorLog /var/log/apache2/eventos.mozilla-hispano.org.error.log
-        CustomLog /var/log/apache2/eventos.mozilla-hispano.org.log combined
-
-	# Django settings
-    	WSGIScriptAlias / /var/lib/mozevents/public/wsgi_handler.py
-    	WSGIDaemonProcess mozevents user=www-data group=www-data processes=2 threads=5 maximum-requests=100
-    	WSGIProcessGroup mozevents
-
-   	<Directory /var/lib/mozevents/public>
-        	 Order deny,allow
-         	Allow from all
-   	</Directory>
-
-    	# Non-Django directories
-    	Alias /static /var/lib/mozevents/public/static/
-    	<Location "/static">
-        	SetHandler None
-    	</Location>
- 
-	Alias /media/ /var/lib/mozevents/public/media/
-
-	# Directory protection
-	<Directory /var/lib/mozevents/public/media/>
-                Options -Indexes
-		Order deny,allow
-                Allow from all
-        </Directory>
-
-	Alias /admin-media /usr/share/pyshared/django/contrib/admin/media
-   
-	<Directory /usr/share/pyshared/django/contrib/admin/media/>
-        	 Order deny,allow
-         	Allow from all
-   	</Directory>
-
-</VirtualHost>
-```
-
-If you application is not under /var/lib/mozevents, you will have also to modify 
-/public/wsgi_handler.py to change the path.
-
-Check also if the ``python-django`` path is correct for your system.
-
 #### Nginx
 
-TBD
+We need ``nginx``, ``uwsgi`` and ``uwsgi-plugin-python`` packages.
+
+Create a virtualhost at ``/etc/nginx/sites-enabled/mozevents``
+
+```
+server {
+  listen  80;
+  server_name eventos.mozilla-hispano.org;
+  access_log /var/log/nginx/eventos.mozilla-hispano.org.access.log;
+  error_log /var/log/nginx/eventos.mozilla-hispano.org.error.log;
+
+    location / {
+        uwsgi_pass unix:///tmp/eventos.mozilla-hispano.org.sock;
+        include uwsgi_params;
+    }
+    
+    
+    location /media/ {
+        alias /var/www/mozevents/public/media/;
+    }
+    
+    
+    location /static/ {
+        alias /var/www/mozevents/static/;
+    }
+}
+```
+
+Create uwsgi app at ``/etc/uwsgi/apps-enabled/eventos.mozilla-hispano.org.ini``
+
+```
+[uwsgi]
+vhost = true
+plugins = python
+socket = /tmp/eventos.mozilla-hispano.org.sock
+master = true
+enable-threads = true
+processes = 2
+wsgi-file = /var/www/mozevents/public/wsgi_handler.py
+virtualenv = /var/www/mozevents/
+chdir = /var/www/mozevents
+```
+
+Restart services:
+
+    $ sudo service nginx restart
+    $ sudo service uwsgi restart
