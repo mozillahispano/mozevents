@@ -2,6 +2,8 @@
 
 This django app allows you to set up an event system for you meetings, talks, parties...
 
+[![Build Status](https://travis-ci.org/mozillahispano/mozevents.svg?branch=master)](https://travis-ci.org/mozillahispano/mozevents)
+
 ### Features
 
 * Upcoming and past events listing.
