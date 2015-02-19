@@ -101,7 +101,7 @@ class Event(models.Model):
     
     def __unicode__(self):
         return self.name
-    
+
 class Registration(models.Model):
     '''
         Model for individual registrations
@@ -152,3 +152,22 @@ class Registration(models.Model):
     
     def __unicode__(self):
         return self.name
+
+class Category(models.Model):
+    '''
+        Model for categories of events
+    '''
+
+    id = models.AutoField(primary_key=True)
+    descrip = models.CharField(_("Category"), max_length=100, default="")
+
+    def __unicode__(self):
+        return self.descrip
+
+class CategoryEvent(models.Model):
+    '''
+        Model for relationship between Event and Cateogry
+    '''
+
+    event = models.ForeignKey(Event)
+    category = models.ForeignKey(Category, verbose_name=_("Category"))

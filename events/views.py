@@ -12,7 +12,7 @@ from django.utils.encoding import smart_str, smart_unicode
 from django.views.generic import TemplateView
 
 from events.forms import RegistrationForm
-from events.models import Event, Registration
+from events.models import Event, Registration, Category, CategoryEvent
 from events.utils import newMail, pendingMail
 
 
@@ -25,21 +25,27 @@ def index(request):
     oldEvents = Event.objects.filter(
         active=True, eventDate__lt=now).order_by('-eventDate')
 
+    categorys = Category.objects.all()
+
     data = {
         'nextEvents': nextEvents,
         'oldEvents': oldEvents,
+        'categorys': categorys,
     }
 
     return render_to_response(
         'index.html', data, context_instance=RequestContext(request))
 
-
 def detail(request, id, slug):
     """Event details page."""
     event = get_object_or_404(Event, id=id, active=True)
 
+    """Get all the categories related to the event"""
+    categorys = CategoryEvent.objects.filter(event_id=id)
+
     data = {
         'event': event,
+        'categorys': categorys,
     }
 
     return render_to_response(
@@ -219,3 +225,20 @@ def stats(request):
 
     return render_to_response(
         'stats/index.html', data, context_instance=RequestContext(request))
+
+def events_category(request, id):
+    """
+        Filter evets for category
+    """
+    events = CategoryEvent.objects.filter(category_id=id)
+
+    ct = Category.objects.get(id=id)
+    category = ct.descrip
+
+    data = {
+        'events': events,
+        'category': category,
+    }
+
+    return render_to_response(
+        'events/events_categorys.html', data, context_instance=RequestContext(request))

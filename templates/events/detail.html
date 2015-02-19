@@ -45,4 +45,12 @@
     
 {% include "events/twitter-widget.html" %}
 
+<br>
+<h3>{% trans 'Category' %}</h3>
+{% for obj in categorys %}
+	<ul>
+		<li><a href="/events/category/{{obj.category.id}}">{{ obj.category.descrip }}</a></li>
+	</ul>
+{% endfor %}
+
 {% endblock %}
