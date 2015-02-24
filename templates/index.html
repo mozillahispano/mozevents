@@ -75,13 +75,15 @@
 		<thead>
 			<tr>
 				<th>{% trans 'Category' %}</th>
+				<th>{% trans 'Description' %}</th>
 			</tr>
 		</thead>
 
 		<tbody>
-			{% for obj in categorys %}
+			{% for obj in categories %}
 				<tr>
-					<td><a href="/events/category/{{obj.id}}">{{ obj.descrip }}</a></td>
+					<td><a href="/events/category/{{obj.id}}">{{ obj.name }}</a></td>
+					<td>{{obj.description|safe}}</td>
 				</tr>
 			{% endfor %}
 		</tbody>

@@ -47,9 +47,9 @@
 
 <br>
 <h3>{% trans 'Category' %}</h3>
-{% for obj in categorys %}
+{% for obj in categories %}
 	<ul>
-		<li><a href="/events/category/{{obj.category.id}}">{{ obj.category.descrip }}</a></li>
+		<li><a href="/events/category/{{obj.category.id}}">{{ obj.category.name }}</a></li>
 	</ul>
 {% endfor %}
 

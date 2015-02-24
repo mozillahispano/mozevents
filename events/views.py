@@ -25,12 +25,12 @@ def index(request):
     oldEvents = Event.objects.filter(
         active=True, eventDate__lt=now).order_by('-eventDate')
 
-    categorys = Category.objects.all()
+    categories = Category.objects.all()
 
     data = {
         'nextEvents': nextEvents,
         'oldEvents': oldEvents,
-        'categorys': categorys,
+        'categories': categories,
     }
 
     return render_to_response(
@@ -41,11 +41,11 @@ def detail(request, id, slug):
     event = get_object_or_404(Event, id=id, active=True)
 
     """Get all the categories related to the event"""
-    categorys = CategoryEvent.objects.filter(event_id=id)
+    categories = CategoryEvent.objects.filter(event_id=id)
 
     data = {
         'event': event,
-        'categorys': categorys,
+        'categories': categories,
     }
 
     return render_to_response(
@@ -233,7 +233,7 @@ def events_category(request, id):
     events = CategoryEvent.objects.filter(category_id=id)
 
     ct = Category.objects.get(id=id)
-    category = ct.descrip
+    category = ct.name
 
     data = {
         'events': events,
@@ -241,4 +241,4 @@ def events_category(request, id):
     }
 
     return render_to_response(
-        'events/events_categorys.html', data, context_instance=RequestContext(request))
+        'events/events_categories.html', data, context_instance=RequestContext(request))

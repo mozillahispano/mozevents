@@ -4,6 +4,7 @@ import csv
 from django.contrib import admin
 from django.http import HttpResponse
 from django.utils.translation import ugettext_lazy as _
+from django.utils.safestring import mark_safe
 
 from events.models import Event, Registration, Category, CategoryEvent
 from events.utils import newMail, pendingMail
@@ -57,11 +58,15 @@ class RegistrationInline(admin.TabularInline):
     search_fields = ['name', 'email']
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('descrip',)
-    list_filter = ['descrip']
-    search_fields = ['descrip']
+    list_display = ('name',)
+    list_filter = ['name']
+    search_fields = ['name']
 
-    ordering = ['descrip']
+    ordering = ['name']
+
+    # TinyMCE
+    class Media:
+        js = ('/static/js/tiny_mce/tiny_mce.js', '/static/js/textareas.js')
 
 class CategoryInline(admin.TabularInline):
     model = CategoryEvent

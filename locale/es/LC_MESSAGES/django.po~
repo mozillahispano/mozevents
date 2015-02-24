@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-19 14:41+0100\n"
+"POT-Creation-Date: 2015-02-24 00:21+0100\n"
 "PO-Revision-Date: 2013-05-20 11:10+0100\n"
 "Last-Translator: Rubén Martín <ruben@funge.uva.es>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1066,27 +1066,27 @@ msgstr ""
 msgid "Export selected objects as CSV file"
 msgstr "Exportar los objetos seleccionados como CSV"
 
-#: events/admin.py:88
+#: events/admin.py:99
 msgid "This registration has attended to the event"
 msgstr "El registrado ha asistido al evento"
 
-#: events/admin.py:95
+#: events/admin.py:106
 msgid "Confirm manually place for this registration"
 msgstr "Confirmar manualmente una plaza para este registro"
 
-#: events/admin.py:101
+#: events/admin.py:112
 msgid "Decline manually this registration"
 msgstr "Declinar manualmente este registro"
 
-#: events/admin.py:111
+#: events/admin.py:122
 msgid "Set as pending and send an email to confirm"
 msgstr "Fijar como pendiente y enviar un correo para confirmar"
 
-#: events/admin.py:119
+#: events/admin.py:130
 msgid "[Privacy] Delete personal information"
 msgstr "[Privacidad] Borrar información personal"
 
-#: events/admin.py:129
+#: events/admin.py:140
 msgid "Export selected registrations as CSV file"
 msgstr "Exportar los registros seleccionados como CSV"
 
@@ -1136,7 +1136,7 @@ msgid "The email doesn't match"
 msgstr "El correo no coincide"
 
 #: events/models.py:16 events/models.py:110 templates/index.html:26
-#: templates/index.html.py:51
+#: templates/index.html.py:51 templates/events/events_categories.html:26
 msgid "Name"
 msgstr "Nombre"
 
@@ -1161,10 +1161,12 @@ msgid "Registration end date"
 msgstr "Fecha de fin de la inscripción"
 
 #: events/models.py:22 templates/index.html:28 templates/index.html.py:53
+#: templates/events/events_categories.html:28
 msgid "Country"
 msgstr "País"
 
 #: events/models.py:23 templates/index.html:29 templates/index.html.py:54
+#: templates/events/events_categories.html:29
 msgid "City"
 msgstr "Ciudad"
 
@@ -1320,9 +1322,14 @@ msgstr "Asistido"
 msgid "Status"
 msgstr "Estado"
 
-#: events/models.py:162 events/models.py:177
+#: events/models.py:162 events/models.py:174 templates/index.html:77
+#: templates/events/detail.html:49 templates/events/events_categories.html:22
 msgid "Category"
 msgstr "Categoría"
+
+#: events/models.py:163
+msgid "Description"
+msgstr "Descripción"
 
 #: events/utils.py:23
 #, python-format
@@ -1370,7 +1377,8 @@ msgstr ""
 msgid "Mozilla Events"
 msgstr "Eventos Mozilla"
 
-#: templates/base.html:7 templates/index.html:5 templates/events/tweets.html:6
+#: templates/base.html:7 templates/index.html:5
+#: templates/events/events_categories.html:5 templates/events/tweets.html:6
 msgid "Events"
 msgstr "Eventos"
 
@@ -1382,11 +1390,11 @@ msgstr "Mozilla"
 msgid "mozilla hispano"
 msgstr "mozilla hispano"
 
-#: templates/index.html:11
+#: templates/index.html:11 templates/events/events_categories.html:11
 msgid "Where is Mozilla?"
 msgstr "¿Dónde está Mozilla?"
 
-#: templates/index.html:15
+#: templates/index.html:15 templates/events/events_categories.html:15
 msgid ""
 "Here you can see some events which Mozilla community will be "
 "<strong>organising and require sign-up</strong>, and the topics on which our "
@@ -1402,7 +1410,7 @@ msgstr ""
 "mozilla-hispano.org</em>. Si eres un Mozillero organizando un evento que no "
 "está listado aquí, ¡háznoslo saber!"
 
-#: templates/index.html:18
+#: templates/index.html:18 templates/events/events_categories.html:18
 msgid ""
 "You can also see <a href=\"https://www.mozilla-hispano.org/documentacion/"
 "Eventos\">a full list of events that Mozilla is participating</a>"
@@ -1416,6 +1424,7 @@ msgid "Coming events"
 msgstr "Próximos eventos"
 
 #: templates/index.html:27 templates/index.html.py:52
+#: templates/events/events_categories.html:27
 #: templates/events/registration-confirmed.html:24
 msgid "Date"
 msgstr "Fecha"
@@ -1423,6 +1432,10 @@ msgstr "Fecha"
 #: templates/index.html:47
 msgid "Past events"
 msgstr "Eventos pasados"
+
+#: templates/index.html:71
+msgid "Filter events for categories"
+msgstr "Filtrar eventos por categorías"
 
 #: templates/events/detail.html:12 templates/events/social-block.html:5
 msgid "I will be at"

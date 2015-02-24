@@ -159,14 +159,15 @@ class Category(models.Model):
     '''
 
     id = models.AutoField(primary_key=True)
-    descrip = models.CharField(_("Category"), max_length=100, default="")
-
+    name = models.CharField(_("Category"), max_length=100, default="")
+    description = models.TextField(_("Description"), blank=True, null=True)
+    
     def __unicode__(self):
-        return self.descrip
+        return self.name
 
 class CategoryEvent(models.Model):
     '''
-        Model for relationship between Event and Cateogry
+        Model for relationship between Event and Category
     '''
 
     event = models.ForeignKey(Event)

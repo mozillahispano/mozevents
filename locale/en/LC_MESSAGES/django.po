@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-19 20:33+0100\n"
+"POT-Creation-Date: 2015-02-24 00:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1065,27 +1065,27 @@ msgstr ""
 msgid "Export selected objects as CSV file"
 msgstr ""
 
-#: events/admin.py:95
+#: events/admin.py:99
 msgid "This registration has attended to the event"
 msgstr ""
 
-#: events/admin.py:102
+#: events/admin.py:106
 msgid "Confirm manually place for this registration"
 msgstr ""
 
-#: events/admin.py:108
+#: events/admin.py:112
 msgid "Decline manually this registration"
 msgstr ""
 
-#: events/admin.py:118
+#: events/admin.py:122
 msgid "Set as pending and send an email to confirm"
 msgstr ""
 
-#: events/admin.py:126
+#: events/admin.py:130
 msgid "[Privacy] Delete personal information"
 msgstr ""
 
-#: events/admin.py:136
+#: events/admin.py:140
 msgid "Export selected registrations as CSV file"
 msgstr ""
 
@@ -1124,7 +1124,7 @@ msgid "The email doesn't match"
 msgstr ""
 
 #: events/models.py:16 events/models.py:110 templates/index.html:26
-#: templates/index.html.py:51 templates/events/events_categorys.html:26
+#: templates/index.html.py:51 templates/events/events_categories.html:26
 msgid "Name"
 msgstr ""
 
@@ -1149,12 +1149,12 @@ msgid "Registration end date"
 msgstr ""
 
 #: events/models.py:22 templates/index.html:28 templates/index.html.py:53
-#: templates/events/events_categorys.html:28
+#: templates/events/events_categories.html:28
 msgid "Country"
 msgstr ""
 
 #: events/models.py:23 templates/index.html:29 templates/index.html.py:54
-#: templates/events/events_categorys.html:29
+#: templates/events/events_categories.html:29
 msgid "City"
 msgstr ""
 
@@ -1302,9 +1302,13 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: events/models.py:162 events/models.py:173 templates/index.html:77
-#: templates/events/detail.html:49 templates/events/events_categorys.html:22
+#: events/models.py:162 events/models.py:174 templates/index.html:77
+#: templates/events/detail.html:49 templates/events/events_categories.html:22
 msgid "Category"
+msgstr ""
+
+#: events/models.py:163
+msgid "Description"
 msgstr ""
 
 #: events/utils.py:23
@@ -1350,7 +1354,7 @@ msgid "Mozilla Events"
 msgstr ""
 
 #: templates/base.html:7 templates/index.html:5
-#: templates/events/events_categorys.html:5 templates/events/tweets.html:6
+#: templates/events/events_categories.html:5 templates/events/tweets.html:6
 msgid "Events"
 msgstr ""
 
@@ -1362,11 +1366,11 @@ msgstr ""
 msgid "mozilla hispano"
 msgstr ""
 
-#: templates/index.html:11 templates/events/events_categorys.html:11
+#: templates/index.html:11 templates/events/events_categories.html:11
 msgid "Where is Mozilla?"
 msgstr ""
 
-#: templates/index.html:15 templates/events/events_categorys.html:15
+#: templates/index.html:15 templates/events/events_categories.html:15
 msgid ""
 "Here you can see some events which Mozilla community will be "
 "<strong>organising and require sign-up</strong>, and the topics on which our "
@@ -1376,7 +1380,7 @@ msgid ""
 "listed here, let us know!"
 msgstr ""
 
-#: templates/index.html:18 templates/events/events_categorys.html:18
+#: templates/index.html:18 templates/events/events_categories.html:18
 msgid ""
 "You can also see <a href=\"https://www.mozilla-hispano.org/documentacion/"
 "Eventos\">a full list of events that Mozilla is participating</a>"
@@ -1387,7 +1391,7 @@ msgid "Coming events"
 msgstr ""
 
 #: templates/index.html:27 templates/index.html.py:52
-#: templates/events/events_categorys.html:27
+#: templates/events/events_categories.html:27
 #: templates/events/registration-confirmed.html:24
 msgid "Date"
 msgstr ""
