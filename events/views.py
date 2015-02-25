@@ -226,7 +226,7 @@ def stats(request):
     return render_to_response(
         'stats/index.html', data, context_instance=RequestContext(request))
 
-def events_category(request, id):
+def events_category(request, id, slug):
     """
         Filter evets for category
     """

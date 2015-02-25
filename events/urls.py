@@ -9,5 +9,5 @@ urlpatterns = patterns('events.views',
 	url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/registration/$', 'registration'),
 	url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/tweets/$', 'tweets'),
 	url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', 'detail'),
-	url(r'^events/category/(?P<id>\d+)/$','events_category'),
+	url(r'^events/category/(?P<id>\d+)/(?P<slug>[-\w]+)/$','events_category'),
 )

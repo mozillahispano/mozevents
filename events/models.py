@@ -5,6 +5,7 @@ from django.db import models
 from django.forms import ModelForm
 from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import smart_str, smart_unicode
+from django.template import defaultfilters
 
 from django_countries.countries import COUNTRIES
 
@@ -160,6 +161,7 @@ class Category(models.Model):
 
     id = models.AutoField(primary_key=True)
     name = models.CharField(_("Category"), max_length=100, default="")
+    slug = models.SlugField(_("Slug"))
     description = models.TextField(_("Description"), blank=True, null=True)
     
     def __unicode__(self):

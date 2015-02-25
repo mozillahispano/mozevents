@@ -58,6 +58,8 @@ class RegistrationInline(admin.TabularInline):
     search_fields = ['name', 'email']
 
 class CategoryAdmin(admin.ModelAdmin):
+    # Autofill slugs
+    prepopulated_fields = {"slug": ("name",)}
     list_display = ('name',)
     list_filter = ['name']
     search_fields = ['name']

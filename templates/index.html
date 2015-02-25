@@ -82,7 +82,7 @@
 		<tbody>
 			{% for obj in categories %}
 				<tr>
-					<td><a href="/events/category/{{obj.id}}">{{ obj.name }}</a></td>
+					<td><a href="/events/category/{{obj.id}}/{{obj.slug}}">{{ obj.name }}</a></td>
 					<td>{{obj.description|safe}}</td>
 				</tr>
 			{% endfor %}
