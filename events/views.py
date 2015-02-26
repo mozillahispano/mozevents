@@ -230,10 +230,12 @@ def events_category(request, id, slug):
     """
         Filter evets for category
     """
-    events = CategoryEvent.objects.filter(category_id=id)
-
-    ct = Category.objects.get(id=id)
-    category = ct.name
+    try:
+        events = CategoryEvent.objects.filter(category_id=id)
+    except CategoryEvent.DoesNotExist:
+        raise Http404("Selected category nonexistent")
+    
+    category = get_object_or_404(Category, id=id)
 
     data = {
         'events': events,

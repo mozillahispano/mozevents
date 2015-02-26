@@ -19,7 +19,7 @@
 </div>
 
 
-<h2>{% trans 'Category' %}: {{ category }}</h2>
+<h2>{% trans 'Category' %}: {{ category.name }}</h2>
 <table class="coming-events">
 		<thead>
 			<tr>
@@ -31,12 +31,12 @@
 		</thead>
 
 		<tbody>
-			{% for obj in events %}
+			{% for event in events %}
 				<tr>
-					<td><a href="/{{ obj.event.id }}/{{ obj.event.slug }}/">{{  obj.event.name }}</a></td>
-                                            <td>{{ obj.event.eventDate|date:"SHORT_DATE_FORMAT" }}</td>
-					<td>{{ obj.event.get_country_display }}</td>
-					<td>{{ obj.event.city }}</td>
+					<td><a href="/{{ event.event.id }}/{{ event.event.slug }}/">{{  event.event.name }}</a></td>
+                                            <td>{{ event.event.eventDate|date:"SHORT_DATE_FORMAT" }}</td>
+					<td>{{ event.event.get_country_display }}</td>
+					<td>{{ event.event.city }}</td>
 				</tr>
 			{% endfor %}
 		</tbody>
