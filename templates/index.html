@@ -80,10 +80,10 @@
 		</thead>
 
 		<tbody>
-			{% for obj in categories %}
+			{% for cat in categories %}
 				<tr>
-					<td><a href="/events/category/{{obj.id}}/{{obj.slug}}">{{ obj.name }}</a></td>
-					<td>{{obj.description|safe}}</td>
+					<td><a href="/events/category/{{cat.id}}/{{cat.slug}}">{{ cat.name }}</a></td>
+					<td>{{cat.description|safe}}</td>
 				</tr>
 			{% endfor %}
 		</tbody>
