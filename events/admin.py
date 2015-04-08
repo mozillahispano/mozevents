@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.utils.translation import ugettext_lazy as _
 from django.utils.safestring import mark_safe
 
-from events.models import Event, Registration, Category, CategoryEvent
+from events.models import Event, Registration, Category
 from events.utils import newMail, pendingMail
 
 
@@ -70,13 +70,6 @@ class CategoryAdmin(admin.ModelAdmin):
     class Media:
         js = ('/static/js/tiny_mce/tiny_mce.js', '/static/js/textareas.js')
 
-class CategoryInline(admin.TabularInline):
-    model = CategoryEvent
-
-    list_display = ('category',)
-    list_filter = ['category']
-    search_fields = ['category']
-
 class EventAdmin(admin.ModelAdmin):
     # Autofill slugs
     prepopulated_fields = {"slug": ("name",)}
@@ -87,7 +80,6 @@ class EventAdmin(admin.ModelAdmin):
 
     inlines = [
         RegistrationInline,
-        CategoryInline,
     ]
 
     # TinyMCE

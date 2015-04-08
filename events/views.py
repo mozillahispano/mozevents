@@ -12,7 +12,7 @@ from django.utils.encoding import smart_str, smart_unicode
 from django.views.generic import TemplateView
 
 from events.forms import RegistrationForm
-from events.models import Event, Registration, Category, CategoryEvent
+from events.models import Event, Registration, Category
 from events.utils import newMail, pendingMail
 
 
@@ -40,12 +40,8 @@ def detail(request, id, slug):
     """Event details page."""
     event = get_object_or_404(Event, id=id, active=True)
 
-    """Get all the categories related to the event"""
-    categories = CategoryEvent.objects.filter(event_id=id)
-
     data = {
-        'event': event,
-        'categories': categories,
+        'event': event
     }
 
     return render_to_response(
@@ -231,9 +227,9 @@ def events_category(request, id, slug):
         Filter evets for category
     """
     try:
-        events = CategoryEvent.objects.filter(category_id=id)
-    except CategoryEvent.DoesNotExist:
-        raise Http404("Selected category nonexistent")
+        events = Event.objects.filter(category_id=id)
+    except Event.DoesNotExist:
+        raise Http404(_("Selected category nonexistent"))
     
     category = get_object_or_404(Category, id=id)
 

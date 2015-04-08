@@ -68,27 +68,4 @@
     </table>
 {% endif %}
 
-<h2>{% trans 'Filter events for categories' %}</h2>
-<div>
-
-	<table class="coming-events">
-		<thead>
-			<tr>
-				<th>{% trans 'Category' %}</th>
-				<th>{% trans 'Description' %}</th>
-			</tr>
-		</thead>
-
-		<tbody>
-			{% for cat in categories %}
-				<tr>
-					<td><a href="/events/category/{{cat.id}}/{{cat.slug}}">{{ cat.name }}</a></td>
-					<td>{{cat.description|safe}}</td>
-				</tr>
-			{% endfor %}
-		</tbody>
-    </table>
-
-</div>
-
 {% endblock %}

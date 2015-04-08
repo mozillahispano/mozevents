@@ -47,10 +47,12 @@
 
 <br>
 <h3>{% trans 'Category' %}</h3>
-{% for cat in categories %}
-	<ul>
-		<li><a href="/events/category/{{cat.category.id}}/{{cat.category.slug}}">{{ cat.category.name }}</a></li>
-	</ul>
-{% endfor %}
+
+{% if event.category != None %}
+    <ul>
+    	<li><a href="/{{event.category_id}}/{{event.category.slug}}/events/category/">{{event.category}}</a></li>
+    </ul>
+{% endif %}
+
 
 {% endblock %}

@@ -33,10 +33,10 @@
 		<tbody>
 			{% for event in events %}
 				<tr>
-					<td><a href="/{{ event.event.id }}/{{ event.event.slug }}/">{{  event.event.name }}</a></td>
-                                            <td>{{ event.event.eventDate|date:"SHORT_DATE_FORMAT" }}</td>
-					<td>{{ event.event.get_country_display }}</td>
-					<td>{{ event.event.city }}</td>
+					<td><a href="/{{ event.id }}/{{ event.slug }}/">{{  event.name }}</a></td>
+                                            <td>{{ event.eventDate|date:"SHORT_DATE_FORMAT" }}</td>
+					<td>{{ event.get_country_display }}</td>
+					<td>{{ event.city }}</td>
 				</tr>
 			{% endfor %}
 		</tbody>
