@@ -10,4 +10,5 @@ urlpatterns = patterns('events.views',
 	url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/tweets/$', 'tweets'),
 	url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', 'detail'),
 	url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/events/category/$', 'events_category'),
+	url(r'^filter_events/$', 'filter_events'),
 )

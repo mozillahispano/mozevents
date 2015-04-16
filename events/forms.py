@@ -1,11 +1,14 @@
 # coding=utf-8
+import datetime
+
 from django import forms
-from django.forms import ModelForm
+from django.forms import ModelForm, extras
 from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import smart_str, smart_unicode
+from django_countries.countries import COUNTRIES
 
 from events.extra import ReCaptchaField
-from events.models import Event, Registration
+from events.models import Event, Registration, Category
 
 
 class RegistrationForm(ModelForm):
@@ -55,3 +58,15 @@ class RegistrationForm(ModelForm):
         self.cleaned_data["twitter"] = twitter
 
         return cleaned_data
+
+class FilterEventSeach(forms.Form):
+
+    year = datetime.datetime.now().year
+
+    country = forms.ChoiceField(choices=COUNTRIES)
+    category = forms.ChoiceField(
+                    choices=Category.objects.all().values_list('id', 'name')
+                )
+    date = forms.DateField(widget=extras.SelectDateWidget(
+                                years=range(2010, year + 10)
+                            ))

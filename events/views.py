@@ -11,7 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import smart_str, smart_unicode
 from django.views.generic import TemplateView
 
-from events.forms import RegistrationForm
+from events.forms import RegistrationForm, FilterEventSeach
 from events.models import Event, Registration, Category
 from events.utils import newMail, pendingMail
 
@@ -27,10 +27,13 @@ def index(request):
 
     categories = Category.objects.all()
 
+    form_filter = FilterEventSeach()
+
     data = {
         'nextEvents': nextEvents,
         'oldEvents': oldEvents,
-        'categories': categories,
+        'categories': categories, 
+        'form_filter': form_filter,   
     }
 
     return render_to_response(
@@ -240,3 +243,30 @@ def events_category(request, id, slug):
 
     return render_to_response(
         'events/events_categories.html', data, context_instance=RequestContext(request))
+
+def filter_events(request):
+
+    """
+        Results of the filters of events
+    """
+
+    try:
+        country = request.POST['country']
+        category = request.POST['category']
+        #date_day = request.POST['date_day']
+        #date_month = request.POST['date_month']
+        #date_year = request.POST['date_year']
+        
+        events = Event.objects.filter(country=country, category=category)
+
+        data = {
+            'events': events,
+        }
+
+        return render_to_response(
+            'events/filter_events.html', data, context_instance=RequestContext(request))
+         
+    except Exception:
+        raise Http404(_("Failed the filter"))
+
+

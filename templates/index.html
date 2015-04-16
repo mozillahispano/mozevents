@@ -1,10 +1,15 @@
 {% extends "base.html" %}
 
 {% load i18n %}
+{% load static %}
 
 {% block title %}{% trans 'Events' %}{% endblock %}
 
 {% block contentClass %}mainpage{% endblock %}
+
+{% block css_extra %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/modal.css' %}" />
+{% endblock %}
 
 {% block content %}
 
@@ -17,9 +22,58 @@
     
     <p>{% trans 'You can also see <a href="https://www.mozilla-hispano.org/documentacion/Eventos">a full list of events that Mozilla is participating</a>' %}.</p>
 </div>
+	
+<a href="#filter"> {% trans 'Filter' %}</a>
+<br>
+<br>
+
+<div id="filter" class="modalDialog">
+	<div>
+		<a href="#" title="Close" class="close">X</a>
+		<h2>{% trans 'Filter' %}</h2>
+		<form action="/filter_events/" method="POST">{% csrf_token %}
+			<table>
+				{% for field in form_filter %}
+					{% if field.name == 'country' %}
+						<tr>
+							<td>
+								<label> {% trans 'Country' %} </label>
+							</td>
+							<td>
+								{{ field }}
+							</td>
+						</tr>
+					{% endif %}
+					{% if field.name == 'category' %}
+						<tr>
+							<td>
+								<label> {% trans 'Category' %} </label>
+							</td>
+							<td>
+								{{ field }}
+							</td>
+						</tr>
+					{% endif %}
+					{% if field.name == 'date' %}
+						<tr>
+							<td>
+								<label> {% trans 'Date' %} </label>
+							</td>
+							<td>
+								{{ field }}
+							</td>
+						</tr>
+					{% endif %}
+				{% endfor %}
+			</table>
+			<input type="submit" value="{% trans 'Filter' %}" />
+		</form>
+	</div>
+</div>
+
 
 {% if nextEvents %}
-    <h2>{% trans 'Coming events' %}</h2>
+    <h2> {% trans 'Coming events' %}</h2>
     <table class="coming-events">
 			<thead>
 				<tr>
