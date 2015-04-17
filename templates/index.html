@@ -22,17 +22,20 @@
     
     <p>{% trans 'You can also see <a href="https://www.mozilla-hispano.org/documentacion/Eventos">a full list of events that Mozilla is participating</a>' %}.</p>
 </div>
-	
-<a href="#filter"> {% trans 'Filter' %}</a>
+
+<button onclick="actionModal(true);"> {% trans 'Filter' %}</button>
 <br>
 <br>
 
 <div id="filter" class="modalDialog">
 	<div>
-		<a href="#" title="Close" class="close">X</a>
-		<h2>{% trans 'Filter' %}</h2>
+		<a title="Close" class="close" onclick="actionModal(false);">X</a>
 		<form action="/filter_events/" method="POST">{% csrf_token %}
 			<table>
+				<th>
+					<h2>{% trans 'Filter' %}</h2>
+				</th>
+				<th></th>
 				{% for field in form_filter %}
 					{% if field.name == 'country' %}
 						<tr>

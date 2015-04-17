@@ -6,12 +6,7 @@
 	bottom: 0;
 	left: 0;
 	background: rgba(0,0,0,0.8);
-	z-index: 99999;
-	opacity:0;
-	-webkit-transition: opacity 400ms ease-in;
-	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
-	pointer-events: none;
+	display: none;
 }
 
 .modalDialog:target {
@@ -25,10 +20,7 @@
 	margin: 10% auto;
 	padding: 5px 20px 13px 20px;
 	border-radius: 10px;
-	background: #fff;
-	background: -moz-linear-gradient(#fff, #999);
-	background: -webkit-linear-gradient(#fff, #999);
-	background: -o-linear-gradient(#fff, #999);
+	background: #f5f1e8 url(../../img/sandstone/bg-sand.png) repeat;
 }
 
 .close {
@@ -48,6 +40,10 @@
 	-moz-box-shadow: 1px 1px 3px #000;
 	-webkit-box-shadow: 1px 1px 3px #000;
 	box-shadow: 1px 1px 3px #000;
+	cursor: pointer;
 }
 
-.close:hover { background: #00d9ff; }
+.close:hover {
+	background: #606061; 
+	cursor: pointer; 
+}
