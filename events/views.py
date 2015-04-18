@@ -11,7 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import smart_str, smart_unicode
 from django.views.generic import TemplateView
 
-from events.forms import RegistrationForm, FilterEventSeach
+from events.forms import RegistrationForm, FilterEventSearch
 from events.models import Event, Registration, Category
 from events.utils import newMail, pendingMail
 
@@ -27,7 +27,7 @@ def index(request):
 
     categories = Category.objects.all()
 
-    form_filter = FilterEventSeach()
+    form_filter = FilterEventSearch()
 
     data = {
         'nextEvents': nextEvents,

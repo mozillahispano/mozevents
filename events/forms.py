@@ -1,14 +1,12 @@
 # coding=utf-8
-import datetime
-
 from django import forms
-from django.forms import ModelForm, extras
+from django.forms import ModelForm
 from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import smart_str, smart_unicode
-from django_countries.countries import COUNTRIES
 
 from events.extra import ReCaptchaField
-from events.models import Event, Registration, Category
+from events.models import Event, Registration
+from events.widgets import CalendarWidget
 
 
 class RegistrationForm(ModelForm):
@@ -59,14 +57,17 @@ class RegistrationForm(ModelForm):
 
         return cleaned_data
 
-class FilterEventSeach(forms.Form):
+class FilterEventSearch(forms.ModelForm):
 
-    year = datetime.datetime.now().year
+    eventDate_from = forms.DateField(widget=CalendarWidget(
+                                        attrs={"data-calendar": "calendar"}
+                                    )) 
+    eventDate_to = forms.DateField(widget=CalendarWidget(
+                                        attrs={"data-calendar": "calendar"}
+                                    )) 
 
-    country = forms.ChoiceField(choices=COUNTRIES)
-    category = forms.ChoiceField(
-                    choices=Category.objects.all().values_list('id', 'name')
-                )
-    date = forms.DateField(widget=extras.SelectDateWidget(
-                                years=range(2010, year + 10)
-                            ))
+    class Meta:
+        model = Event
+        fields = ['country', 'category']
+
+

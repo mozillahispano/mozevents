@@ -9,6 +9,19 @@
 
 {% block css_extra %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/modal.css' %}" />
+{{form_filter.media.css}}
+{% endblock %}
+
+{% block js_extra %}
+{{form_filter.media.js}}
+<script>
+    $("[data-calendar='calendar']").datepicker({
+      showOn: "button",
+      buttonImage: "{% static 'admin/img/icon_calendar.gif' %}", 
+      buttonImageOnly: true,
+      dateFormat: "dd/mm/yy"
+    });
+</script>
 {% endblock %}
 
 {% block content %}
@@ -57,7 +70,17 @@
 							</td>
 						</tr>
 					{% endif %}
-					{% if field.name == 'date' %}
+					{% if field.name == 'eventDate_from' %}
+						<tr>
+							<td>
+								<label> {% trans 'Date' %} </label>
+							</td>
+							<td>
+								{{ field }}
+							</td>
+						</tr>
+					{% endif %}
+					{% if field.name == 'eventDate_to' %}
 						<tr>
 							<td>
 								<label> {% trans 'Date' %} </label>
