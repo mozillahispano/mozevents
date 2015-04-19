@@ -59,10 +59,10 @@ class RegistrationForm(ModelForm):
 
 class FilterEventSearch(forms.ModelForm):
 
-    eventDate_from = forms.DateField(widget=CalendarWidget(
+    eventDateFrom = forms.DateField(widget=CalendarWidget(
                                         attrs={"data-calendar": "calendar"}
                                     )) 
-    eventDate_to = forms.DateField(widget=CalendarWidget(
+    eventDateTo = forms.DateField(widget=CalendarWidget(
                                         attrs={"data-calendar": "calendar"}
                                     )) 
 

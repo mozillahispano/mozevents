@@ -27,13 +27,13 @@ def index(request):
 
     categories = Category.objects.all()
 
-    form_filter = FilterEventSearch()
+    formFilter = FilterEventSearch()
 
     data = {
         'nextEvents': nextEvents,
         'oldEvents': oldEvents,
         'categories': categories, 
-        'form_filter': form_filter,   
+        'formFilter': formFilter,   
     }
 
     return render_to_response(
@@ -253,11 +253,18 @@ def filter_events(request):
     try:
         country = request.POST['country']
         category = request.POST['category']
-        #date_day = request.POST['date_day']
-        #date_month = request.POST['date_month']
-        #date_year = request.POST['date_year']
+        eventDateFrom = request.POST['eventDateFrom']
+        eventDateTo = request.POST['eventDateTo']
         
-        events = Event.objects.filter(country=country, category=category)
+        eventDateFrom = datetime.datetime.strptime(
+                            eventDateFrom, "%d/%m/%Y").strftime("%Y-%m-%d")
+
+        eventDateTo = datetime.datetime.strptime(
+                            eventDateTo, "%d/%m/%Y").strftime("%Y-%m-%d")
+
+        events = Event.objects.filter(country=country, category=category,
+                                        eventDate__gte=eventDateFrom,
+                                        eventDate__lte=eventDateTo)
 
         data = {
             'events': events,

@@ -9,11 +9,11 @@
 
 {% block css_extra %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/modal.css' %}" />
-{{form_filter.media.css}}
+{{formFilter.media.css}}
 {% endblock %}
 
 {% block js_extra %}
-{{form_filter.media.js}}
+{{formFilter.media.js}}
 <script>
     $("[data-calendar='calendar']").datepicker({
       showOn: "button",
@@ -49,7 +49,7 @@
 					<h2>{% trans 'Filter' %}</h2>
 				</th>
 				<th></th>
-				{% for field in form_filter %}
+				{% for field in formFilter %}
 					{% if field.name == 'country' %}
 						<tr>
 							<td>
@@ -70,7 +70,7 @@
 							</td>
 						</tr>
 					{% endif %}
-					{% if field.name == 'eventDate_from' %}
+					{% if field.name == 'eventDateFrom' %}
 						<tr>
 							<td>
 								<label> {% trans 'Date' %} </label>
@@ -80,7 +80,7 @@
 							</td>
 						</tr>
 					{% endif %}
-					{% if field.name == 'eventDate_to' %}
+					{% if field.name == 'eventDateTo' %}
 						<tr>
 							<td>
 								<label> {% trans 'Date' %} </label>
