@@ -3,7 +3,7 @@ import datetime
 import uuid
 
 from django.contrib.auth.decorators import login_required
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import Context
 from django.template import RequestContext
@@ -251,20 +251,40 @@ def filter_events(request):
     """
 
     try:
-        country = request.POST['country']
-        category = request.POST['category']
-        eventDateFrom = request.POST['eventDateFrom']
-        eventDateTo = request.POST['eventDateTo']
+        country = request.POST.get('country')
+        category = request.POST.get('category')
+        keyword = request.POST.get('keyword')
+        eventDateFrom = request.POST.get('eventDateFrom')
+        eventDateTo = request.POST.get('eventDateTo')
         
-        eventDateFrom = datetime.datetime.strptime(
+        if (not country and not category and not keyword
+            and not eventDateFrom and not eventDateTo):
+            return HttpResponseRedirect("/")
+
+        kwargs = {}
+
+        if country:
+            kwargs['country'] = country
+
+        if category:
+            kwargs['category'] = category
+
+        if keyword:
+            kwargs['name__icontains'] = keyword
+
+        if eventDateFrom:
+            eventDateFrom = datetime.datetime.strptime(
                             eventDateFrom, "%d/%m/%Y").strftime("%Y-%m-%d")
 
-        eventDateTo = datetime.datetime.strptime(
+            kwargs['eventDate__gte'] = eventDateFrom
+
+        if eventDateTo:
+            eventDateTo = datetime.datetime.strptime(
                             eventDateTo, "%d/%m/%Y").strftime("%Y-%m-%d")
 
-        events = Event.objects.filter(country=country, category=category,
-                                        eventDate__gte=eventDateFrom,
-                                        eventDate__lte=eventDateTo)
+            kwargs['eventDate__lte'] = eventDateTo
+
+        events = Event.objects.filter(**kwargs).order_by("-eventDate")
 
         data = {
             'events': events,
@@ -273,7 +293,7 @@ def filter_events(request):
         return render_to_response(
             'events/filter_events.html', data, context_instance=RequestContext(request))
          
-    except Exception:
+    except Exception, e:
         raise Http404(_("Failed the filter"))
 
 

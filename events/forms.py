@@ -59,6 +59,7 @@ class RegistrationForm(ModelForm):
 
 class FilterEventSearch(forms.ModelForm):
 
+    keyword = forms.CharField(max_length=45)
     eventDateFrom = forms.DateField(widget=CalendarWidget(
                                         attrs={"data-calendar": "calendar"}
                                     )) 

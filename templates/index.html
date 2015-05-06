@@ -36,7 +36,7 @@
     <p>{% trans 'You can also see <a href="https://www.mozilla-hispano.org/documentacion/Eventos">a full list of events that Mozilla is participating</a>' %}.</p>
 </div>
 
-<button onclick="actionModal(true);"> {% trans 'Filter' %}</button>
+<button class="button" onclick="actionModal(true);"> {% trans 'Filter' %}</button>
 <br>
 <br>
 
@@ -70,6 +70,16 @@
 							</td>
 						</tr>
 					{% endif %}
+					{% if field.name == 'keyword' %}
+						<tr>
+							<td>
+								<label> {% trans 'Keyword' %} </label>
+							</td>
+							<td>
+								{{ field }}
+							</td>
+						</tr>
+					{% endif %}
 					{% if field.name == 'eventDateFrom' %}
 						<tr>
 							<td>
@@ -92,7 +102,7 @@
 					{% endif %}
 				{% endfor %}
 			</table>
-			<input type="submit" value="{% trans 'Filter' %}" />
+			<input type="submit" class="button" value="{% trans 'Filter' %}" />
 		</form>
 	</div>
 </div>
