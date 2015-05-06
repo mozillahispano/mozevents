@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-21 00:00+0200\n"
+"POT-Creation-Date: 2015-05-06 05:20+0200\n"
 "PO-Revision-Date: 2013-05-20 11:10+0100\n"
 "Last-Translator: Rubén Martín <ruben@funge.uva.es>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1148,8 +1148,8 @@ msgstr "Enlace permanente"
 msgid "Description"
 msgstr "Descripción"
 
-#: events/models.py:30 events/models.py:125 templates/index.html:106
-#: templates/index.html.py:131 templates/events/events_categories.html:26
+#: events/models.py:30 events/models.py:125 templates/index.html:116
+#: templates/index.html.py:141 templates/events/events_categories.html:26
 #: templates/events/filter_events.html:25
 msgid "Name"
 msgstr "Nombre"
@@ -1170,13 +1170,13 @@ msgstr "Fecha de inicio de la inscripción"
 msgid "Registration end date"
 msgstr "Fecha de fin de la inscripción"
 
-#: events/models.py:36 templates/index.html:56 templates/index.html.py:108
-#: templates/index.html:133 templates/events/events_categories.html:28
+#: events/models.py:36 templates/index.html:56 templates/index.html.py:118
+#: templates/index.html:143 templates/events/events_categories.html:28
 #: templates/events/filter_events.html:27
 msgid "Country"
 msgstr "País"
 
-#: events/models.py:37 templates/index.html:109 templates/index.html.py:134
+#: events/models.py:37 templates/index.html:119 templates/index.html.py:144
 #: templates/events/events_categories.html:29
 #: templates/events/filter_events.html:28
 msgid "City"
@@ -1348,7 +1348,7 @@ msgstr "[%(name)s] ¡Tienes plaza!"
 msgid "Selected category nonexistent"
 msgstr ""
 
-#: events/views.py:277
+#: events/views.py:297
 msgid "Failed the filter"
 msgstr ""
 
@@ -1434,30 +1434,34 @@ msgstr ""
 "Eventos\">una lista completa de eventos en los que Mozilla está "
 "participando</a>"
 
-#: templates/index.html:39 templates/index.html.py:49 templates/index.html:95
+#: templates/index.html:39 templates/index.html.py:49 templates/index.html:105
 msgid "Filter"
 msgstr ""
 
 #: templates/index.html:76
+msgid "Keyword"
+msgstr "Palabra clave"
+
+#: templates/index.html:86
 msgid "From"
 msgstr "Desde"
 
-#: templates/index.html:86
+#: templates/index.html:96
 msgid "To"
 msgstr "Hasta"
 
-#: templates/index.html:102
+#: templates/index.html:112
 msgid "Coming events"
 msgstr "Próximos eventos"
 
-#: templates/index.html:107 templates/index.html.py:132
+#: templates/index.html:117 templates/index.html.py:142
 #: templates/events/events_categories.html:27
 #: templates/events/filter_events.html:26
 #: templates/events/registration-confirmed.html:24
 msgid "Date"
 msgstr "Fecha"
 
-#: templates/index.html:127
+#: templates/index.html:137
 msgid "Past events"
 msgstr "Eventos pasados"
 
