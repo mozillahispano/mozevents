@@ -22,6 +22,10 @@ class Category(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+
 class Event(models.Model):
     '''
         Main event model
