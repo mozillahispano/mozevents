@@ -40,9 +40,9 @@ Clone this repo
 
     $ git clone git@github.com:mozillahispano/mozevents.git
     
-You should be using a ``virtualenv`` for this project, and ``pip``,``libmysqlclient-dev``, ``python-dev``, and ``libssl-dev`` are needed for install some packages from pip.
+You should be using a ``virtualenv`` for this project, and ``python-pip``,``libmysqlclient-dev``, ``python-dev``, ``libssl-dev``, ``libxml2-dev`` and ``libxslt-dev`` are needed for install some packages from pip.
 
-    $ sudo aptitude install pip libmysqlclient-dev python-dev libssl-dev
+    $ sudo aptitude install python-pip libmysqlclient-dev python-dev libssl-dev libxml2-dev libxslt-dev
     $ sudo pip install virtualenv
 
 Create and enable the ``virtualenv``, project is at ``/var/lib/mozevents``:
