@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 10:24+0200\n"
+"POT-Creation-Date: 2015-02-24 00:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1061,54 +1061,54 @@ msgstr ""
 msgid "United Republic of Tanzania"
 msgstr ""
 
-#: events/admin.py:11
+#: events/admin.py:12
 msgid "Export selected objects as CSV file"
 msgstr ""
 
-#: events/admin.py:68
+#: events/admin.py:99
 msgid "This registration has attended to the event"
 msgstr ""
 
-#: events/admin.py:72
+#: events/admin.py:106
 msgid "Confirm manually place for this registration"
 msgstr ""
 
-#: events/admin.py:76
+#: events/admin.py:112
 msgid "Decline manually this registration"
 msgstr ""
 
-#: events/admin.py:83
+#: events/admin.py:122
 msgid "Set as pending and send an email to confirm"
 msgstr ""
 
-#: events/admin.py:87
+#: events/admin.py:130
 msgid "[Privacy] Delete personal information"
 msgstr ""
 
-#: events/admin.py:93
+#: events/admin.py:140
 msgid "Export selected registrations as CSV file"
 msgstr ""
 
-#: events/extra.py:14
+#: events/extra.py:15
 msgid "Invalid captcha"
 msgstr ""
 
-#: events/forms.py:19
+#: events/forms.py:21
 msgid "Confirm email address"
 msgstr ""
 
-#: events/forms.py:20
+#: events/forms.py:23
 msgid ""
 "To avoid automatical registrations, you have to fill this field with the two "
 "words above. If you arent able to read them, you can reload a different ones "
 "from the arrows icon."
 msgstr ""
 
-#: events/forms.py:21
+#: events/forms.py:27
 msgid "I accept the privacy policy"
 msgstr ""
 
-#: events/forms.py:21
+#: events/forms.py:29
 msgid ""
 "All your data will be incorporated to a database and will be used to "
 "organice and control the event assistants and contact you with information "
@@ -1119,12 +1119,12 @@ msgid ""
 "us via email at eventos at mozilla-hispano.org"
 msgstr ""
 
-#: events/forms.py:34
+#: events/forms.py:48
 msgid "The email doesn't match"
 msgstr ""
 
-#: events/models.py:16 events/models.py:110 templates/index.html:22
-#: templates/index.html.py:47
+#: events/models.py:16 events/models.py:110 templates/index.html:26
+#: templates/index.html.py:51 templates/events/events_categories.html:26
 msgid "Name"
 msgstr ""
 
@@ -1148,11 +1148,13 @@ msgstr ""
 msgid "Registration end date"
 msgstr ""
 
-#: events/models.py:22 templates/index.html:24 templates/index.html.py:49
+#: events/models.py:22 templates/index.html:28 templates/index.html.py:53
+#: templates/events/events_categories.html:28
 msgid "Country"
 msgstr ""
 
-#: events/models.py:23 templates/index.html:25 templates/index.html.py:50
+#: events/models.py:23 templates/index.html:29 templates/index.html.py:54
+#: templates/events/events_categories.html:29
 msgid "City"
 msgstr ""
 
@@ -1165,7 +1167,7 @@ msgstr ""
 msgid "The address should be searchable in Google Maps"
 msgstr ""
 
-#: events/models.py:25 templates/events/detail.html:27
+#: events/models.py:25 templates/events/detail.html:26
 msgid "Places"
 msgstr ""
 
@@ -1300,12 +1302,21 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: events/utils.py:26
+#: events/models.py:162 events/models.py:174 templates/index.html:77
+#: templates/events/detail.html:49 templates/events/events_categories.html:22
+msgid "Category"
+msgstr ""
+
+#: events/models.py:163
+msgid "Description"
+msgstr ""
+
+#: events/utils.py:23
 #, python-format
 msgid "[%(name)s] Registration confirmation"
 msgstr ""
 
-#: events/utils.py:50
+#: events/utils.py:46
 #, python-format
 msgid "[%(name)s] You got a place!"
 msgstr ""
@@ -1342,7 +1353,8 @@ msgstr ""
 msgid "Mozilla Events"
 msgstr ""
 
-#: templates/base.html:7 templates/index.html:5 templates/events/tweets.html:6
+#: templates/base.html:7 templates/index.html:5
+#: templates/events/events_categories.html:5 templates/events/tweets.html:6
 msgid "Events"
 msgstr ""
 
@@ -1350,15 +1362,15 @@ msgstr ""
 msgid "Mozilla"
 msgstr ""
 
-#: templates/base.html:224
+#: templates/base.html:236
 msgid "mozilla hispano"
 msgstr ""
 
-#: templates/index.html:9
+#: templates/index.html:11 templates/events/events_categories.html:11
 msgid "Where is Mozilla?"
 msgstr ""
 
-#: templates/index.html:12
+#: templates/index.html:15 templates/events/events_categories.html:15
 msgid ""
 "Here you can see some events which Mozilla community will be "
 "<strong>organising and require sign-up</strong>, and the topics on which our "
@@ -1368,23 +1380,28 @@ msgid ""
 "listed here, let us know!"
 msgstr ""
 
-#: templates/index.html:15
+#: templates/index.html:18 templates/events/events_categories.html:18
 msgid ""
 "You can also see <a href=\"https://www.mozilla-hispano.org/documentacion/"
 "Eventos\">a full list of events that Mozilla is participating</a>"
 msgstr ""
 
-#: templates/index.html:18
+#: templates/index.html:22
 msgid "Coming events"
 msgstr ""
 
-#: templates/index.html:23 templates/index.html.py:48
+#: templates/index.html:27 templates/index.html.py:52
+#: templates/events/events_categories.html:27
 #: templates/events/registration-confirmed.html:24
 msgid "Date"
 msgstr ""
 
-#: templates/index.html:43
+#: templates/index.html:47
 msgid "Past events"
+msgstr ""
+
+#: templates/index.html:71
+msgid "Filter events for categories"
 msgstr ""
 
 #: templates/events/detail.html:12 templates/events/social-block.html:5
@@ -1411,7 +1428,7 @@ msgstr ""
 msgid "Register here"
 msgstr ""
 
-#: templates/events/detail.html:26
+#: templates/events/detail.html:27
 msgid "Comments and opinions about the event"
 msgstr ""
 
@@ -1579,7 +1596,7 @@ msgstr ""
 msgid "Fields marked with <span>*</span> are mandatory"
 msgstr ""
 
-#: templates/events/registration.html:104
+#: templates/events/registration.html:114
 msgid "Submit"
 msgstr ""
 
@@ -1631,38 +1648,38 @@ msgstr ""
 msgid "\" + Math.ceil( day_diff / 7 ) + \" weeks ago"
 msgstr ""
 
-#: templates/stats/index.html:15
+#: templates/stats/index.html:9
 msgid "Stats"
 msgstr ""
 
-#: templates/stats/index.html:19
+#: templates/stats/index.html:13
 msgid "Event stats"
 msgstr ""
 
-#: templates/stats/index.html:21
+#: templates/stats/index.html:15
 msgid "General"
 msgstr ""
 
-#: templates/stats/index.html:23
+#: templates/stats/index.html:17
 msgid "Total number of events"
 msgstr ""
 
-#: templates/stats/index.html:24
+#: templates/stats/index.html:18
 msgid "Total number of registrations"
 msgstr ""
 
-#: templates/stats/index.html:24
+#: templates/stats/index.html:18
 msgid "Average"
 msgstr ""
 
-#: templates/stats/index.html:25
+#: templates/stats/index.html:19
 msgid "Total people attended"
 msgstr ""
 
-#: templates/stats/index.html:26
+#: templates/stats/index.html:20
 msgid "Global success ratio"
 msgstr ""
 
-#: templates/stats/index.html:28
+#: templates/stats/index.html:22
 msgid "Attendees per event"
 msgstr ""

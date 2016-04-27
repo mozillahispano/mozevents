@@ -6,6 +6,7 @@ from django.utils.encoding import smart_str, smart_unicode
 
 from events.extra import ReCaptchaField
 from events.models import Event, Registration
+from events.widgets import CalendarWidget
 
 
 class RegistrationForm(ModelForm):
@@ -55,3 +56,19 @@ class RegistrationForm(ModelForm):
         self.cleaned_data["twitter"] = twitter
 
         return cleaned_data
+
+class FilterEventSearch(forms.ModelForm):
+
+    keyword = forms.CharField(max_length=45)
+    eventDateFrom = forms.DateField(widget=CalendarWidget(
+                                        attrs={"data-calendar": "calendar"}
+                                    )) 
+    eventDateTo = forms.DateField(widget=CalendarWidget(
+                                        attrs={"data-calendar": "calendar"}
+                                    )) 
+
+    class Meta:
+        model = Event
+        fields = ['country', 'category']
+
+

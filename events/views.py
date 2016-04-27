@@ -3,7 +3,7 @@ import datetime
 import uuid
 
 from django.contrib.auth.decorators import login_required
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import Context
 from django.template import RequestContext
@@ -11,8 +11,8 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import smart_str, smart_unicode
 from django.views.generic import TemplateView
 
-from events.forms import RegistrationForm
-from events.models import Event, Registration
+from events.forms import RegistrationForm, FilterEventSearch
+from events.models import Event, Registration, Category
 from events.utils import newMail, pendingMail
 
 
@@ -25,21 +25,26 @@ def index(request):
     oldEvents = Event.objects.filter(
         active=True, eventDate__lt=now).order_by('-eventDate')
 
+    categories = Category.objects.all()
+
+    formFilter = FilterEventSearch()
+
     data = {
         'nextEvents': nextEvents,
         'oldEvents': oldEvents,
+        'categories': categories, 
+        'formFilter': formFilter,   
     }
 
     return render_to_response(
         'index.html', data, context_instance=RequestContext(request))
-
 
 def detail(request, id, slug):
     """Event details page."""
     event = get_object_or_404(Event, id=id, active=True)
 
     data = {
-        'event': event,
+        'event': event
     }
 
     return render_to_response(
@@ -219,3 +224,76 @@ def stats(request):
 
     return render_to_response(
         'stats/index.html', data, context_instance=RequestContext(request))
+
+def events_category(request, id, slug):
+    """
+        Filter evets for category
+    """
+    try:
+        events = Event.objects.filter(category_id=id)
+    except Event.DoesNotExist:
+        raise Http404(_("Selected category nonexistent"))
+    
+    category = get_object_or_404(Category, id=id)
+
+    data = {
+        'events': events,
+        'category': category,
+    }
+
+    return render_to_response(
+        'events/events_categories.html', data, context_instance=RequestContext(request))
+
+def filter_events(request):
+
+    """
+        Results of the filters of events
+    """
+
+    try:
+        country = request.POST.get('country')
+        category = request.POST.get('category')
+        keyword = request.POST.get('keyword')
+        eventDateFrom = request.POST.get('eventDateFrom')
+        eventDateTo = request.POST.get('eventDateTo')
+        
+        if (not country and not category and not keyword
+            and not eventDateFrom and not eventDateTo):
+            return HttpResponseRedirect("/")
+
+        kwargs = {}
+
+        if country:
+            kwargs['country'] = country
+
+        if category:
+            kwargs['category'] = category
+
+        if keyword:
+            kwargs['name__icontains'] = keyword
+
+        if eventDateFrom:
+            eventDateFrom = datetime.datetime.strptime(
+                            eventDateFrom, "%d/%m/%Y").strftime("%Y-%m-%d")
+
+            kwargs['eventDate__gte'] = eventDateFrom
+
+        if eventDateTo:
+            eventDateTo = datetime.datetime.strptime(
+                            eventDateTo, "%d/%m/%Y").strftime("%Y-%m-%d")
+
+            kwargs['eventDate__lte'] = eventDateTo
+
+        events = Event.objects.filter(**kwargs).order_by("-eventDate")
+
+        data = {
+            'events': events,
+        }
+
+        return render_to_response(
+            'events/filter_events.html', data, context_instance=RequestContext(request))
+         
+    except Exception, e:
+        raise Http404(_("Failed the filter"))
+
+

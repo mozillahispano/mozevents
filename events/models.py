@@ -5,8 +5,26 @@ from django.db import models
 from django.forms import ModelForm
 from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import smart_str, smart_unicode
+from django.template import defaultfilters
 
 from django_countries.countries import COUNTRIES
+
+class Category(models.Model):
+    '''
+        Model for categories of events
+    '''
+
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(_("Category"), max_length=100, default="")
+    slug = models.SlugField(_("Slug"))
+    description = models.TextField(_("Description"), blank=True, null=True)
+    
+    def __unicode__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
 
 class Event(models.Model):
     '''
@@ -30,7 +48,8 @@ class Event(models.Model):
     queueActive = models.BooleanField(_("Queue active"))
     queueSize = models.IntegerField(_("Queue max. size"), blank=True, null=True, help_text=_("Max. people on the queue, set 0 for no limit"))
     queueWaitTime = models.IntegerField(_("Max. time to answer queue (hours)"), blank=True, null=True, help_text=_("Max. time a person has to answer when he get a place for the event (in hours)"))
-    
+    category = models.ForeignKey(Category, null=True, blank=True, verbose_name=_("Category"))
+
     def placesLeft(self):
         '''
             Returns how many places an event has left
@@ -101,7 +120,7 @@ class Event(models.Model):
     
     def __unicode__(self):
         return self.name
-    
+
 class Registration(models.Model):
     '''
         Model for individual registrations
@@ -152,3 +171,5 @@ class Registration(models.Model):
     
     def __unicode__(self):
         return self.name
+
+

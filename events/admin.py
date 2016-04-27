@@ -4,8 +4,9 @@ import csv
 from django.contrib import admin
 from django.http import HttpResponse
 from django.utils.translation import ugettext_lazy as _
+from django.utils.safestring import mark_safe
 
-from events.models import Event, Registration
+from events.models import Event, Registration, Category
 from events.utils import newMail, pendingMail
 
 
@@ -47,7 +48,6 @@ def export_as_csv_action(description=_("Export selected objects as CSV file"),
 
     return export_as_csv
 
-
 class RegistrationInline(admin.TabularInline):
     model = Registration
     list_display = ('name', 'email', 'website', 'event', 'twitter',
@@ -57,6 +57,18 @@ class RegistrationInline(admin.TabularInline):
                    'mailme', 'creationDate', 'event']
     search_fields = ['name', 'email']
 
+class CategoryAdmin(admin.ModelAdmin):
+    # Autofill slugs
+    prepopulated_fields = {"slug": ("name",)}
+    list_display = ('name',)
+    list_filter = ['name']
+    search_fields = ['name']
+
+    ordering = ['name']
+
+    # TinyMCE
+    class Media:
+        js = ('/static/js/tiny_mce/tiny_mce.js', '/static/js/textareas.js')
 
 class EventAdmin(admin.ModelAdmin):
     # Autofill slugs
@@ -129,4 +141,5 @@ class RegistrationAdmin(admin.ModelAdmin):
 
 admin.site.register(Event, EventAdmin)
 admin.site.register(Registration, RegistrationAdmin)
+admin.site.register(Category, CategoryAdmin)
 

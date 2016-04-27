@@ -45,4 +45,14 @@
     
 {% include "events/twitter-widget.html" %}
 
+<br>
+<h3>{% trans 'Category' %}</h3>
+
+{% if event.category != None %}
+    <ul>
+    	<li><a href="/{{event.category_id}}/{{event.category.slug}}/events/category/">{{event.category}}</a></li>
+    </ul>
+{% endif %}
+
+
 {% endblock %}

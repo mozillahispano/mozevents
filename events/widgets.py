@@ -15,3 +15,10 @@ class ReCaptcha(forms.widgets.Widget):
     def value_from_datadict(self, data, files, name):
         return [data.get(self.recaptcha_challenge_name, None), 
             data.get(self.recaptcha_response_name, None)]
+
+class CalendarWidget(forms.TextInput):
+    class Media:
+        css = {
+            'all': ('http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css',)
+        }
+        js = ('http://code.jquery.com/ui/1.11.4/jquery-ui.min.js',)

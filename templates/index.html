@@ -1,10 +1,28 @@
 {% extends "base.html" %}
 
 {% load i18n %}
+{% load static %}
 
 {% block title %}{% trans 'Events' %}{% endblock %}
 
 {% block contentClass %}mainpage{% endblock %}
+
+{% block css_extra %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/modal.css' %}" />
+{{formFilter.media.css}}
+{% endblock %}
+
+{% block js_extra %}
+{{formFilter.media.js}}
+<script>
+    $("[data-calendar='calendar']").datepicker({
+      showOn: "button",
+      buttonImage: "{% static 'admin/img/icon_calendar.gif' %}", 
+      buttonImageOnly: true,
+      dateFormat: "dd/mm/yy"
+    });
+</script>
+{% endblock %}
 
 {% block content %}
 
@@ -18,8 +36,80 @@
     <p>{% trans 'You can also see <a href="https://www.mozilla-hispano.org/documentacion/Eventos">a full list of events that Mozilla is participating</a>' %}.</p>
 </div>
 
+<button class="button" onclick="actionModal(true);"> {% trans 'Filter' %}</button>
+<br>
+<br>
+
+<div id="filter" class="modalDialog">
+	<div>
+		<a title="Close" class="close" onclick="actionModal(false);">X</a>
+		<form action="/filter_events/" method="POST">{% csrf_token %}
+			<table>
+				<th>
+					<h2>{% trans 'Filter' %}</h2>
+				</th>
+				<th></th>
+				{% for field in formFilter %}
+					{% if field.name == 'country' %}
+						<tr>
+							<td>
+								<label> {% trans 'Country' %} </label>
+							</td>
+							<td>
+								{{ field }}
+							</td>
+						</tr>
+					{% endif %}
+					{% if field.name == 'category' %}
+						<tr>
+							<td>
+								<label> {% trans 'Category' %} </label>
+							</td>
+							<td>
+								{{ field }}
+							</td>
+						</tr>
+					{% endif %}
+					{% if field.name == 'keyword' %}
+						<tr>
+							<td>
+								<label> {% trans 'Keyword' %} </label>
+							</td>
+							<td>
+								{{ field }}
+							</td>
+						</tr>
+					{% endif %}
+					{% if field.name == 'eventDateFrom' %}
+						<tr>
+							<td>
+								<label> {% trans 'From' %} </label>
+							</td>
+							<td>
+								{{ field }}
+							</td>
+						</tr>
+					{% endif %}
+					{% if field.name == 'eventDateTo' %}
+						<tr>
+							<td>
+								<label> {% trans 'To' %} </label>
+							</td>
+							<td>
+								{{ field }}
+							</td>
+						</tr>
+					{% endif %}
+				{% endfor %}
+			</table>
+			<input type="submit" class="button" value="{% trans 'Filter' %}" />
+		</form>
+	</div>
+</div>
+
+
 {% if nextEvents %}
-    <h2>{% trans 'Coming events' %}</h2>
+    <h2> {% trans 'Coming events' %}</h2>
     <table class="coming-events">
 			<thead>
 				<tr>
