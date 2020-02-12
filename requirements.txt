@@ -1,4 +1,4 @@
-Django==1.5
+Django==1.11.28
 MySQL-python==1.2.3
 South==0.7.5
 distribute==0.7.3
